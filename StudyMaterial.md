@@ -3,8 +3,8 @@
 ## 1. 게임보드 만들기
 - [x] content mode란  
 - [x] UIStackView 학습
-- [ ] statusBar
-- [ ] UIImageView
+- [x] statusBar
+- [x] UIImageView
 
 ## 2. 카드 클래스 구현하기
 - [ ] OOP
