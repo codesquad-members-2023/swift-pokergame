@@ -6,19 +6,16 @@
 
 13일
 
-- [ ]  statusbar 설정
-- [ ]  배경 이미지 설정
-    - [ ]  이미지 asset 추가
-    - [ ]  self.view 배경 변경
-- [ ]  카드 표시하기
-    - [ ]  이미지 추가
-    - [ ]  카드 크기 구하기
-    - [ ]  UIImageView 7개를 화면에 추가
-    - [ ]  이미지 변경
-- [ ]  view stackview로 옮기기
-- [ ]  앱 표시 이름 변경하기
-- [ ]  업무 내용 관련 readme 업데이트
-- [ ]  학습 내용 관련 readme 업데이트
+- [x]  statusbar 설정
+- [x]  배경 이미지 설정
+    - [x]  이미지 asset 추가
+    - [x]  self.view 배경 변경
+- [x]  카드 표시하기
+    - [x]  이미지 추가
+    - [x]  카드 크기 구하기
+    - [x]  UIImageView 7개를 화면에 추가
+- [x]  view stackview로 옮기기
+- [x]  앱 표시 이름 변경하기
 
 ### 2. 카드 클래스 구현하기
 
@@ -31,17 +28,29 @@
     - [ ]  속성 추가
     - [ ]  카드 정보 출력 메소드 구현
 - [ ]  출력 객체 만들기
-- [ ]  업무 내용 관련 readme 업데이트
-- [ ]  학습 내용 관련 readme 업데이트
 
 ## 📗 학습 계획
 
 ### 월요일 (3월 13일)
 
-- [ ]  화면 크기 구하는 방법
-- [ ]  info.plist
-    - [ ]  info.plist는 어떤 파일이고, 어떤 정보를 담고 있는지
-    - [ ]  app delegate 설정과 plist 중에 어떤 게 우선하는지
+1단계
+
+- [x]  info.plist
+    - [x]  info.plist는 어떤 파일이고, 어떤 정보를 담고 있는지
+    - [x]  관련 key
+- [x]  auto layout 관련 문서 학습
+    - [x]  constraint
+    - [x]  `translatesAutoresizingMaskIntoConstraints`
+
+### 화요일 (3월 14일)
+
+1단계
+
+- [ ]  stack view
+    - [ ]  addArrangedSubview
+
+2단계
+
 - [ ]  class vs. struct
     - [ ]  스위프트 타입별 메모리 분석 강의 시청
     - [ ]  프로세스 메모리 강의 시청
@@ -53,3 +62,5 @@
 [단계별 구현 확인 자료](https://www.notion.so/d5ed16a344484deaba60e719fa812c35)
 
 # 학습 노트
+
+[step 1 학습 노트](https://www.notion.so/step-1-482710834fac4568a10f659b44c4074a)
