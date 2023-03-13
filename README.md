@@ -16,5 +16,8 @@
 - [x] 앱 기본 설정(Info.plist)을 변경하는 방식에 대해 학습하고 앱 표시 이름을 변경
 <img src="https://user-images.githubusercontent.com/97685264/224711801-9416f0ee-99d3-4d22-a392-1f2c6910cab5.png">
 
-
+2-2
+- [ ] 객체지향 프로그래밍 방식에 충실하게 카드 클래스(class)를 설계
+- [ ] 카드 정보를 출력하기 위한 문자열을 반환하는 함수를 구현
+- [ ] ViewController에서 특정한 카드 객체 인스턴스를 만들어서 콘솔에 출력
 
