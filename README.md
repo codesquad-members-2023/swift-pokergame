@@ -27,21 +27,27 @@ info.plist에서 두 가지 프로퍼티 추가하여 Status bar 스타일을 Li
 
 ### 2. 배경, 카드 이미지 뷰 추가
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/70703326/224710861-963a153b-7796-4115-a906-068f2169a6e9.png">
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/70703326/224733692-abc088af-f592-4e93-baf2-b16c0e8f2cc4.png">
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/70703326/224734282-85e435e2-bbb7-48e3-9539-f5c39a5877ad.png">
+
 
 ```swift
-func placeCards(number: Int, width: CGFloat, spacing: CGFloat, atPointX startPointX: CGFloat, atPointY: CGFloat) {
-        let cardHeight: CGFloat = width * 1.27
+func placeCards(number: Int, spacing: CGFloat, atPointX startPointX: CGFloat, atPointY pointY: CGFloat) {
+        // card만의 width를 모두 합한 값
+        let widthWithoutSpacing = UIScreen.main.bounds.size.width - spacing * (CGFloat(number) + 1)
+        let cardWidth: CGFloat = widthWithoutSpacing / CGFloat(number)
+        let cardHeight: CGFloat = cardWidth * 1.27
         var pointX = startPointX
         
         for _ in 0..<number {
             var imageView : UIImageView
-            imageView  = UIImageView(frame:CGRectMake(pointX, atPointY, width, cardHeight));
+            imageView  = UIImageView(frame:CGRectMake(pointX, pointY, cardWidth, cardHeight));
             imageView.image = UIImage(named:"card-back.jpg")
             self.view.addSubview(imageView)
-            pointX += width + spacing
+            pointX += cardWidth + spacing
         }
     }
 ```
-number는 카드의 개수, width는 카드의 너비, spacing은 카드간 간격, atPointX와 atPointY는 카드가 놓여지는 좌표입니다. iPhone14 pro에 한해 width 55가 가장 적절하다고 판단했으며, 테스트 기기에 따라 결과가 다를 것입니다. 
+number는 카드의 개수, spacing은 뷰 양끝 여백과 카드간 간격, atPointX와 atPointY는 첫 카드가 놓여지는 좌표입니다. 이미지는 순서대로 iPhone14PRO로 카드 7개일 때, 4개일 때, iPhoneSE 카드 4개일 때 입니다. type check 오류 때문에 cardWidth를 구하는 데애 widthWithoutSpacing 변수를 추가하는 단계가 필요했습니다.
 
 
