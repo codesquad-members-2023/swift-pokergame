@@ -20,7 +20,11 @@ class ViewController: UIViewController {
             return
         }
         self.view.backgroundColor = UIColor(patternImage: backgroundImage)
-        let cardBackImage = UIImage(named: "card-back")
+        
+        var haveCard = Array(repeating: MakeCard(shape: .clover, number: 1), count: 7)
+        haveCard[3] = MakeCard(shape: .heart, number: 4)
+
+        //프린트하는코드
         var cardLocateX: CGFloat = 2.5
         let cardLocateY: CGFloat = 60
         let ratio = 1.27
@@ -28,8 +32,8 @@ class ViewController: UIViewController {
         let spacingCard: CGFloat = 5
         let cardWidth = (self.view.frame.width / numberCards)-spacingCard
         let cardHeight = cardWidth * ratio
-        for _ in 1...7 {
-            let cardImageView = UIImageView(image: cardBackImage)
+        for index in 0..<haveCard.count {
+            let cardImageView = UIImageView(image: haveCard[index].image)
             cardImageView.frame = CGRect(x: cardLocateX, y: cardLocateY, width: cardWidth, height: cardHeight)
             self.view.addSubview(cardImageView)
             cardLocateX += (cardWidth+spacingCard)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB5A993A29C0154F0076E8A5 /* MakeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5A993929C0154F0076E8A5 /* MakeCard.swift */; };
 		DBA2D25729BF194F00A90908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA2D25629BF194F00A90908 /* AppDelegate.swift */; };
 		DBA2D25929BF194F00A90908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA2D25829BF194F00A90908 /* SceneDelegate.swift */; };
 		DBA2D25B29BF194F00A90908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA2D25A29BF194F00A90908 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB5A993929C0154F0076E8A5 /* MakeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCard.swift; sourceTree = "<group>"; };
 		DBA2D25329BF194F00A90908 /* PokerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA2D25629BF194F00A90908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA2D25829BF194F00A90908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		DBA2D25529BF194F00A90908 /* PokerGame */ = {
 			isa = PBXGroup;
 			children = (
+				DB5A993929C0154F0076E8A5 /* MakeCard.swift */,
 				DBA2D25629BF194F00A90908 /* AppDelegate.swift */,
 				DBA2D25829BF194F00A90908 /* SceneDelegate.swift */,
 				DBA2D25A29BF194F00A90908 /* ViewController.swift */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBA2D25B29BF194F00A90908 /* ViewController.swift in Sources */,
+				DB5A993A29C0154F0076E8A5 /* MakeCard.swift in Sources */,
 				DBA2D25729BF194F00A90908 /* AppDelegate.swift in Sources */,
 				DBA2D25929BF194F00A90908 /* SceneDelegate.swift in Sources */,
 			);
