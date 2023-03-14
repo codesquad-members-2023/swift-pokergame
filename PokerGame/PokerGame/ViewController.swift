@@ -11,12 +11,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_pattern")!)
-        placeCards(number: 4, spacing: 1, atPointX: 1, atPointY: 50)
+        setBackground()
+        placeCards(number: 7, spacing: 1, atPointX: 1, atPointY: 50)
     }
 }
 
 extension ViewController {
+    func setBackground() {
+        if let patternImage = UIImage(named: "bg_pattern") {
+            self.view.backgroundColor = UIColor(patternImage: patternImage)
+        } else {
+            print("UIImage named \"bg_pattern\" is not found.")
+        }
+    }
+    
     func placeCards(number: Int, spacing: CGFloat, atPointX startPointX: CGFloat, atPointY pointY: CGFloat) {
         // card만의 width를 모두 합한 값
         let widthWithoutSpacing = UIScreen.main.bounds.size.width - spacing * (CGFloat(number) + 1)
