@@ -58,6 +58,11 @@ class MakeCard{
         case clover
         case diamond
     }
+
+    func printCard() {
+        print(self.imoticon, self.number)
+    }
 }
+
 
 

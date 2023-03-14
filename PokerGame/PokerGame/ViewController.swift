@@ -16,16 +16,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         printCardImage()
-        printFirstCardInformation()
+        MakeCard(shape: .heart, number: 3).printCard()
     }
     
     func printCardImage() {
-        guard let backgroundImage = UIImage(named: "bg_pattern")else {
-            print("배경이미지 오류.")
-            return
+        if let backgroundImage = UIImage(named: "bg_pattern"){
+            self.view.backgroundColor = UIColor(patternImage: backgroundImage)
         }
-        self.view.backgroundColor = UIColor(patternImage: backgroundImage)
-
         var cardLocateX: CGFloat = 2.5
         let cardLocateY: CGFloat = 60
         let ratio = 1.27
@@ -39,10 +36,6 @@ class ViewController: UIViewController {
             self.view.addSubview(cardImageView)
             cardLocateX += (cardWidth+spacingCard)
         }
-    }
-    
-    func printFirstCardInformation() {
-        print("\((haveCard.first?.imoticon)!) \((haveCard.first?.number)!)")
     }
 }
 
