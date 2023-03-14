@@ -9,9 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //카드배열(7장의 카드)를 채워넣는 코드
+    var haveCard = Array(repeating: MakeCard(shape: .clover, number: 1), count: 7)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         printCardImage()
+        printFirstCardInformation()
     }
     
     func printCardImage() {
@@ -20,11 +25,7 @@ class ViewController: UIViewController {
             return
         }
         self.view.backgroundColor = UIColor(patternImage: backgroundImage)
-        
-        var haveCard = Array(repeating: MakeCard(shape: .clover, number: 1), count: 7)
-        haveCard[3] = MakeCard(shape: .heart, number: 4)
 
-        //프린트하는코드
         var cardLocateX: CGFloat = 2.5
         let cardLocateY: CGFloat = 60
         let ratio = 1.27
@@ -38,6 +39,10 @@ class ViewController: UIViewController {
             self.view.addSubview(cardImageView)
             cardLocateX += (cardWidth+spacingCard)
         }
+    }
+    
+    func printFirstCardInformation() {
+        print("\((haveCard.first?.imoticon)!) \((haveCard.first?.number)!)")
     }
 }
 
