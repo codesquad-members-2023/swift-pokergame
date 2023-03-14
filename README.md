@@ -51,7 +51,7 @@ func placeCards(number: Int, spacing: CGFloat, atPointX startPointX: CGFloat, at
 number는 카드의 개수, spacing은 뷰 양끝 여백과 카드간 간격, atPointX와 atPointY는 첫 카드가 놓여지는 좌표입니다. 이미지는 순서대로 iPhone14PRO로 카드 7개일 때, 4개일 때, iPhoneSE 카드 4개일 때 입니다. type check 오류 때문에 cardWidth를 구하는 데애 widthWithoutSpacing 변수를 추가하는 단계가 필요했습니다.
 
 ### 3. 피드백 이후 수정한 부분
-A. 강제언래핑 부분 수정 
+**A. 강제언래핑 부분 수정**
 
 ```swift
 override func viewDidLoad() {
@@ -69,16 +69,32 @@ override func viewDidLoad() {
 ```
 강제언래핑 부분을 옵셔널 바인딩으로 변경하였습니다.  
 
-B. 뷰 관련 상수 선언하기
+**B. 뷰 관련 상수 선언하기** 
 ```swift
 let cardCount: Int = 7
 let spacing: CGFloat = 1
 ```
 이전에 placeCards 메소드에서 인수를 직접 수로 받았던 부분을 수정했습니다. 뷰와 관련된 상수라는 점에 서 상수로 선언했습니다.
 
-C. placeCards 파라미터 변경
+**C. placeCards 파라미터 변경**
 * atPointX와 atPointY pointY -> startAt: (CGFloat, CGFloat)
 * number -> count
 * pointX -> atX
 파라미터명을 일부 변경하였고, 읽기 쉽게하기 위해 x, y좌표를 따로 받는 것이 아닌 튜플로 하나의 좌표를 받을 수 있도록 했습니다. CGPoint는 Int, Double만 가능해서 사용할 수 없었던 점이 아쉬웠습니다. 
 
+**D. placeCards 메소드 로직 일부 수정**
+```swift
+var imageView: UIImageView
+func placeCards(count: Int, spacing: CGFloat, startAt point: (CGFloat, CGFloat)) {
+    // for문 밖으로 이동
+        var imageView: UIImageView
+        for _ in 0..<count {
+            // var imageView: UIImageView 본래 위치
+            imageView  = UIImageView(frame:CGRectMake(pointX, pointY, cardWidth, cardHeight))
+            imageView.image = UIImage(named:"card-back.jpg")
+            self.view.addSubview(imageView)
+            pointX += cardWidth + spacing
+        }
+    }
+```
+imageView 변수를 한번만 생성할 수 있도록 변경했습니다.  
