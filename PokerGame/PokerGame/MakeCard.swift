@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 class MakeCard{
-    
+    //shape enum타입 한 이유 : 어짜피 모양은 4개중 하나니까
     var shape : Shape
+    //number을 String으로 한 이유: AJQK로 변환을 해야하기 때문에 숫자로 받고 String으로 저장하는 형식으로 진행
     var number : String
     var imoticon : String
     var image : UIImage
@@ -32,6 +33,7 @@ class MakeCard{
             self.number = String(number)
         }
         
+        //shape에 따라 이모티콘과 이미지를 변경하기 위한 스위치문
         switch shape{
         case .clover :
             self.imoticon = "♣️"
