@@ -13,8 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg_pattern")!)
         placeCards(number: 4, spacing: 1, atPointX: 1, atPointY: 50)
-        // 현재 장치 너비 구하기
-        // let screenWidth = UIScreen.main.bounds.size.width
     }
 }
 
@@ -27,7 +25,7 @@ extension ViewController {
         var pointX = startPointX
         
         for _ in 0..<number {
-            var imageView : UIImageView
+            var imageView: UIImageView
             imageView  = UIImageView(frame:CGRectMake(pointX, pointY, cardWidth, cardHeight));
             imageView.image = UIImage(named:"card-back.jpg")
             self.view.addSubview(imageView)
@@ -35,4 +33,3 @@ extension ViewController {
         }
     }
 }
-
