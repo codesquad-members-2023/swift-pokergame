@@ -16,7 +16,7 @@ class GameBoardViewController: UIViewController {
     }
     
     func setBackground () {
-        var backgroundPattern : UIImage? = UIImage(named: "bg_pattern")
+        let backgroundPattern : UIImage? = UIImage(named: "bg_pattern")
         
         guard let pattern = backgroundPattern else {
             return
@@ -25,22 +25,23 @@ class GameBoardViewController: UIViewController {
     }
     
     func setCardBack () {
-        var cardBack : UIImage? = UIImage(named: "card-back")
+        let cardBack : UIImage? = UIImage(named: "card-back")
+        let boundaryWidth = self.view.bounds.width
+        let cardWidth = boundaryWidth/7
+        var posX = 0.0
+        let posY = 50.0
+        let padding = 2.0
         
         guard let img = cardBack else {
             return
         }
-        let boundaryWidth = self.view.bounds.width
-        let cardWidth = boundaryWidth/7
-        var posX = 0.0
         
         for _ in 0...6 {
-            var cardBackView = UIImageView(image: img)
-            cardBackView.frame = CGRect(x: posX+2.0 , y: 50, width: cardWidth-4.0, height: cardWidth * 1.25 )
+            let cardBackView = UIImageView(image: img)
+            cardBackView.frame = CGRect(x: posX+padding , y: posY, width: cardWidth-(2*padding), height: cardWidth * 1.27 )
             self.view.addSubview(cardBackView)
             posX += cardWidth
         }
-        
     }
 }
 
