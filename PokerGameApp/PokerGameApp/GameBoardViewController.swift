@@ -31,10 +31,11 @@ class GameBoardViewController: UIViewController {
     func setCardBack () {
         let cardBack : UIImage? = UIImage(named: "card-back")
         let boundaryWidth = self.view.bounds.width
-        let cardWidth = boundaryWidth/7
-        var posX = 0.0
+        var posX = 2.0
         let posY = 50.0
         let padding = 2.0
+        let cardWidth = boundaryWidth/7 - (2*padding)
+        let cardHeight = cardWidth * 1.27
         
         guard let img = cardBack else {
             return
@@ -42,9 +43,9 @@ class GameBoardViewController: UIViewController {
         
         for _ in 0...6 {
             let cardBackView = UIImageView(image: img)
-            cardBackView.frame = CGRect(x: posX+padding , y: posY, width: cardWidth-(2*padding), height: cardWidth * 1.27 )
+            cardBackView.frame = CGRect(x: posX , y: posY, width: cardWidth, height: cardHeight)
             self.view.addSubview(cardBackView)
-            posX += cardWidth
+            posX += cardWidth + (2*padding)
         }
     }
 }
