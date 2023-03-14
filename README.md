@@ -86,4 +86,6 @@ override var preferredStatusBarStyle: UIStatusBarStyle {
      return .lightContent
 }
 ```
-  
+  v. 결과화면 
+  <img width="393" alt="스크린샷 2023-03-14 오후 5 15 45" src="https://user-images.githubusercontent.com/88966578/224947786-47e5dd0b-4366-4d75-8f62-e761285f1b62.png">
+
