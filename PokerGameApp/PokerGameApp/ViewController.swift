@@ -9,14 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  private let safeAreaSideMargin = CGFloat(16)
+  private lazy var safeAreaSideMargin: CGFloat = 16
+  
+  private let cardAspectRatio = CGFloat(1.27)
   
   private let cardImage = UIImage(named: "card-back")
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
-    addCards(7, withInset: 1.0)
+    addCards(ofRatio: cardAspectRatio, numberOfCard: 7, withInset: 1.0)
   }
   
   private func configure() {
@@ -24,31 +26,32 @@ class ViewController: UIViewController {
     view.backgroundColor = .init(patternImage: pattermImage)
   }
   
-  private func addCards(_ count: Int, withInset insetWidth: CGFloat) {
-    let cardWidth = (view.frame.width - safeAreaSideMargin * 2 - (insetWidth * CGFloat(count + 1))) / CGFloat(count)
-    let cardHeight = cardWidth * CGFloat(1.27)
+  private func addCards(ofRatio cardAspectRatio: CGFloat, numberOfCard: Int, withInset insetWidth: CGFloat) {
+    let bothSideMargins = safeAreaSideMargin * 2
+    let allSpacing = insetWidth * CGFloat(numberOfCard - 1)
+    let cardWidth = (view.frame.width - bothSideMargins - allSpacing) / CGFloat(numberOfCard)
+    let cardHeight = cardWidth * cardAspectRatio
     
-    var cardViews = Array<UIImageView>()
+    var previousCard: UIImageView? = nil
     
-    for i in 0..<count {
-      let cardImageView = UIImageView(image: cardImage)
-      cardViews.append(cardImageView)
+    for _ in 0..<numberOfCard {
+      let currentCard = UIImageView(image: cardImage)
+      view.addSubview(currentCard)
       
-      view.addSubview(cardImageView)
-      cardImageView.translatesAutoresizingMaskIntoConstraints = false
-      
+      currentCard.translatesAutoresizingMaskIntoConstraints = false
       NSLayoutConstraint.activate([
-        cardImageView.widthAnchor.constraint(equalToConstant: cardWidth),
-        cardImageView.heightAnchor.constraint(equalToConstant: cardHeight),
-        cardImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+        currentCard.widthAnchor.constraint(equalToConstant: cardWidth),
+        currentCard.heightAnchor.constraint(equalToConstant: cardHeight),
+        currentCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
       ])
       
-      if i == 0 {
-        cardImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: safeAreaSideMargin).isActive = true
+      if let previous = previousCard {
+        currentCard.leadingAnchor.constraint(equalTo: previous.trailingAnchor, constant: insetWidth).isActive = true
       } else {
-        let previousCard = cardViews[i - 1]
-        cardImageView.leadingAnchor.constraint(equalTo: previousCard.trailingAnchor, constant: insetWidth).isActive = true
+        currentCard.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: safeAreaSideMargin).isActive = true
       }
+      
+      previousCard = currentCard
     }
   }
 
