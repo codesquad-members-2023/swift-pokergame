@@ -7,18 +7,17 @@ class GameViewController: UIViewController {
             self.view.backgroundColor = UIColor(patternImage: backgroundImage)
         }
         
-        let cardWidth = UIScreen.main.bounds.size.width / 7 - 3
         let cardImage = UIImage(named: "card-back")
+        let cardInterval = CGFloat(2.6)
+        let cardWidth = UIScreen.main.bounds.size.width / 7 - 3
+        let cardPatternWidth = cardWidth + cardInterval
+        let cardPositionY = CGFloat(54)
+        let cardHeight = cardWidth * 1.27
         for i in 0..<7 {
             let card = UIImageView(image: cardImage)
-            card.frame = CGRect(x: 2.6 + CGFloat(i)*(cardWidth + 2.6), y: 54,
-                                width: cardWidth, height: cardWidth * 1.27)
-            // 카드간 간격인 2.6은 임의로 설정한 값입니다.
-            // y값은 아래 문서에서 발췌한 IPhone 14의 Safe Area 높이입니다.
-            // https://useyourloaf.com/blog/iphone-14-screen-sizes/
+            card.frame = CGRect(x: cardInterval + CGFloat(i)*(cardPatternWidth),
+                                y: cardPositionY, width: cardWidth, height: cardHeight)
             self.view.addSubview(card)
         }
     }
 }
-
-
