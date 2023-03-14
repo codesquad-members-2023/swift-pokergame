@@ -8,11 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let cardCount: Int = 7
+    let spacing: CGFloat = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
-        placeCards(number: 7, spacing: 1, atPointX: 1, atPointY: 50)
+        placeCards(number: cardCount, spacing: spacing, atPointX: 1, atPointY: 50)
     }
 }
 
