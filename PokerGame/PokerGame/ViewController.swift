@@ -35,8 +35,8 @@ extension ViewController {
         let cardWidth: CGFloat = widthWithoutSpacing / CGFloat(count)
         let cardHeight: CGFloat = cardWidth * 1.27
         
+        var imageView: UIImageView
         for _ in 0..<count {
-            var imageView: UIImageView
             imageView  = UIImageView(frame:CGRectMake(pointX, pointY, cardWidth, cardHeight))
             imageView.image = UIImage(named:"card-back.jpg")
             self.view.addSubview(imageView)
