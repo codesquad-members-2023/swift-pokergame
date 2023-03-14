@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
-        placeCards(number: cardCount, spacing: spacing, atPointX: 1, atPointY: 50)
+        placeCards(count: cardCount, spacing: spacing, startAt: (0, 50))
     }
 }
 
@@ -27,16 +27,17 @@ extension ViewController {
         }
     }
     
-    func placeCards(number: Int, spacing: CGFloat, atPointX startPointX: CGFloat, atPointY pointY: CGFloat) {
+    func placeCards(count: Int, spacing: CGFloat, startAt point: (CGFloat, CGFloat)) {
         // card만의 width를 모두 합한 값
-        let widthWithoutSpacing = UIScreen.main.bounds.size.width - spacing * (CGFloat(number) + 1)
-        let cardWidth: CGFloat = widthWithoutSpacing / CGFloat(number)
+        var pointX: CGFloat = point.0
+        let pointY: CGFloat = point.1
+        let widthWithoutSpacing = UIScreen.main.bounds.size.width - spacing * (CGFloat(count) + 1)
+        let cardWidth: CGFloat = widthWithoutSpacing / CGFloat(count)
         let cardHeight: CGFloat = cardWidth * 1.27
-        var pointX = startPointX
         
-        for _ in 0..<number {
+        for _ in 0..<count {
             var imageView: UIImageView
-            imageView  = UIImageView(frame:CGRectMake(pointX, pointY, cardWidth, cardHeight));
+            imageView  = UIImageView(frame:CGRectMake(pointX, pointY, cardWidth, cardHeight))
             imageView.image = UIImage(named:"card-back.jpg")
             self.view.addSubview(imageView)
             pointX += cardWidth + spacing

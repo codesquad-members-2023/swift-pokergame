@@ -76,4 +76,9 @@ let spacing: CGFloat = 1
 ```
 이전에 placeCards 메소드에서 인수를 직접 수로 받았던 부분을 수정했습니다. 뷰와 관련된 상수라는 점에 서 상수로 선언했습니다.
 
+C. placeCards 파라미터 변경
+* atPointX와 atPointY pointY -> startAt: (CGFloat, CGFloat)
+* number -> count
+* pointX -> atX
+파라미터명을 일부 변경하였고, 읽기 쉽게하기 위해 x, y좌표를 따로 받는 것이 아닌 튜플로 하나의 좌표를 받을 수 있도록 했습니다. CGPoint는 Int, Double만 가능해서 사용할 수 없었던 점이 아쉬웠습니다. 
 
