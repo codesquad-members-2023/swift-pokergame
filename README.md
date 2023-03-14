@@ -50,4 +50,24 @@ func placeCards(number: Int, spacing: CGFloat, atPointX startPointX: CGFloat, at
 ```
 number는 카드의 개수, spacing은 뷰 양끝 여백과 카드간 간격, atPointX와 atPointY는 첫 카드가 놓여지는 좌표입니다. 이미지는 순서대로 iPhone14PRO로 카드 7개일 때, 4개일 때, iPhoneSE 카드 4개일 때 입니다. type check 오류 때문에 cardWidth를 구하는 데애 widthWithoutSpacing 변수를 추가하는 단계가 필요했습니다.
 
+### 3. 피드백 이후 수정한 부분
+```swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+        setBackground()
+    }
+    
+    func setBackground() {
+        if let patternImage = UIImage(named: "bg_pattern") {
+            self.view.backgroundColor = UIColor(patternImage: patternImage)
+        } else {
+            print("UIImage named \"bg_pattern\" is not found.")
+        }
+    }
+```
+강제언래핑 부분을 옵셔널 바인딩으로 변경하였습니다. 
+
+
+
+
 
