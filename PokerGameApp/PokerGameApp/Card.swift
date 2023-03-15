@@ -8,26 +8,14 @@
 import Foundation
 
 struct Card { // 포커에 있어서 더이상 확장할 필요가 없는 객체라고 생각한 것이 가장 큰 이유.
-    enum Shape : Character { // 같은 주제로 연관된 데이터의 집합이므로 Enum이 적합하다고 생각.
-        case spade = “♠︎”
-        case heart = “♥︎”
-        case diamond = “♦︎”
-        case clover = “♣︎”
+    enum Shape : Character {
+        // 같은 주제로 연관된 데이터의 집합
+        // 입력받을 값을 미리 특정할 수 있기에 Enum이 적합하다고 생각.
+        case spade = "♠︎" , heart = "♥︎" , diamond = "♦︎" , clover = "♣︎"
     }
     enum Rank : Int { // 나중에 승패를 가르기 위해서는 Integer의 비교가 필요하므로 Int형
-        case ace = 1
-        case two = 2
-        case three = 3
-        case four = 4
-        case five = 5
-        case six = 6
-        case seven = 7
-        case eight = 8
-        case nine = 9
-        case ten = 10
-        case jack = 11
-        case queen = 12
-        case king = 13
+        case ace = 1 , two = 2 , three = 3 , four = 4 , five = 5 , six = 6 , seven = 7, eight = 8, nine = 9,
+             ten = 10, jack = 11, queen = 12, king = 13
         
         func getString() -> String {
             switch self{
@@ -60,6 +48,17 @@ struct Card { // 포커에 있어서 더이상 확장할 필요가 없는 객체
             }
         }
     }
+    
     let shape : Shape
     let rank : Rank
+    
+    var cardInfo: String {
+        var result = String(self.shape.rawValue)
+        result += self.rank.getString()
+        return result
+    }
+    
+    func printDescription () {
+        print(self.cardInfo)
+    }
 }
