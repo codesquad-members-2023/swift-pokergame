@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         
         let card = Card(shape: .heart, number: .two)
         print(card.description())
+        
+        testCode()
     }
     
     func printCardImage() {
@@ -38,6 +40,33 @@ class ViewController: UIViewController {
                 cardLocateX += (cardWidth+spacingCard)
             }
         }
+    }
+    func testCode(){
+        //카드초기화
+        var deck = CardDeck()
+        for i in deck.ReturnCardArray(){
+            print(i.description(),terminator: " ")
+        }
+        
+        print("\n------셔플셔플------\n")
+        
+        //카드 셔플
+        deck.shuffle()
+        for i in deck.ReturnCardArray(){
+            print(i.description(),terminator: " ")
+        }
+        
+        //카드 하나 뽑기
+        print("\n")
+        print("카드 갯수: \(deck.count())")
+        var cardPicked = deck.removeOne()
+        print("뽑은카드 : \(cardPicked.description())")
+        print("남은 카드 갯수 : \(deck.count())")
+        
+        //카드 하나 뽑기
+        cardPicked = deck.removeOne()
+        print("뽑은카드 : \(cardPicked.description())")
+        print("남은 카드 갯수 : \(deck.count())")
     }
 }
 
