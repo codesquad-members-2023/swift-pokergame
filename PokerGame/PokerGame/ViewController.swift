@@ -10,11 +10,15 @@ import UIKit
 class ViewController: UIViewController {
     let cardCount: Int = 7
     let spacing: CGFloat = 1
+    let firstCard: Card = .init(shape: .Heart, rank: .tweleve)
+    let secondCard: Card = .init(shape: .Space, rank: .seven)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         placeCards(count: cardCount, spacing: spacing, startAt: (0, 50))
+        printCard(firstCard)
+        printCard(secondCard)
     }
 }
 
@@ -42,5 +46,9 @@ extension ViewController {
             self.view.addSubview(imageView)
             pointX += cardWidth + spacing
         }
+    }
+    
+    func printCard(_ card: Card) {
+        print("\(card.returnShape())\(card.returnRank())")
     }
 }

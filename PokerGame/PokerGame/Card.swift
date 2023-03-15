@@ -15,15 +15,18 @@ class Card {
         self.shape = shape
         self.rank = rank
     }
+    
+    func returnShape() -> String { shape.rawValue }
+    func returnRank() -> String { rank.rawValue }
 }
 
 // Shape, Rank에는 값이 한정되어 있으므로 enum이 적절하다고 판단했습니다. 또 Rank의 경우에서 one, eleven, tweleve, thirteen에서 숫자가 아닌 문자로 표현하는 데에 있어 enum의 rawValue를 활용하는 것이 적절하다고 생각했습니다.
 
-enum Shape {
-    case Space
-    case Clover
-    case Diamond
-    case Heart
+enum Shape: String {
+    case Space = "♠️"
+    case Clover = "♣️"
+    case Diamond = "♦️"
+    case Heart = "♥️"
 }
 
 enum Rank: String {
