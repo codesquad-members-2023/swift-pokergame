@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         let height: CGFloat = width * 1.27
         let posY: CGFloat = 55
         
-        let imageView = UIImageView(frame: CGRect(x: CGFloat(posX), y: posY, width: width, height: height))
-        let myImage: UIImage = UIImage(named: "card_back")!
-        imageView.image = myImage
-        return imageView
+        let cardView = UIImageView(frame: CGRect(x: CGFloat(posX), y: posY, width: width, height: height))
+        let myCard: UIImage = UIImage(named: "card_back")!
+        cardView.image = myCard
+        return cardView
     }
 }
 
