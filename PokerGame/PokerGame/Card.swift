@@ -7,12 +7,26 @@
 
 import Foundation
 
-class Card{
+struct Card: CustomStringConvertible{
+    
     //enum타입 한 이유 : 어짜피 모양은 4개중 하나, 넘버는 1~13중 하나라서
     var shape : Shape
     var number : Number
-    lazy var imoticon: String = self.shape.rawValue
-
+    var description: String{
+        switch self.number {
+        case .one :
+            return self.shape.rawValue + "A"
+        case .eleven :
+            return self.shape.rawValue + "J"
+        case .twelve :
+            return self.shape.rawValue + "Q"
+        case .thirteen :
+            return self.shape.rawValue + "K"
+        default :
+            return self.shape.rawValue + String(self.number.rawValue)
+        }
+    }
+    
     init(shape: Shape, number: Number) {
         self.shape = shape
         self.number = number
@@ -25,26 +39,21 @@ class Card{
         case diamond = "◆"
     }
     
-    enum Number : String, CaseIterable{
-        case one = "A"
-        case two = "2"
-        case three = "3"
-        case four = "4"
-        case five = "5"
-        case six = "6"
-        case seven = "7"
-        case eight = "8"
-        case nine = "9"
-        case ten = "10"
-        case eleven = "J"
-        case twelve = "Q"
-        case thirteen = "K"
+    enum Number : Int, CaseIterable{
+        case one = 1
+        case two
+        case three
+        case four
+        case five
+        case six
+        case seven
+        case eight
+        case nine
+        case ten
+        case eleven
+        case twelve
+        case thirteen
     }
-    
-    func description() -> String{
-        return self.imoticon + self.number.rawValue
-    }
-    
 }
 
 
