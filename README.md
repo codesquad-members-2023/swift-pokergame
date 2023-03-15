@@ -100,6 +100,8 @@ imageView 변수를 한번만 생성할 수 있도록 변경했습니다.
 
 ***
 ## Step2-2. 카드 클래스 구현하기
+
+### 1. Card 클래스
 ```swift
 class Card {
     private let shape: Shape
@@ -112,3 +114,14 @@ class Card {
 }
 ```
 shape, rank의 enum으로 구현
+
+### 2. Card 출력하기
+```swift
+//Card내 메소드
+func returnShape() -> String { shape.rawValue }
+func returnRank() -> String { rank.rawValue }
+///ViewController내 메소드
+func printCard(_ card: Card) {
+        print("\(card.returnShape())\(card.returnRank())")
+    }
+```
