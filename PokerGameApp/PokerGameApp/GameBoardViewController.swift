@@ -17,6 +17,7 @@ class GameBoardViewController: UIViewController {
         super.viewDidLoad()
         setBackground()
         setCardBack()
+        printCardInfo()
     }
     
     func setBackground () {
@@ -44,6 +45,11 @@ class GameBoardViewController: UIViewController {
             self.view.addSubview(cardBackView)
             positionX += cardWidth + (2*padding)
         }
+    }
+    
+    func printCardInfo() {
+        let firstCard = Card(shape: .clover, rank: .ace)
+        firstCard.printDescription()
     }
 }
 
