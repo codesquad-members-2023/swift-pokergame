@@ -8,7 +8,7 @@
 - [x] 앱 표시 이름 변경하는법
 
 ## 2. 카드 클래스 구현하기
-- [ ] 카드 클래스 구현
+- [x] 카드 클래스 구현
 - [ ] 이름 규칙 생각하기
 - [ ] 카드 객체 하나 만들어서 출력해보기
 
@@ -97,3 +97,18 @@ func placeCards(count: Int, spacing: CGFloat, startAt point: (CGFloat, CGFloat))
     }
 ```
 imageView 변수를 한번만 생성할 수 있도록 변경했습니다.  
+
+***
+## Step2-2. 카드 클래스 구현하기
+```swift
+class Card {
+    private let shape: Shape
+    private let rank: Rank
+    
+    init(shape: Shape, rank: Rank) {
+        self.shape = shape
+        self.rank = rank
+    }
+}
+```
+shape, rank의 enum으로 구현
