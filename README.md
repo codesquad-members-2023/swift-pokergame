@@ -5,7 +5,7 @@
 - [x] StatusBar 스타일 설정하기
 - [x] StackView 사용하지 않고 7등분
 - [x] 이미지 패턴 설정
-- [ ] 앱 표시 이름 변경하는법
+- [x] 앱 표시 이름 변경하는법
 
 ## 2. 카드 클래스 구현하기
 - [ ] 카드 클래스 구현
@@ -23,7 +23,6 @@ Status bar style | Light Content
 View controller-based status bar appearance | NO
 ```
 info.plist에서 두 가지 프로퍼티 추가하여 Status bar 스타일을 Light Content로 변경하였습니다. 하얀 글자로 표시됩니다.
-
 
 ### 2. 배경, 카드 이미지 뷰 추가
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/70703326/224710861-963a153b-7796-4115-a906-068f2169a6e9.png">
