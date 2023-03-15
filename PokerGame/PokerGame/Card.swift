@@ -18,14 +18,14 @@ class Card{
         self.number = number
     }
     
-    enum Shape: String{
+    enum Shape : String, CaseIterable{
         case heart = "❤️"
         case spade = "♠️"
         case clover = "♣️"
         case diamond = "◆"
     }
     
-    enum Number : String{
+    enum Number : String, CaseIterable{
         case one = "A"
         case two = "2"
         case three = "3"
