@@ -10,6 +10,11 @@
 - [x] OOP
 - [x] 유니코드
 
+## 3. 카드덱 구현하고 테스트하기
+- [ ] ARC
+- [ ] 참조 접근자
+- [ ] 메모리 분석 도구
+
 ## 레퍼런스
 * UIImageView content mode : https://hyerios.tistory.com/35  
 * StatusBar global하게 설정하기 : https://sarunw.com/posts/how-to-set-status-bar-style/  
