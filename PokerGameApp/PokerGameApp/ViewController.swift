@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     configure()
     addCards(ofRatio: cardAspectRatio, numberOfCard: 7, withInset: 1.0)
+    
+    testCards()
   }
   
   private func configure() {
@@ -54,7 +56,23 @@ class ViewController: UIViewController {
       previousCard = currentCard
     }
   }
-
+  
+  private func testCards() {
+    let outputManager = OutputManager()
+    
+    let heartQueen = Card(shape: .heart, number: .queen)
+    outputManager.printInfo(ofCard: heartQueen)
+    
+    let spadeKing = Card(shape: .spade, number: .king)
+    outputManager.printInfo(ofCard: spadeKing)
+    
+    let cloveAce = Card(shape: .clove, number: .ace)
+    outputManager.printInfo(ofCard: cloveAce)
+    
+    let diamondJack = Card(shape: .diamond, number: .jack)
+    outputManager.printInfo(ofCard: diamondJack)
+    
+    let diamondEight = Card(shape: .diamond, number: .n8)
+    outputManager.printInfo(ofCard: diamondEight)
+  }
 }
-
-
