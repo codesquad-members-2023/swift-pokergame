@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         printCardImage()
         
         let card = Card(shape: .heart, number: .two)
-        print(card)
+        print(card.description())
     }
     
     func printCardImage() {
