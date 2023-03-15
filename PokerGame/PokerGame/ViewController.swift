@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         printCardImage()
         
         let card = Card(shape: .heart, number: .two)
-        print(card.description())
+        print(card.description)
         
         testCode()
     }
@@ -41,11 +41,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
     func testCode(){
         //카드초기화
         var deck = CardDeck()
         for i in deck.ReturnCardArray(){
-            print(i.description(),terminator: " ")
+            print(i.description,terminator: " ")
         }
         
         print("\n------셔플셔플------\n")
@@ -53,19 +55,27 @@ class ViewController: UIViewController {
         //카드 셔플
         deck.shuffle()
         for i in deck.ReturnCardArray(){
-            print(i.description(),terminator: " ")
+            print(i.description,terminator: " ")
+        }
+        
+        print("\n------셔플셔플------\n")
+        
+        //셔플이 랜덤하게 되는지 한번 더 확인
+        deck.shuffle()
+        for i in deck.ReturnCardArray(){
+            print(i.description,terminator: " ")
         }
         
         //카드 하나 뽑기
         print("\n")
         print("카드 갯수: \(deck.count())")
         var cardPicked = deck.removeOne()
-        print("뽑은카드 : \(cardPicked.description())")
+        print("뽑은카드 : \(cardPicked.description)")
         print("남은 카드 갯수 : \(deck.count())")
         
         //카드 하나 뽑기
         cardPicked = deck.removeOne()
-        print("뽑은카드 : \(cardPicked.description())")
+        print("뽑은카드 : \(cardPicked.description)")
         print("남은 카드 갯수 : \(deck.count())")
     }
 }
