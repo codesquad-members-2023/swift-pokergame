@@ -2,6 +2,7 @@
 # swift-pokergame
 ## 체크리스트
 ### 게임보드 만들기 
+
 - Asset에 이미지 추가하고 갖고 놀아보기    
 - 화면 크기 고려해서 정교하게 View 구성해보기 
 - 코드로 화면 컨트롤 하기
@@ -40,6 +41,7 @@
 ## 구현
  
 ### STEP 1
+
 * 이미지 다운로드 후 프로젝트에 추가 
    
 " 리소스 파일을 추가할 때는 Copy 옵션을 꼭 지정하고 Target을 체크되어 있는지 확인한다. "
@@ -52,7 +54,8 @@ self.view.backgroundColor = UIColor(patternImage: pattern)
 ```
 
 * 카드 뒷면 이미지뷰 배치 
-   i. 조건에 필요한 변수 선언 
+  
+  i. 조건에 필요한 변수 선언 
 ```swift
 let cardBack : UIImage? = UIImage(named: "card-back")
 let boundaryWidth = self.view.bounds.width
