@@ -36,7 +36,7 @@
 
 ## 학습
 
-[LEARNED.md](https://github.com/HG-SONG/swift-pokergame.git) 에 정리하였다. 
+[LEARNED.md](https://github.com/HG-SONG/swift-pokergame/blob/main/LEARNED.md) 에 정리하였다. 
  
 ## 구현
  
