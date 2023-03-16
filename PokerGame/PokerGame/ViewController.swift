@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,13 +18,14 @@ class ViewController: UIViewController {
         print(card.description)
         
         testCode()
+       
     }
     
     func printCardImage() {
         if let backgroundImage = UIImage(named: "bg_pattern"){
             self.view.backgroundColor = UIColor(patternImage: backgroundImage)
         }
-    
+        
         var cardLocateX: CGFloat = 2.5
         let cardLocateY: CGFloat = 60
         let ratio = 1.27
@@ -46,7 +47,7 @@ class ViewController: UIViewController {
     func testCode(){
         //카드초기화
         var deck = CardDeck()
-        for i in deck.ReturnCardArray(){
+        for i in deck.ReturnStackCards(){
             print(i.description,terminator: " ")
         }
         
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
         
         //카드 셔플
         deck.shuffle()
-        for i in deck.ReturnCardArray(){
+        for i in deck.ReturnStackCards(){
             print(i.description,terminator: " ")
         }
         
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
         
         //셔플이 랜덤하게 되는지 한번 더 확인
         deck.shuffle()
-        for i in deck.ReturnCardArray(){
+        for i in deck.ReturnStackCards(){
             print(i.description,terminator: " ")
         }
         

@@ -31,10 +31,8 @@ struct CardDeck{
     }
     
     mutating func removeOne() -> Card{
-        if stackCards.count == 1{
-            print("마지막 카드입니다.")
-            return stackCards.removeLast()
-        }else if stackCards.count == 0{
+        if stackCards.count == 0{
+            print("---------------------")
             print("카드 부족. 어플을 종료합니다.")
             exit(0)
         }else{
@@ -56,7 +54,9 @@ struct CardDeck{
         return stackCards.count
     }
     
-    func ReturnCardArray() -> [Card]{
+    func ReturnStackCards() -> [Card]{
         return stackCards
     }
 }
+
+var cardDeck = CardDeck()
