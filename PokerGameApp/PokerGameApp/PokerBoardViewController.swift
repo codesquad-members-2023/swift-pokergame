@@ -7,4 +7,10 @@
 
 import UIKit
 
-final class PokerBoardViewController: UIViewController { }
+final class PokerBoardViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+}
