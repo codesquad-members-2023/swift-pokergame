@@ -49,7 +49,7 @@ class GameBoardViewController: UIViewController {
     
     func printCardInfo() {
         let firstCard = Card(shape: .clover, rank: .ace)
-        firstCard.printDescription()
+        print(firstCard)
     }
 }
 
