@@ -3,14 +3,18 @@ struct Card {
     // 클래스보다 접근이나 메모리 관리가 효율적이기 때문입니다.
     
     // enum 타입으로 설정한 이유는 가독성면에서 좋기 때문입니다.
-    enum Suit:String {
+    enum Suit:String, CustomStringConvertible {
         case spade = "♠",
              heart = "♥",
              clover = "♣",
              diamond = "♦"
+        
+        var description: String {
+            return self.rawValue
+        }
     }
     
-    enum Rank:Int {
+    enum Rank:Int, CustomStringConvertible {
         case ace = 1,
              two,
              three,
@@ -24,6 +28,10 @@ struct Card {
              jack,
              queen,
              king
+        
+        var description: String {
+            return "\(self.rawValue)"
+        }
     }
     
     private let suit:Suit
@@ -33,21 +41,10 @@ struct Card {
         self.suit = suit
         self.rank = rank
     }
-    
-    func showInformation() -> String {
-        var stringRank = ""
-        switch self.rank {
-        case .ace:
-            stringRank = "A"
-        case .jack:
-            stringRank = "J"
-        case .queen:
-            stringRank = "Q"
-        case .king:
-            stringRank = "K"
-        default:
-            stringRank = String(self.rank.rawValue)
-        }
-        return self.suit.rawValue + stringRank
+}
+
+extension Card:CustomStringConvertible {
+    var description: String {
+        return self.suit.description + self.rank.description
     }
 }
