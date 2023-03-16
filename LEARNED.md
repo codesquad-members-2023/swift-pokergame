@@ -76,4 +76,33 @@ self.view.addSubview(diaView)
 - 구조체는 생성자를 구현하지 않을 시 기본 initializer를 사용할 수 있습니다.
 - 클래스는 reference counting으로 메모리 관리가 가능합니다
 
+### CustomStringCovertible 프로토콜 
+
+# * 애플 생태계에서는 toString , getString 같은 녀석들을 description 으로 쓴다. 
+ 
+ 그러기 위해서는 텍스트적인 표현을 커스터마이즈할 필요성이 생기는데 , 이는 CustomStringConvertible 프로토콜을 채택함으로써 가능해진다. 공식문서의 예제에 따르면 , 
+
+```swift 
+struct Point {
+	let x: Int, let y: Int
+}
+
+let p = Point(x: 21, y: 30)
+
+print(p)
+// Prints "Point(x: 21, y: 30)"
+```
+
+CustomStringConvertible 프로토콜을 채택하면, 사용자가 정의한 형태로 출력이 되는 것을 확인할 수 있다.
+
+```swift 
+extension Point: CustomStringConvertible {
+	var description: String {
+    	return "(\(x), \(y))" // print시 출력되는 포맷을 지정할 수 있다. 
+    }
+}
+
+print(p)
+// Prints "(21, 30)"
+```
 
