@@ -5,23 +5,23 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         setBackground(imageName: "backgroundImage")
         
-        let cardInterval = CGFloat(2.6)
-        let cardPositionY = CGFloat(54)
-        let cardWidth = UIScreen.main.bounds.size.width / 7 - 3
-        let cardPatternWidth = cardWidth + cardInterval
+        let interval = CGFloat(2.6)
+        let positionY = CGFloat(54)
+        let count = CGFloat(7)
+        let totalInterval = interval * count
+        let width = (UIScreen.main.bounds.size.width - totalInterval) / count
         for i in 0..<7 {
-            let cardUI = makeCardUI(x: cardInterval + (cardInterval + cardWidth) * CGFloat(i), y: cardPositionY)
-            self.view.addSubview(cardUI)
+            let cardUI = makeCardUI(x: interval + (interval + width) * CGFloat(i), y: positionY)
         }
     }
     
-    func setBackground(imageName: String) {
+    private func setBackground(imageName: String) {
         if let image = UIImage(named: imageName) {
             self.view.backgroundColor = UIColor(patternImage: image)
         }
     }
     
-    func makeCardUI(x:CGFloat, y:CGFloat) -> UIImageView {
+    private func makeCardUI(x:CGFloat, y:CGFloat) -> UIImageView {
         var cardUI = UIImageView()
         if let deck = UIImage(named: "card-back") {
             cardUI = UIImageView(image: deck)
@@ -30,6 +30,7 @@ class GameViewController: UIViewController {
         let width = UIScreen.main.bounds.size.width / 7 - 3
         let height = width * 1.27
         cardUI.frame = CGRect(x: x, y: y, width: width, height: height)
+        self.view.addSubview(cardUI)
         return cardUI
     }
 }
