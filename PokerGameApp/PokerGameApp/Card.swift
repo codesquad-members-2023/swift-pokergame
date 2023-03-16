@@ -4,16 +4,26 @@ struct Card {
     
     // enum 타입으로 설정한 이유는 가독성면에서 좋기 때문입니다.
     enum Suit:String {
-        case spade = "♠"
-        case heart = "♥"
-        case clover = "♣"
-        case diamond = "♦"
+        case spade = "♠",
+             heart = "♥",
+             clover = "♣",
+             diamond = "♦"
     }
     
     enum Rank:Int {
-        case two = 2, three, four, five, six, seven, eight, nine, ten
-        case ace = 1
-        case jack = 11, queen, king
+        case ace = 1,
+             two,
+             three,
+             four,
+             five,
+             six,
+             seven,
+             eight,
+             nine,
+             ten,
+             jack,
+             queen,
+             king
     }
     
     private let suit:Suit
