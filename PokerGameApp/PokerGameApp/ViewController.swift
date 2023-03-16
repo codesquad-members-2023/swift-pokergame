@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setBackground(to: "backGround")
+        self.setBackground(toImage: "backGround")
         self.setCard(countOf: 7)
         
         let test1Card = Card(number: .queen, shape: .hearts)
@@ -22,8 +22,8 @@ class ViewController: UIViewController {
         cardPrint(card: test2Card)
     }
     
-    func setBackground(to:String) {
-        let backgroundImage = UIImage(named: to)
+    func setBackground(toImage:String) {
+        let backgroundImage = UIImage(named: toImage)
         self.view.backgroundColor = UIColor(patternImage: backgroundImage!)
     }
     
