@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Card {
+class Card: Equatable, Hashable {
     private let shape: Shape
     private let rank: Rank
     
@@ -18,18 +18,27 @@ class Card {
     
     func returnShape() -> String { shape.rawValue }
     func returnRank() -> String { rank.rawValue }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(shape)
+        hasher.combine(rank)
+    }
+    
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        lhs.shape == rhs.shape && lhs.rank == rhs.rank
+    }
 }
 
 // Shape, Rank에는 값이 한정되어 있으므로 enum이 적절하다고 판단했습니다. 또 Rank의 경우에서 one, eleven, tweleve, thirteen에서 숫자가 아닌 문자로 표현하는 데에 있어 enum의 rawValue를 활용하는 것이 적절하다고 생각했습니다.
 
-enum Shape: String, CaseIterable {
+enum Shape: String, CaseIterable, Hashable {
     case Space = "♠️"
     case Clover = "♣️"
     case Diamond = "♦️"
     case Heart = "♥️"
 }
 
-enum Rank: String, CaseIterable {
+enum Rank: String, CaseIterable, Hashable {
     case one = "A"
     case two = "2"
     case three = "3"
