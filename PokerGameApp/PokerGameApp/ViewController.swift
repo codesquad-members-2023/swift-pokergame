@@ -13,26 +13,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.setBackground(to: "backGround")
-        self.setCard(num: 7)
+        self.setCard(countOf: 7)
     }
     
     func setBackground(to:String) {
-        /// 배경 이미지 변경
         let backgroundImage = UIImage(named: to)
         self.view.backgroundColor = UIColor(patternImage: backgroundImage!)
     }
     
-    func setCard(num: Int) {
-        /// 입력한 카드 갯수만큼 카드 생성
-        let screenSize = self.view.bounds
+    func setCard(countOf: Int) {
+        var screenSize = self.view.bounds
+        var cardWidthRatio = 0.8 /// 7등분한 사이즈에 차지할 카드의 가로 길이
+        var cardSizeRatio = 1.27 /// 가로 길이에 대한 세로길이의 비율
+        var margin = 0.1 /// 카드 사이 간격 비율
         
-        let cardWidth = screenSize.width / CGFloat(num)
-        let cardHeight = cardWidth * 1.27
-        let cardSpacing = cardWidth * 0.2
+        let splitScreenSize = screenSize.width / CGFloat(countOf)
+        let cardWidth = splitScreenSize * cardWidthRatio
+        let cardHeight = splitScreenSize * cardSizeRatio
+        let cardMargin = splitScreenSize * margin
         
-        for i in 0..<num {
-            let x = CGFloat(i) * cardWidth + cardWidth * 0.1
-            let frame = CGRect(x: x, y: 80, width: cardWidth*0.8, height: cardHeight)
+        for i in 0..<countOf {
+            let x = CGFloat(i) * splitScreenSize + cardMargin
+            let frame = CGRect(x: x, y: 80, width: cardWidth, height: cardHeight)
 
             let imageView = UIImageView(frame: frame)
             imageView.image = UIImage(named: "backCard")
