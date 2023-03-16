@@ -11,6 +11,7 @@
 		4FBD661029BEFF0E00B372BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD660F29BEFF0E00B372BB /* SceneDelegate.swift */; };
 		4FBD661729BEFF1000B372BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD661629BEFF1000B372BB /* Assets.xcassets */; };
 		4FBD661A29BEFF1000B372BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD661829BEFF1000B372BB /* LaunchScreen.storyboard */; };
+		4FBD663D29C2F24F00B372BB /* PokerBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD663C29C2F24E00B372BB /* PokerBoardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		4FBD661629BEFF1000B372BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FBD661929BEFF1000B372BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FBD661B29BEFF1000B372BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FBD663C29C2F24E00B372BB /* PokerBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerBoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				4FBD660D29BEFF0E00B372BB /* AppDelegate.swift */,
 				4FBD660F29BEFF0E00B372BB /* SceneDelegate.swift */,
+				4FBD663C29C2F24E00B372BB /* PokerBoardViewController.swift */,
 				4FBD661629BEFF1000B372BB /* Assets.xcassets */,
 				4FBD661829BEFF1000B372BB /* LaunchScreen.storyboard */,
 				4FBD661B29BEFF1000B372BB /* Info.plist */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBD660E29BEFF0E00B372BB /* AppDelegate.swift in Sources */,
+				4FBD663D29C2F24F00B372BB /* PokerBoardViewController.swift in Sources */,
 				4FBD661029BEFF0E00B372BB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
