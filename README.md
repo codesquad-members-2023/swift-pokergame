@@ -4,6 +4,7 @@
 1. 프로젝트 생성
     - App 템플릿으로 "PockerGameApp" 생성
     - StatusBar 스타일 LightContent로 변경
+	- project -> general -> deployment info -> status bar style
     - self.view 배경 변경
     - UIImageView 추가(StackView 사용하지 않기)
     - [ ] 화면 크기를 구하고 균등하게 7등분해 이미지 표시
