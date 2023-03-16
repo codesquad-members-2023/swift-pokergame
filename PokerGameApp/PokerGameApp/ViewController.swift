@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         
         self.setBackground(to: "backGround")
         self.setCard(countOf: 7)
+        
+        let test1Card = Card(number: .queen, shape: .hearts)
+        let test2Card = Card(number: .seven, shape: .hearts)
+    
+        cardPrint(card: test1Card)
+        cardPrint(card: test2Card)
     }
     
     func setBackground(to:String) {
@@ -22,10 +28,10 @@ class ViewController: UIViewController {
     }
     
     func setCard(countOf: Int) {
-        var screenSize = self.view.bounds
-        var cardWidthRatio = 0.8 /// 7등분한 사이즈에 차지할 카드의 가로 길이
-        var cardSizeRatio = 1.27 /// 가로 길이에 대한 세로길이의 비율
-        var margin = 0.1 /// 카드 사이 간격 비율
+        let screenSize = self.view.bounds
+        let cardWidthRatio = 0.8 /// 7등분한 사이즈에 차지할 카드의 가로 길이
+        let cardSizeRatio = 1.27 /// 가로 길이에 대한 세로길이의 비율
+        let margin = 0.1 /// 카드 사이 간격 비율
         
         let splitScreenSize = screenSize.width / CGFloat(countOf)
         let cardWidth = splitScreenSize * cardWidthRatio
@@ -41,6 +47,10 @@ class ViewController: UIViewController {
 
             self.view.addSubview(imageView)
         }
+    }
+    
+    func cardPrint(card:Card) {
+        print(card)
     }
 }
 
