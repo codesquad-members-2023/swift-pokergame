@@ -8,12 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let backgroundImage = UIImage(named: "backGround")
+        self.view.backgroundColor = UIColor(patternImage: backgroundImage!)
     }
-
-
 }
 
