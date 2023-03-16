@@ -12,7 +12,7 @@
 - [ ] 해당 기능에 대한 pr 보낸 이후 뷰 7개 StackView를 이용해서 다시 구현
 - [x] info.plist를 이용하여 앱 표시 이름 변경
 ### 작업 결과 화면
-<img width="454" alt="Screenshot 2023-03-16 at 4 13 11 AM" src="https://user-images.githubusercontent.com/57861751/225418364-601ce4b2-fd1e-4efa-b0d3-2ae5cb440d54.png">
+<img width="432" alt="Screenshot 2023-03-17 at 12 02 40 AM" src="https://user-images.githubusercontent.com/57861751/225659119-7a42176a-8627-4b1e-96ea-deb1e6ed22c1.png">
 
 ### 완성 날짜 = 03.16
 
