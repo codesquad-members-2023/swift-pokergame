@@ -9,15 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let cardBackImage = UIImage(named: "card_back")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         makeBackgroundView()
-        let interval = 4
-        let cardWidth = self.view.bounds.width/7 - 3.4
-        for i in 0...6 {
-            let cardImage = makeCardView(posX: Int(interval) + (Int(interval) + Int(cardWidth)) * i)
-            self.view.addSubview(cardImage)
-        }
+        makeSevenCard()
     }
     
     func makeBackgroundView() {
@@ -25,15 +22,23 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: backgroundImage)
     }
     
-    func makeCardView(posX: Int) -> UIImageView {
-        let width: CGFloat = self.view.bounds.width/7 - 3.4
-        let height: CGFloat = width * 1.27
-        let posY: CGFloat = 55
-        
-        let cardView = UIImageView(frame: CGRect(x: CGFloat(posX), y: posY, width: width, height: height))
-        let myCard: UIImage = UIImage(named: "card_back")!
-        cardView.image = myCard
+    private func makeCardView(xCoordinate: Double, yCoordinate: Int, cardWidth: Int, cardHeight: Double) -> UIImageView {
+        let cardView = UIImageView(frame: CGRect(x: xCoordinate, y: Double(yCoordinate), width: Double(cardWidth), height: cardHeight))
+        cardView.image = cardBackImage
         return cardView
+    }
+    
+    func makeSevenCard() {
+        let interval = 5
+        let numberOfCards = 7
+        let spaceFromBorder = 6.5
+        let cardWidth = 50
+        let cardHeight = Double(cardWidth) * 1.27
+        let yCoordinate = 55
+        for i in 0 ..< numberOfCards {
+            let cardImage = makeCardView(xCoordinate: spaceFromBorder + Double((interval + cardWidth) * i), yCoordinate: yCoordinate, cardWidth: cardWidth, cardHeight: cardHeight)
+            self.view.addSubview(cardImage)
+        }
     }
 }
 
