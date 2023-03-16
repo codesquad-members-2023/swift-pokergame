@@ -17,7 +17,7 @@ struct Card { // 포커에 있어서 더이상 확장할 필요가 없는 객체
         case ace = 1 , two = 2 , three = 3 , four = 4 , five = 5 , six = 6 , seven = 7, eight = 8, nine = 9,
              ten = 10, jack = 11, queen = 12, king = 13
         
-        func getString() -> String {
+        func description() -> String {
             switch self{
             case .ace :
                 return "A"
@@ -52,13 +52,10 @@ struct Card { // 포커에 있어서 더이상 확장할 필요가 없는 객체
     let shape : Shape
     let rank : Rank
     
-    var cardInfo: String {
-        var result = String(self.shape.rawValue)
-        result += self.rank.getString()
-        return result
-    }
-    
-    func printDescription () {
-        print(self.cardInfo)
+}
+
+extension Card: CustomStringConvertible {
+    var description : String {
+        return "\(self.shape.rawValue)\(self.rank.description())"
     }
 }
