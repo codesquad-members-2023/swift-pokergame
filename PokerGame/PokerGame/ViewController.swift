@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         print(card.description)
         
         testCode()
-       
+        gameStart()
     }
     
     func printCardImage() {
@@ -79,6 +79,40 @@ class ViewController: UIViewController {
         print("뽑은카드 : \(cardPicked.description)")
         print("남은 카드 갯수 : \(deck.count())")
     }
+    
+    func gameStart(){
+            var gameCount = 1
+            var nameCollecton = ["haena", "JK", "crong", "honux", "chloe"]
+            nameCollecton.shuffle()
+            let numberUsers = 2
+            let numberStuds = 7
+            
+            print("\(numberStuds)카드 기준, 참가자 \(numberUsers)명일때")
+            
+            while true {
+                cardDeck.shuffle()
+                let dealer = Dealer(name: "dealer")
+                var userCollection: [Participant] = [dealer]
+                
+                for i in 0..<numberUsers{
+                    userCollection.append(Participant(name: nameCollecton[i]))
+                }
+                
+                for i in userCollection{
+                    for _ in 0..<numberStuds{
+                        let newCard = dealer.removeOne()
+                        i.haveCard.append(newCard)
+                    }
+                }
+                
+                print("--------\(gameCount)번째 게임 시작 --------")
+                
+                for i in 0..<userCollection.count{
+                    print("\(userCollection[i].name!)의 카드 \(userCollection[i].haveCard)")
+                }
+                gameCount += 1
+            }
+        }
 }
 
 
