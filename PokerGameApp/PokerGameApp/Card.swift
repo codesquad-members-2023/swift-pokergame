@@ -3,7 +3,7 @@ struct Card {
     // 클래스보다 접근이나 메모리 관리가 효율적이기 때문입니다.
     
     // enum 타입으로 설정한 이유는 가독성면에서 좋기 때문입니다.
-    enum Suit:String, CustomStringConvertible {
+    enum Suit:String, CustomStringConvertible, CaseIterable {
         case spade = "♠",
              heart = "♥",
              clover = "♣",
@@ -14,7 +14,7 @@ struct Card {
         }
     }
     
-    enum Rank:Int, CustomStringConvertible {
+    enum Rank:Int, CustomStringConvertible, CaseIterable {
         case ace = 1,
              two,
              three,

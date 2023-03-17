@@ -6,7 +6,7 @@ class GameViewController: UIViewController {
         setBackground(imageName: "backgroundImage")
         
         let interval = CGFloat(2.6)
-        let positionY = CGFloat(54)
+        let positionY = CGFloat(59)
         let count = CGFloat(7)
         let totalInterval = interval * count
         let width = (UIScreen.main.bounds.size.width - totalInterval) / count
@@ -31,6 +31,7 @@ class GameViewController: UIViewController {
         let height = width * 1.27
         cardUI.frame = CGRect(x: x, y: y, width: width, height: height)
         self.view.addSubview(cardUI)
+        
         return cardUI
     }
 }

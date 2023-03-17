@@ -17,6 +17,7 @@
 		63438CA029BF12FD000873DD /* PokerGameAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63438C9F29BF12FD000873DD /* PokerGameAppUITests.swift */; };
 		63438CA229BF12FD000873DD /* PokerGameAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63438CA129BF12FD000873DD /* PokerGameAppUITestsLaunchTests.swift */; };
 		63438CAF29C172F7000873DD /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63438CAE29C172F7000873DD /* Card.swift */; };
+		63438CB129C2F078000873DD /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63438CB029C2F078000873DD /* CardDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		63438C9F29BF12FD000873DD /* PokerGameAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGameAppUITests.swift; sourceTree = "<group>"; };
 		63438CA129BF12FD000873DD /* PokerGameAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGameAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		63438CAE29C172F7000873DD /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		63438CB029C2F078000873DD /* CardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				63438C8029BF12FB000873DD /* SceneDelegate.swift */,
 				63438C8229BF12FB000873DD /* GameViewController.swift */,
 				63438CAE29C172F7000873DD /* Card.swift */,
+				63438CB029C2F078000873DD /* CardDeck.swift */,
 				63438C8429BF12FB000873DD /* Main.storyboard */,
 				63438C8729BF12FD000873DD /* Assets.xcassets */,
 				63438C8929BF12FD000873DD /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63438C8329BF12FB000873DD /* GameViewController.swift in Sources */,
+				63438CB129C2F078000873DD /* CardDeck.swift in Sources */,
 				63438C7F29BF12FB000873DD /* AppDelegate.swift in Sources */,
 				63438C8129BF12FB000873DD /* SceneDelegate.swift in Sources */,
 				63438CAF29C172F7000873DD /* Card.swift in Sources */,
