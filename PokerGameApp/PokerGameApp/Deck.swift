@@ -38,7 +38,7 @@ extension Deck: CustomStringConvertible {
         var result = ""
         for card in self.deck {
             result += card.description
-            result += " , "
+            result += " "
         }
         return result
     }

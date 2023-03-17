@@ -52,6 +52,26 @@ class GameBoardViewController: UIViewController {
         let firstCard = Card(shape: .clover, rank: .ace)
         print(firstCard)
     }
-
+    
+    func testDeck() {
+        var myDeck = Deck()
+        
+        print("덱 초기화")
+        myDeck.reset()
+        print(myDeck)
+        
+        print("카드 몇 장?")
+        print(myDeck.count())
+        
+        print("카드 섞어")
+        myDeck.shuffle()
+        print(myDeck)
+        
+        print("카드 뽑아")
+        print(myDeck.removeOne() ?? "nil")
+        
+        print("카드 몇 장?")
+        print(myDeck.count())
+    }
 }
 
