@@ -22,4 +22,14 @@ struct Deck {
         }
         return nil
     }
+    
+    mutating func shuffle() {
+        if self.deck.isEmpty == false {
+            for i in stride(from: self.deck.count - 1, to: 0, by: -1) {
+                let j = Int.random(in: 0...i)
+                deck.swapAt(i, j)
+            }
+        }
+    }
 }
+
