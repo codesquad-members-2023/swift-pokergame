@@ -16,11 +16,10 @@ struct Deck {
             }
         }
     }
-    
-    func removeOne() -> Card {
-        if self.deck.isEmpty == false {
-            return self.deck.popLast()
+    mutating func removeOne() -> Card? {
+        if let drawedCard = self.deck.popLast() {
+            return drawedCard
         }
+        return nil
     }
-
 }
