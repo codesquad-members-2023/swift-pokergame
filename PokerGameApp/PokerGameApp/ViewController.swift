@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         makeBackgroundView()
-        makeSevenCard()
+        makeCard()
     }
     
     func makeBackgroundView() {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         return cardView
     }
     
-    func makeSevenCard() {
+    func makeCard() {
         let screenWidth = UIScreen.main.bounds.size.width
         let numberOfCards = 7
         let interval = (screenWidth * 0.1)/CGFloat(numberOfCards + 1)
