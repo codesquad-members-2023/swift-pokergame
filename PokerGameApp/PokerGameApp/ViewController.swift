@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     let diamondJack = Card(shape: .diamond, number: .jack)
     outputManager.printInfo(ofCard: diamondJack)
     
-    let diamondEight = Card(shape: .diamond, number: .n8)
+    let diamondEight = Card(shape: .diamond, number: .eight)
     outputManager.printInfo(ofCard: diamondEight)
   }
 }
