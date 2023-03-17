@@ -18,6 +18,7 @@ class GameBoardViewController: UIViewController {
         setBackground()
         setCardBack()
         printCardInfo()
+        testDeck()
     }
     
     func setBackground () {
@@ -51,5 +52,6 @@ class GameBoardViewController: UIViewController {
         let firstCard = Card(shape: .clover, rank: .ace)
         print(firstCard)
     }
+
 }
 

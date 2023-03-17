@@ -3,8 +3,8 @@ import Foundation
 
 
 struct Deck {
-    private var deck : [Card]
-    
+   var deck : [Card] = []
+
     func count() -> Int {
         return self.deck.count
     }
@@ -33,3 +33,13 @@ struct Deck {
     }
 }
 
+extension Deck: CustomStringConvertible {
+    var description : String {
+        var result = ""
+        for card in self.deck {
+            result += card.description
+            result += " , "
+        }
+        return result
+    }
+}

@@ -64,11 +64,11 @@
 				E4E0F9D029BF01C600AE817A /* SceneDelegate.swift */,
 				E4E0F9D229BF01C600AE817A /* GameBoardViewController.swift */,
 				E4E0FA5229C190F400AE817A /* Card.swift */,
-				E4E0FA9029C3FDDC00AE817A /* Deck.swift */,
 				E4E0F9D429BF01C600AE817A /* Main.storyboard */,
 				E4E0F9D729BF01C700AE817A /* Assets.xcassets */,
 				E4E0F9D929BF01C700AE817A /* LaunchScreen.storyboard */,
 				E4E0F9DC29BF01C700AE817A /* Info.plist */,
+				E4E0FA9029C3FDDC00AE817A /* Deck.swift */,
 			);
 			path = PokerGameApp;
 			sourceTree = "<group>";
