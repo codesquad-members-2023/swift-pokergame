@@ -22,21 +22,21 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: backgroundImage)
     }
     
-    private func makeCardView(xCoordinate: Double, yCoordinate: Int, cardWidth: Int, cardHeight: Double) -> UIImageView {
-        let cardView = UIImageView(frame: CGRect(x: xCoordinate, y: Double(yCoordinate), width: Double(cardWidth), height: cardHeight))
+    private func makeCardView(xCoordinate: CGFloat, yCoordinate: CGFloat, cardWidth: CGFloat, cardHeight: CGFloat) -> UIImageView {
+        let cardView = UIImageView(frame: CGRect(x: xCoordinate, y: yCoordinate, width: cardWidth, height: cardHeight))
         cardView.image = cardBackImage
         return cardView
     }
     
     func makeSevenCard() {
-        let interval = 5
+        let screenWidth = UIScreen.main.bounds.size.width
         let numberOfCards = 7
-        let spaceFromBorder = 6.5
-        let cardWidth = 50
-        let cardHeight = Double(cardWidth) * 1.27
-        let yCoordinate = 55
+        let interval = (screenWidth * 0.1)/CGFloat(numberOfCards + 1)
+        let cardWidth = (screenWidth * 0.9)/CGFloat(numberOfCards)
+        let cardHeight = cardWidth * 1.27
+        let yCoordinate: CGFloat = 55
         for i in 0 ..< numberOfCards {
-            let cardImage = makeCardView(xCoordinate: spaceFromBorder + Double((interval + cardWidth) * i), yCoordinate: yCoordinate, cardWidth: cardWidth, cardHeight: cardHeight)
+            let cardImage = makeCardView(xCoordinate: interval + (interval + cardWidth) * CGFloat(i), yCoordinate: yCoordinate, cardWidth: cardWidth, cardHeight: cardHeight)
             self.view.addSubview(cardImage)
         }
     }
