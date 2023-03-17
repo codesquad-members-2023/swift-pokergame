@@ -16,4 +16,11 @@ struct Deck {
             }
         }
     }
+    
+    func removeOne() -> Card {
+        if self.deck.isEmpty == false {
+            return self.deck.popLast()
+        }
+    }
+
 }
