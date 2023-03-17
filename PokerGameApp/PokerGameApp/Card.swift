@@ -11,32 +11,41 @@ class Card {
   /// 카드의 문양
   ///
   /// 카드 숫자의 타입과 일관성을 위해서 열거형으로 선언했습니다.
-  enum Shape: Character {
-    case spade = "\u{2660}"
-    case clove = "\u{2663}"
-    case heart = "\u{2665}"
-    case diamond = "\u{2666}"
+  enum Shape: CustomStringConvertible {
+    case spade
+    case clove
+    case heart
+    case diamond
+    
+    var description: String {
+      switch self {
+      case .spade: return "\u{2660}"
+      case .clove: return "\u{2663}"
+      case .heart: return "\u{2665}"
+      case .diamond: return "\u{2666}"
+      }
+    }
   }
   
   /// 카드의 숫자
   ///
   /// 카드 숫자는 경우가 많고, 그 경우의 수를 제한할 필요가 있어서 열거형으로 선언했습니다.
-  enum Number: Int {
-    case ace = 1,
-         n2,
-         n3,
-         n4,
-         n5,
-         n6,
-         n7,
-         n8,
-         n9,
-         n10,
+  enum Number: Int, CustomStringConvertible {
+    case ace,
+         two,
+         three,
+         four,
+         five,
+         six,
+         seven,
+         eight,
+         nine,
+         ten,
          jack,
          queen,
          king
     
-    var symbol: String {
+    var description: String {
       switch self {
       case .ace: return "A"
       case .jack: return "J"
@@ -56,6 +65,6 @@ class Card {
   }
   
   func info() -> String {
-    "\(shape.rawValue)\(number.symbol)"
+    "\(shape.description)\(number.description)"
   }
 }
