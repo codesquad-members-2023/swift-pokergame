@@ -12,14 +12,26 @@ struct CardDeck {
         return deck.count
     }
     
-    mutating func shuffle() {
-        for index in 0..<deck.count-1 {
-            let switchIndex = Int.random(in: index..<deck.count)
-            deck.swapAt(index, switchIndex)
+    // 덱에 카드가 한장이거나 없을때 예외처리
+    mutating func shuffle() throws {
+        switch count() {
+        case 0:
+            throw CardDeckError.isEmpty
+        case 1:
+            throw CardDeckError.OneCard
+        default:
+            for index in 0..<deck.count-1 {
+                let switchIndex = Int.random(in: index..<deck.count)
+                deck.swapAt(index, switchIndex)
+            }
         }
     }
 
+    // 덱에 카드가 없을 때 예외처리
     mutating func removeOne() throws -> Card {
+        guard count() != 0 else {
+            throw CardDeckError.isEmpty
+        }
         return deck.removeLast()
     }
     
@@ -30,5 +42,14 @@ struct CardDeck {
                 deck.append(Card(suit: suit, rank: rank))
             }
         }
+    }
+}
+
+// 에러 선언부는 메소드와 분리시켜 선언하는게 가독성이 좋다고 판단하여 확장부에 작성
+extension CardDeck {
+    // CardDeck에서만 사용하기에 Nested Enum Type으로 선언
+    enum CardDeckError:Error {
+        case isEmpty
+        case OneCard
     }
 }
