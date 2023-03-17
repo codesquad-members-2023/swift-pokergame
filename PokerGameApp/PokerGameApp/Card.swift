@@ -3,6 +3,7 @@ struct Card {
     // 클래스보다 접근이나 메모리 관리가 효율적이기 때문입니다.
     
     // enum 타입으로 설정한 이유는 가독성면에서 좋기 때문입니다.
+    // CaseIterable 채택 이유: CardDeck 구조체에서 카드 초기화에 활용
     enum Suit:String, CustomStringConvertible, CaseIterable {
         case spade = "♠",
              heart = "♥",
