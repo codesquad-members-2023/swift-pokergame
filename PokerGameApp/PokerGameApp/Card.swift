@@ -16,7 +16,7 @@ class Card {
         cardRank = rank
     }
     
-    enum Suits: String {
+    enum Suits: String { // 속성이 2개면서 각각 4개, 13개의 모양과 숫자를 가지고 있기 때문에 nested enum을 쓰는게 가장 합리적이라고 판단함
         case clubs = "♣"
         case diamonds = "◆"
         case hearts = "♥"
