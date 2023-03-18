@@ -123,6 +123,14 @@ Access control restricts access to parts of your code from code in other source 
 * 모듈은 코드를 배포하는 단일 단위로 하나의 프레임워크나 앱이 이 단위로 배포되고 다른 모듈에서 Swift의 import키워드를 사용해 import될 수 있다. Xcode의 각 빌드 타겟은 Swift에서 분리된 단일 모듈로 취급된다.
 * 소스파일은 모듈안에 있는 소스파일을 의미한다. abc.swift 같은거.
 
+### 왜 사용하는가 ? 
+
+* Encapsulation : 액세스 제어를 사용하면 코드의 구현 세부 정보를 숨기고 코드의 다른 부분과 상호 작용하는 데 필요한 부분만 노출할 수 있다. 이렇게 하면 코드의 복잡성을 줄이고 유지 관리 및 업데이트를 쉽게 할 수 있다.
+
+* Stability : 액세스 제어를 사용하면 코드의 공용 인터페이스를 표시할 수 있으므로 코드 동작이 의도하지 않게 변경되는 것을 방지할 수 있다. 잘 정의된 공용 인터페이스만 노출하면 코드의 다른 부분이 코드 기능을 손상시킬 수 있는 변경을 수행하지 않도록 할 수 있다.
+
+* Security , Reusability
+
 ### Swift의 5가지 Access levels
 
  (특정 접근 제어자가 적용되는 대상을 entity로 서술한다. entity는 접근제어자를 작성할 수 있는 property, method, class, struct 등의 집합을 의미한다.)
