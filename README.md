@@ -90,5 +90,36 @@ override var preferredStatusBarStyle: UIStatusBarStyle {
 }
 ```
   v. 결과화면 
+  
   <img width="393" alt="스크린샷 2023-03-14 오후 5 15 45" src="https://user-images.githubusercontent.com/88966578/224947786-47e5dd0b-4366-4d75-8f62-e761285f1b62.png">
 
+### STEP 2 
+
+i. Card Struct 
+ 
+ 지금 당장은 상속의 필요성이 느껴지지 않아서 class가 아닌 struct를 선택. 
+ 카드의 속성인 Shape과 Rank는 Enum으로 정의하였다. 같은 주제로 연관된 데이터의 집합이고 입력받을 값을 미리 특정할 수 있는 것들이기에 적합다고 생각했다.
+ 
+ii. CustomStringConvertible 프로토콜
+ 
+ 객체정보를 출력할때 내가 원하는 포맷으로 출력하기 위해 CustomStringConvertible를 채택하였다.
+ 
+```swift
+extension Card: CustomStringConvertible {
+    var description : String {
+        return "\(self.shape.rawValue)\(self.rank.description())"
+    }
+}
+```
+
+### STEP 3
+
+i. Deck struct
+    
+   * Card객체로 구성된 Array를 프로퍼티(private)로 갖고, 그 Array에 접근하는 함수들을 몇가지 가지고 있다. 
+    
+ - func count() : 현재 Deck에 들어있는 Card객체가 몇개인지 return한다. 
+ - func reset() : 52개의 Card객체를 Deck에 넣는다.
+ - func removeOne() : Deck에 들어있는 Card객체 1개를 return하고 제거한다. 즉, 카드를 뽑는 기능 
+ - func shuffle() : Deck에 들어있는 Card객체를 섞어준다.  
+ 
