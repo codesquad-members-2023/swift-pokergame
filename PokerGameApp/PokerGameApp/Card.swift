@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Card{
+class Card {
     var cardSuit: Suits
     var cardRank: Ranks
     
