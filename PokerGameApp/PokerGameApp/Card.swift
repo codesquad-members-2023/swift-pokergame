@@ -16,14 +16,14 @@ class Card{
         cardRank = rank
     }
     
-    enum Suits: String, CaseIterable {
+    enum Suits: String {
         case clubs = "♣"
         case diamonds = "◆"
         case hearts = "♥"
         case spades = "♠"
     }
     
-    enum Ranks: String, CaseIterable {
+    enum Ranks: String {
         case ace = "A", jack = "J", queen = "Q", king = "k"
         case two = "2", three = "3", four = "4", five = "5", six = "6", seven = "7", eight = "8", nine = "9", ten = "10"
     }
