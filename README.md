@@ -1,14 +1,15 @@
 # swift-porkergame
 ## 추가 학습
-- [ ] AppDelegate와 SceneDelegate 학습하기
+- [x] AppDelegate와 SceneDelegate 학습하기
 - [ ] Xcode 단축키
 
 ## 1. 게임보드 만들기
-- [ ] StatusBar 스타일을 LightContent로 하기
-- [ ] image 추가하기
-- [ ] content mode 학습하기
-- [ ] UIStackView에 대해 학습하기
-- [ ] 앱 기본 설정(Info.plist)을 변경하는 방식에 대해 학습하고 앱 표시이름 변경하기
+- [x] StatusBar 스타일을 LightContent로 하기
+- [x] image 추가하기
+- [x] content mode 학습하기
+- [x] UIStackView에 대해 학습하기
+- [x] 앱 기본 설정(Info.plist)을 변경하는 방식에 대해 학습하고 앱 표시이름 변경하기
+![image](https://user-images.githubusercontent.com/115064144/226177573-6c2b1bed-249f-44e7-b068-8f6b21b2c61a.png)
 
 ## 2. 카드 클래스 구현하기
 - [ ] 객체지향 프로그래밍 방식에 충실하게 카드 클래스(class)를 설계하기
