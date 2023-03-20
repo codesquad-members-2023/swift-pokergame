@@ -127,7 +127,9 @@ i. Deck struct
 
 i. 클래스 다이어그램
 
-<img width="426" alt="스크린샷 2023-03-20 오후 4 30 46" src="https://user-images.githubusercontent.com/88966578/226320301-b2fb8967-d9df-4547-bf8b-94a603226ef8.png">
+<img width="607" alt="스크린샷 2023-03-20 오후 7 58 06" src="https://user-images.githubusercontent.com/88966578/226320808-f4bcdded-7040-4eca-8d45-04e93d1ba0d8.png">
+
+
 
 ii. 
 
