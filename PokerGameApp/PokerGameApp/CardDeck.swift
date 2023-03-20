@@ -46,6 +46,42 @@ class CardDeck {
     }
     
     func reset() {
-        
+        self.deck += self.tempDeck
     }
+}
+
+
+func testCardDeck() {
+    var result = ""
+    let cardDeck:CardDeck = CardDeck()
+    
+    let cardShapeCount = Card.getAllShape().count
+    let cardNumberCount = Card.getAllNumber().count
+    let nowCardCount = cardDeck.count()
+    
+    if cardShapeCount*cardNumberCount != nowCardCount {
+        result += "card init 이상\n"
+    }
+    
+    cardDeck.shuffle()
+    if nowCardCount != cardDeck.count() {
+        result += "shuffle 이상\n"
+    }
+    
+    
+    let countCard = 5
+    for _ in 0..<countCard {
+        let _:Card = cardDeck.removeOne()
+    }
+    
+    if cardDeck.count() != nowCardCount - countCard {
+        result += "remove 이상\n"
+    }
+    
+    if result == "" {
+        print("이상무")
+    } else {
+        print(result)
+    }
+    
 }
