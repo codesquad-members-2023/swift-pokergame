@@ -7,25 +7,13 @@
 
 import Foundation
 
-class Card: Equatable, Hashable {
-    private let shape: Shape
-    private let rank: Rank
+struct Card: Equatable {
+    let shape: Shape
+    let rank: Rank
     
     init(shape: Shape, rank: Rank) {
         self.shape = shape
         self.rank = rank
-    }
-    
-    func returnShape() -> String { shape.rawValue }
-    func returnRank() -> String { rank.rawValue }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(shape)
-        hasher.combine(rank)
-    }
-    
-    static func == (lhs: Card, rhs: Card) -> Bool {
-        lhs.shape == rhs.shape && lhs.rank == rhs.rank
     }
 }
 
@@ -38,18 +26,24 @@ enum Shape: String, CaseIterable, Hashable {
     case Heart = "♥️"
 }
 
-enum Rank: String, CaseIterable, Hashable {
-    case one = "A"
-    case two = "2"
-    case three = "3"
-    case four = "4"
-    case five = "5"
-    case six = "6"
-    case seven = "7"
-    case eight = "8"
-    case nine = "9"
-    case ten = "10"
-    case eleven = "J"
-    case tweleve = "Q"
-    case thirteen = "K"
+enum Rank: Int, CaseIterable, Hashable {
+    case two = 2
+    case three
+    case four
+    case five
+    case six
+    case seven
+    case eight
+    case nine
+    case ten
+    case jack
+    case queen
+    case king
+    case ace
+}
+
+extension Card: CustomStringConvertible {
+    var description: String {
+        "\(shape)\(rank)"
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     let cardCount: Int = 7
     let spacing: CGFloat = 1
-    let firstCard: Card = .init(shape: .Heart, rank: .tweleve)
+    let firstCard: Card = .init(shape: .Heart, rank: .queen)
     let secondCard: Card = .init(shape: .Space, rank: .seven)
     
     override func viewDidLoad() {
@@ -49,6 +49,6 @@ extension ViewController {
     }
     
     func printCard(_ card: Card) {
-        print("\(card.returnShape())\(card.returnRank())")
+        print(card.description)
     }
 }
