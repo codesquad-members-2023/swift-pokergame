@@ -14,4 +14,18 @@ class Participant : Player {
         self.name = ""
         super.init()
     }
+    
+    func setRandomName() {
+        var name = ""
+        let nameLength = Int.random(in: 2...5)
+        
+        for _ in 1...nameLength {
+            let randomOffset = UInt32.random(in: 0...25)
+            let randomUnicodeScalar = UnicodeScalar("a").value + randomOffset
+            guard let randomLetter = UnicodeScalar(randomUnicodeScalar) else {
+                return
+            }
+            name += String(randomLetter)
+        }
+    }
 }
