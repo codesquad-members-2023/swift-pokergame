@@ -22,4 +22,11 @@ struct CardDeck {
         }
         printCardList(cardList: cardList)
     }
+    
+    mutating func removeOne() {
+        let element = cardList.randomElement()!
+        print("> 카드 하나 뽑기\n= \(element.cardSuit.rawValue + element.cardRank.rawValue)\n")
+        cardList = cardList.filter(){($0.cardSuit.rawValue != element.cardSuit.rawValue || $0.cardRank.rawValue != element.cardRank.rawValue)}
+        printCardList(cardList: cardList)
+    }
 }
