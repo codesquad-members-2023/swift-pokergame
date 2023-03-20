@@ -12,6 +12,7 @@ class Dealer : Player {
     
     init(_ gameDeck : Deck) {
         self.gameDeck = gameDeck
+        super.init()
     }
     
     func shuffle() {
