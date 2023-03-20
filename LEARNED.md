@@ -198,3 +198,23 @@ Access control restricts access to parts of your code from code in other source 
 <img width="236" alt="스크린샷 2023-03-19 오후 9 29 32" src="https://user-images.githubusercontent.com/88966578/226175260-e5c4ed63-91e6-4fc5-87c4-c1efc25d8188.png">
 
 이 시점에서 더 이상 수행할 수 있는 것은 없으므로 결과 순열은 G E D C A H B F이다.
+
+* 오름차순과 내림차순의 차이 
+
+```swift
+func shuffleDescending() {
+    for i in stride(from: deck.count - 1, to: 0, by: -1) {
+        let j = Int.random(in: 0...i)
+        deck.swapAt(i, j)
+    }
+}
+
+func shuffleAscending() {
+    for i in 0..<deck.count {
+        let j = Int.random(in: i..<deck.count)
+        deck.swapAt(i, j)
+    }
+}
+// 각 스왑 후에 나머지 섞이지 않은 카드의 인덱스를 업데이트해야 하므로 코드가 복잡해지고 읽기가 더 어려워진다.
+// 그러나 체감은 비슷하다... 
+```
