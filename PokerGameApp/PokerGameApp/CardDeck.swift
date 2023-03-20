@@ -17,7 +17,7 @@ struct CardDeck {
     mutating func shuffle() { // Knuth Shuffle 구현
         print("> 카드 섞기 \n\(cardList.count)장의 카드를 섞었습니다.\n")
         for i in 0 ..< (cardList.count - 1) {
-            let randomIndex = Int.random(in: i..<cardList.count)
+            let randomIndex = Int.random(in: i ..< cardList.count)
             cardList.swapAt(i, randomIndex)
         }
         printCardList(cardList: cardList)
@@ -25,8 +25,8 @@ struct CardDeck {
     
     mutating func removeOne() {
         let element = cardList.randomElement()!
-        print("> 카드 하나 뽑기\n= \(element.cardSuit.rawValue + element.cardRank.rawValue)\n")
-        cardList = cardList.filter(){($0.cardSuit.rawValue != element.cardSuit.rawValue || $0.cardRank.rawValue != element.cardRank.rawValue)}
+        print("> 카드 하나 뽑기\n= \(element.getSuit().rawValue + element.getRank().rawValue)\n")
+        cardList = cardList.filter(){($0.getSuit().rawValue != element.getSuit().rawValue || $0.getRank().rawValue != element.getRank().rawValue)}
         printCardList(cardList: cardList)
     }
     
@@ -45,7 +45,7 @@ struct CardDeck {
     private func printCardList(cardList: Array<Card>) {
         print("> 카드 목록")
         for card in cardList {
-            print(card.cardSuit.rawValue + card.cardRank.rawValue, terminator: " ")
+            print(card.getSuit().rawValue + card.getRank().rawValue, terminator: " ")
         }
         count()
     }
