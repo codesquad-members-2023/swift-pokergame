@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card: Equatable {
+struct Card: Equatable, Hashable {
     let shape: Shape
     let rank: Rank
     

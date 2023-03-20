@@ -19,6 +19,9 @@ class ViewController: UIViewController {
         placeCards(count: cardCount, spacing: spacing, startAt: (0, 50))
         printCard(firstCard)
         printCard(secondCard)
+        
+        var testDeck = Deck()
+        testDeck.test()
     }
 }
 
