@@ -68,7 +68,7 @@ class GameBoardViewController: UIViewController {
         print(myDeck)
         
         print("카드 뽑아")
-        print(myDeck.removeOne() ?? "nil")
+        print((myDeck.removeOne() ?? "카드가 없어")!)
         
         print("카드 몇 장?")
         print(myDeck.count())
