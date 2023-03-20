@@ -15,11 +15,16 @@ class ViewController: UIViewController {
         self.setBackground(toImage: "backGround")
         self.setCard(countOf: 7)
         
-        let test1Card = Card(number: .queen, shape: .hearts)
-        let test2Card = Card(number: .seven, shape: .hearts)
-    
-        cardPrint(card: test1Card)
-        cardPrint(card: test2Card)
+//        let test1Card = Card(number: .queen, shape: .hearts)
+//        let test2Card = Card(number: .seven, shape: .hearts)
+//    
+//        cardPrint(card: test1Card)
+//        cardPrint(card: test2Card)
+//        
+//        let cardDeck = CardDeck()
+//        
+//        print(cardDeck.count())
+//        print(cardDeck.shuffle())
     }
     
     func setBackground(toImage:String) {
