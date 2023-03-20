@@ -21,4 +21,13 @@ class GameSetting {
             }
         }
     }
+    let mode : Mode
+    let numberOfPlayer : Int
+    let playerList : [Player]
+    
+    init(_ mode : Mode ){
+        self.mode = mode
+        self.numberOfPlayer = 0
+        self.playerList = []
+    }
 }
