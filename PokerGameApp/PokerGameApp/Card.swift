@@ -11,7 +11,7 @@ class Card {
   /// 카드의 문양
   ///
   /// 카드 숫자의 타입과 일관성을 위해서 열거형으로 선언했습니다.
-  enum Shape: CustomStringConvertible {
+  enum Shape: CustomStringConvertible, CaseIterable {
     case spade
     case clove
     case heart
@@ -30,7 +30,7 @@ class Card {
   /// 카드의 숫자
   ///
   /// 카드 숫자는 경우가 많고, 그 경우의 수를 제한할 필요가 있어서 열거형으로 선언했습니다.
-  enum Number: Int, CustomStringConvertible {
+  enum Number: Int, CustomStringConvertible, CaseIterable {
     case ace,
          two,
          three,

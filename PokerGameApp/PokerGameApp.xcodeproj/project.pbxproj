@@ -13,6 +13,8 @@
 		F42DDF1029BEB66C00B0DFBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42DDF0E29BEB66C00B0DFBE /* Main.storyboard */; };
 		F42DDF1229BEB66D00B0DFBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42DDF1129BEB66D00B0DFBE /* Assets.xcassets */; };
 		F42DDF1529BEB66D00B0DFBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42DDF1329BEB66D00B0DFBE /* LaunchScreen.storyboard */; };
+		F442291129C807FE00CBF0CD /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442291029C807FE00CBF0CD /* CardDeck.swift */; };
+		F442291329C8082A00CBF0CD /* Array_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442291229C8082A00CBF0CD /* Array_Extension.swift */; };
 		F4E1AD5629C1DF0900E999F3 /* OutputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1AD5529C1DF0900E999F3 /* OutputManager.swift */; };
 		F4E1AD5829C1DF1400E999F3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E1AD5729C1DF1400E999F3 /* Card.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		F42DDF1129BEB66D00B0DFBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F42DDF1429BEB66D00B0DFBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F42DDF1629BEB66D00B0DFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F442291029C807FE00CBF0CD /* CardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
+		F442291229C8082A00CBF0CD /* Array_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Extension.swift; sourceTree = "<group>"; };
 		F4E1AD5529C1DF0900E999F3 /* OutputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputManager.swift; sourceTree = "<group>"; };
 		F4E1AD5729C1DF1400E999F3 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +67,8 @@
 				F42DDF0829BEB66C00B0DFBE /* AppDelegate.swift */,
 				F42DDF0A29BEB66C00B0DFBE /* SceneDelegate.swift */,
 				F42DDF0C29BEB66C00B0DFBE /* ViewController.swift */,
+				F442291029C807FE00CBF0CD /* CardDeck.swift */,
+				F442291229C8082A00CBF0CD /* Array_Extension.swift */,
 				F4E1AD5729C1DF1400E999F3 /* Card.swift */,
 				F4E1AD5529C1DF0900E999F3 /* OutputManager.swift */,
 				F42DDF0E29BEB66C00B0DFBE /* Main.storyboard */,
@@ -144,10 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F442291129C807FE00CBF0CD /* CardDeck.swift in Sources */,
 				F42DDF0D29BEB66C00B0DFBE /* ViewController.swift in Sources */,
 				F42DDF0929BEB66C00B0DFBE /* AppDelegate.swift in Sources */,
 				F4E1AD5829C1DF1400E999F3 /* Card.swift in Sources */,
 				F4E1AD5629C1DF0900E999F3 /* OutputManager.swift in Sources */,
+				F442291329C8082A00CBF0CD /* Array_Extension.swift in Sources */,
 				F42DDF0B29BEB66C00B0DFBE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
