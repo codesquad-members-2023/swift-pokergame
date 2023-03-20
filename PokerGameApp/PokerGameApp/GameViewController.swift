@@ -13,6 +13,15 @@ class GameViewController: UIViewController {
         for i in 0..<7 {
             let cardUI = makeCardUI(x: interval + (interval + width) * CGFloat(i), y: positionY)
         }
+        
+        var deck = CardDeck()
+        shuffle(deck: &deck)
+        for i in 0..<54 {
+            guard let card = removeOne(deck: &deck) else {
+                return
+            }
+            print(card)
+        }
     }
     
     private func setBackground(imageName: String) {
@@ -33,5 +42,28 @@ class GameViewController: UIViewController {
         self.view.addSubview(cardUI)
         
         return cardUI
+    }
+    
+    private func shuffle(deck:inout CardDeck) {
+        do {
+            try deck.shuffle()
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func removeOne(deck: inout CardDeck) -> Card? {
+        var card:Card?
+        do {
+            card = try deck.removeOne()
+        } catch CardDeckError.isEmpty {
+            print("Deck is Empty")
+        } catch {
+            print("\(error)")
+        }
+        guard card != nil else {
+            return nil
+        }
+        return card!
     }
 }

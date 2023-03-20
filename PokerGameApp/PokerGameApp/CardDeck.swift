@@ -2,19 +2,19 @@
 // 상속이나 재사용성을 활용할 경우가 없다 생각하여 구조체로 선언
 struct CardDeck {
     private var deck:[Card] = []
-    
+    // count메소드 대신 편리성 및 중복 메소드 없애기 위해 계산 프로퍼티를 사용
+    var count:Int {
+        return deck.count
+    }
+
     // 초기화와 동시에 54장의 카드를 가지도록 의도하여 reset 메소드를 호출 함
     init() {
         reset()
     }
     
-    func count() -> Int {
-        return deck.count
-    }
-    
     // 덱에 카드가 한장이거나 없을때 예외처리
     mutating func shuffle() throws {
-        switch count() {
+        switch count {
         case 0:
             throw CardDeckError.isEmpty
         case 1:
@@ -29,7 +29,7 @@ struct CardDeck {
 
     // 덱에 카드가 없을 때 예외처리
     mutating func removeOne() throws -> Card {
-        guard count() != 0 else {
+        guard deck.count > 0 else {
             throw CardDeckError.isEmpty
         }
         return deck.removeLast()
@@ -45,11 +45,10 @@ struct CardDeck {
     }
 }
 
-// 에러 선언부는 메소드와 분리시켜 선언하는게 가독성이 좋다고 판단하여 확장부에 작성
-extension CardDeck {
-    // CardDeck에서만 사용하기에 Nested Enum Type으로 선언
-    enum CardDeckError:Error {
+// 오류처리시 GameViewController에서 사용해야하기에
+// Nested Enum -> Enum으로 수정
+enum CardDeckError:Error {
         case isEmpty
         case OneCard
-    }
 }
+
