@@ -28,3 +28,14 @@
 <img width="551" alt="Screenshot 2023-03-19 at 12 36 34 AM" src="https://user-images.githubusercontent.com/57861751/226115663-1faa39b7-4144-4b20-b4c1-ccc980d5494f.png">
 
 ### 완성 날짜 = 03.18
+
+### step3
+- [x] step2 피드백 반영
+- [x] 카드덱 구조체 설계
+- [x] 카드덱 멤버변수, 함수 구현
+- [x] 테스트 코드 작성
+- [x] knuth shuffle 구현
+### 작업 결과 화면
+<img width="868" alt="Screenshot 2023-03-20 at 5 25 36 PM" src="https://user-images.githubusercontent.com/57861751/226285029-a1f9920f-989b-4d45-adb2-c9f0c51680cf.png">
+
+### 완성 날짜 = 03.20
