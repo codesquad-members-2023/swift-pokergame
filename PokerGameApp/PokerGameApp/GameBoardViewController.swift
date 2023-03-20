@@ -36,7 +36,7 @@ class GameBoardViewController: UIViewController {
             cardStackView.distribution = .fillEqually
             cardStackView.spacing = widthPadding
         
-        for _ in 0 ... 6 {
+        for _ in 1 ... Int(cardCount) {
             let cardBack:UIImageView = UIImageView()
             cardBack.contentMode = .scaleAspectFit
             cardBack.image = cardBackImage
@@ -46,7 +46,7 @@ class GameBoardViewController: UIViewController {
         self.view.addSubview(cardStackView)
 
            
-        
+        print(heartQ.description)
 
     }
     
@@ -58,19 +58,32 @@ class GameBoardViewController: UIViewController {
     
 }
 
-class PokerCard {
+class PokerCard: CustomStringConvertible {
     // 연관된 계층 구조를 깔끔하게 표현하기 위해서 nested Type 사용
-    enum Suit: Character {
+    enum Suit: Character, CustomStringConvertible {
         case spade = "♠"
         case heart = "♥"
         case diamond = "♦"
         case club = "♣"
+        
+        var description: String {
+            switch self {
+            case .spade:
+                return "♠"
+            case .heart:
+                return "♥"
+            case .diamond:
+                return "♦"
+            case .club:
+                return "♣"
+            }
+        }
     }
     // 카드의 랭크는 추후 승패를 위해 비교해야 하니 Int Type 사용
-    enum Rank: Int {
+    enum Rank: Int, CustomStringConvertible {
         case A = 1, two, three, four, five, six, seven, eight, nine, ten, J, Q, K
         
-        func convert() -> String {
+        var description: String {
             switch self {
             case.A:
                 return "A"
@@ -86,16 +99,16 @@ class PokerCard {
         }
     }
     
-    var suit:Suit
-    var rank:Rank
+    private var suit:Suit
+    private var rank:Rank
     
     init(suit:Suit, rank:Rank) {
         self.suit = suit
         self.rank = rank
     }
     
-    func cardDescription() -> String {
-        return "\(suit.rawValue)\(rank.convert())"
+    var description: String {
+        return "\(suit)\(rank)"
     }
 }
 
