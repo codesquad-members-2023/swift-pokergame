@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         makeBackgroundView()
         setCard()
+        let card = Card(suit: .clubs, rank: .one)
+        print(card)
         var deck = CardDeck()
         deck.reset()
         deck.removeOne()

@@ -16,15 +16,17 @@ class Card {
         cardRank = rank
     }
     
-    func makeCard() -> String {
-        return (cardSuit.rawValue + cardRank.rawValue)
-    }
-    
     func getSuit() -> Suits {
         return cardSuit
     }
     
     func getRank() -> Ranks {
         return cardRank
+    }
+}
+
+extension Card: CustomStringConvertible {
+    var description: String {
+        return "\(cardSuit.rawValue + cardRank.rawValue)"
     }
 }
