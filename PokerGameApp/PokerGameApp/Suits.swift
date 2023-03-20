@@ -11,3 +11,20 @@ enum Suits: String, CaseIterable {
     case diamonds = "◆"
     case clubs = "♣"
 }
+
+extension Suits: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case.spades :
+            return Suits.spades.rawValue
+        case.hearts :
+            return Suits.hearts.rawValue
+        case.diamonds :
+            return Suits.diamonds.rawValue
+        case.clubs :
+            return Suits.clubs.rawValue
+        }
+    }
+}
+
+
