@@ -19,10 +19,11 @@ final class PokerBoardViewController: UIViewController {
     }
     
     private func setupBackgroundColor() {
-        if let pockerBoardBackground = ImageAsset.load(from: .pokerBoard) {
-            self.view.backgroundColor = UIColor(patternImage: pockerBoardBackground)
-        } else {
+        guard let pokerBoardBackground = ImageAsset.load(from: .pokerBoard)
+        else {
             self.view.backgroundColor = UIColor.black
+            return
         }
+        self.view.backgroundColor = UIColor(patternImage: pokerBoardBackground)
     }
 }
