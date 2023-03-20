@@ -15,8 +15,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         makeBackgroundView()
         setCard()
-        let card = Card(suit: .spades, rank: .ten)
-        print(card.makeCard())
+        var deck = CardDeck()
+        deck.reset()
+        deck.removeOne()
+        deck.shuffle()
+        deck.reset()
     }
     
     func makeBackgroundView() {
