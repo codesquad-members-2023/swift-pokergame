@@ -8,5 +8,7 @@
 import Foundation
 
 struct CardDeck {
+    private var cardList = [Card]()
+    
     
 }
