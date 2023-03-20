@@ -3,7 +3,7 @@ import Foundation
 
 
 struct Deck {
-   var deck : [Card] = []
+   private var deck : [Card] = []
     
     init() {
         for shape in Card.Shape.allCases{
