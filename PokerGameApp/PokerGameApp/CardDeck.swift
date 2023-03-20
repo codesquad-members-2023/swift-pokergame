@@ -24,9 +24,9 @@ struct CardDeck {
     }
     
     mutating func removeOne() {
-        let element = cardList.randomElement()!
-        print("> 카드 하나 뽑기\n= \(element.getSuit().rawValue + element.getRank().rawValue)\n")
-        cardList = cardList.filter(){($0.getSuit().rawValue != element.getSuit().rawValue || $0.getRank().rawValue != element.getRank().rawValue)}
+        let index = cardList.count - 1
+        print("> 카드 하나 뽑기\n= \(cardList[index].getSuit().rawValue + cardList[index].getRank().rawValue)\n")
+        cardList.removeLast()
         printCardList(cardList: cardList)
     }
     
