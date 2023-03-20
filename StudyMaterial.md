@@ -23,5 +23,14 @@
 * iOS Memory Footprint : https://hcn1519.github.io/articles/2018-09/wwdc2018session416  
 * memory leak 검사 : https://ios-development.tistory.com/604
 
+## 추가로 찾아본 내용
+* hashable 프로토콜 : https://developer.apple.com/documentation/swift/hashable
+* [아직 안읽음] CustomStringConvertible : https://developer.apple.com/documentation/swift/customstringconvertible
+* static을 피해야 하는 이유 : https://kellis.tistory.com/127
+* struct vs class : https://didu-story.tistory.com/255
+* [다시 확인하기, method dipatch 부터 안읽음]heap과 stack : https://corykim0829.github.io/swift/Understanding-Swift-Performance/#
+* [아직 안읽음] @inlineable : https://swiftrocks.com/understanding-inlinable-in-swift
+
 ## 학습내용 정리
 * UIStackView : https://velog.io/@raindrop/UIStackView  
+* Hashable : https://velog.io/@raindrop/Hashable-프로토콜

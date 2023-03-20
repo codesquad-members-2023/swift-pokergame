@@ -14,12 +14,12 @@
 
 ## 3. 카드덱 구현하고 테스트하기
 - [x] struct, class 속성 차이점 확인
-- [ ] 참조 접근자 활용하기
-- [ ] count
-- [ ] shuffle(로직 직접 구현)
-- [ ] removeOne
-- [ ] reset
-- [ ] 동작 확인 코드 작성
+- [x] 참조 접근자 활용하기
+- [x] count
+- [x] shuffle(로직 직접 구현)
+- [x] removeOne
+- [x] reset
+- [x] 동작 확인 코드 작성
 
  # 주요 작업 내용
  ## Step2-1. 게임보드 만들기
@@ -136,3 +136,24 @@ func printCard(_ card: Card) {
 ```
 ***
 ## Step2-3. 카드덱 구현하고 테스트하기
+Deck을 추가하였습니다. cards: [Card]를 프라퍼티를 가지며, 여러 메소드를 구현했습니다.
+메소드는 다음과 같습니다.
+* count : cards의 count를 반환합니다.
+* shuffle : cards를 무작위로 섞습니다.
+* removeOne : cards의 마지막 카드를 pop해서 리턴하며, 카드가 없을 때는 nil을 리턴합니다. guard문이 없어도 nil을 리턴하지만 print문을 위해 guard문을 작성했습니다. print문을 viewController 이외에 놓는 것도 괜찮은지 모르겠습니다.
+* reset : 모든 종류의 카드를 순서대로 cards에 담습니다.
+
+test함수를 추가했습니다.
+* test
+* test_reset
+* test_removeOne
+* test_shuffle  
+
+### 피드백 내용 반영
+* shape, rank의 private let -> let 으로 변경
+* CustomStringConvertible 추가
+* returnShape, returnRank 삭제
+* Rank 타입 String -> Int 로 변경
+* class -> struct 로 변경
+
+인스턴스의 cards 프라퍼티를 변경하며, test 함수에서 나머지 테스트 함수를 모두 실행합니다.
