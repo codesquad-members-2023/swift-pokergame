@@ -10,6 +10,7 @@ import Foundation
 
 class CardDeck {
     private var deck: [Card] = []
+    private var tempDeck: [Card] = []
     
     init() {
         let allShape = Card.getAllShape()
@@ -38,8 +39,10 @@ class CardDeck {
         }
     }
     
-    func removeOne() {
-        
+    func removeOne() -> Card {
+        let tempCard:Card = self.deck.popLast()!
+        self.tempDeck.append(tempCard)
+        return tempCard
     }
     
     func reset() {
