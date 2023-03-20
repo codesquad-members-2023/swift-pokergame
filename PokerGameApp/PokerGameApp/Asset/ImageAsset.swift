@@ -9,6 +9,7 @@ import UIKit.UIImage
 
 enum ImageAsset: String {
     case pokerBoard = "PokerBoard"
+    case cardBack = "CardBack"
 }
 
 extension ImageAsset {
