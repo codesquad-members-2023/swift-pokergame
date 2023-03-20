@@ -29,4 +29,16 @@ struct CardDeck {
         cardList = cardList.filter(){($0.cardSuit.rawValue != element.cardSuit.rawValue || $0.cardRank.rawValue != element.cardRank.rawValue)}
         printCardList(cardList: cardList)
     }
+    
+    mutating func reset() {
+        print("> 카드 초기화 \n카드 전체를 초기화 했습니다.\n")
+        if !cardList.isEmpty { cardList.removeAll() }
+        for suit in Suits.allCases {
+            for rank in Ranks.allCases {
+                let card = Card(suit: suit, rank: rank)
+                cardList.append(card)
+            }
+        }
+        printCardList(cardList: cardList)
+    }
 }
