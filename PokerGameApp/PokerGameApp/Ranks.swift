@@ -5,51 +5,39 @@
 //  Created by ilim on 2023/03/20.
 //
 
-enum Ranks: String, CaseIterable {
-    case one = "A"
-    case two = "2"
-    case three = "3"
-    case four = "4"
-    case five = "5"
-    case six = "6"
-    case seven = "7"
-    case eight = "8"
-    case nine = "9"
-    case ten = "10"
-    case eleven = "J"
-    case twelve = "Q"
-    case thirteen = "K"
+enum Ranks: Int, CaseIterable {
+    case one = 1, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen
 }
 
 extension Ranks: CustomStringConvertible {
     var description: String {
         switch self {
         case.one :
-            return Ranks.one.rawValue
+            return "A"
         case.two :
-            return Ranks.two.rawValue
+            return "2"
         case.three :
-            return Ranks.three.rawValue
+            return "3"
         case.four :
-            return Ranks.four.rawValue
+            return "4"
         case.five :
-            return Ranks.five.rawValue
+            return "5"
         case.six :
-            return Ranks.six.rawValue
+            return "6"
         case.seven :
-            return Ranks.seven.rawValue
+            return "7"
         case.eight :
-            return Ranks.eight.rawValue
+            return "8"
         case.nine :
-            return Ranks.nine.rawValue
+            return "9"
         case.ten :
-            return Ranks.ten.rawValue
+            return "10"
         case.eleven :
-            return Ranks.eleven.rawValue
+            return "J"
         case.twelve :
-            return Ranks.twelve.rawValue
+            return "Q"
         case.thirteen :
-            return Ranks.thirteen.rawValue
+            return "K"
         }
     }
 }

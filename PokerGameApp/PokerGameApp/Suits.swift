@@ -5,24 +5,21 @@
 //  Created by ilim on 2023/03/20.
 //
 
-enum Suits: String, CaseIterable {
-    case spades = "♠"
-    case hearts = "♥"
-    case diamonds = "◆"
-    case clubs = "♣"
+enum Suits: Int, CaseIterable {
+    case clubs = 1, diamonds, hearts, spades
 }
 
 extension Suits: CustomStringConvertible {
     var description: String {
         switch self {
         case.spades :
-            return Suits.spades.rawValue
+            return "♠"
         case.hearts :
-            return Suits.hearts.rawValue
+            return "♥"
         case.diamonds :
-            return Suits.diamonds.rawValue
+            return "◆"
         case.clubs :
-            return Suits.clubs.rawValue
+            return "♣"
         }
     }
 }
