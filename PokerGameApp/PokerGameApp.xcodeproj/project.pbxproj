@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E4629E2929C847AA0062F005 /* GameSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4629E2829C847AA0062F005 /* GameSetting.swift */; };
+		E4629E2B29C8493A0062F005 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4629E2A29C8493A0062F005 /* Player.swift */; };
 		E4E0F9CF29BF01C600AE817A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F9CE29BF01C600AE817A /* AppDelegate.swift */; };
 		E4E0F9D129BF01C600AE817A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F9D029BF01C600AE817A /* SceneDelegate.swift */; };
 		E4E0F9D329BF01C600AE817A /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F9D229BF01C600AE817A /* GameBoardViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		E4629E2829C847AA0062F005 /* GameSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetting.swift; sourceTree = "<group>"; };
+		E4629E2A29C8493A0062F005 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E4E0F9CB29BF01C600AE817A /* PokerGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E0F9CE29BF01C600AE817A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4E0F9D029BF01C600AE817A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				E4E0F9DC29BF01C700AE817A /* Info.plist */,
 				E4E0FA9029C3FDDC00AE817A /* Deck.swift */,
 				E4629E2829C847AA0062F005 /* GameSetting.swift */,
+				E4629E2A29C8493A0062F005 /* Player.swift */,
 			);
 			path = PokerGameApp;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				E4E0F9CF29BF01C600AE817A /* AppDelegate.swift in Sources */,
 				E4E0FA9129C3FDDC00AE817A /* Deck.swift in Sources */,
 				E4E0F9D129BF01C600AE817A /* SceneDelegate.swift in Sources */,
+				E4629E2B29C8493A0062F005 /* Player.swift in Sources */,
 				E4629E2929C847AA0062F005 /* GameSetting.swift in Sources */,
 				E4E0FA5329C190F400AE817A /* Card.swift in Sources */,
 			);
