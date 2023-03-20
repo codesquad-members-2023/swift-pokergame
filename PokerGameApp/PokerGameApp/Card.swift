@@ -37,8 +37,8 @@ class Card: CustomStringConvertible {
         }
     }
     
-    let shape: Shape
-    let number: Number
+    internal let shape: Shape
+    internal let number: Number
     
     init(number: Number, shape: Shape) {
         self.shape = shape

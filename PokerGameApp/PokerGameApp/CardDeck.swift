@@ -9,7 +9,7 @@ import Foundation
 
 
 class CardDeck {
-    var deck: [Card] = []
+    private var deck: [Card] = []
     
     init() {
         let allShape = Card.getAllShape()
