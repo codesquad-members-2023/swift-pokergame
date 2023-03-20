@@ -5,14 +5,24 @@ import Foundation
 struct Deck {
    var deck : [Card] = []
     
+    init() {
+        for shape in Card.Shape.allCases{
+            for rank in Card.Rank.allCases{
+                self.deck.append(Card(shape: shape, rank: rank))
+            }
+        }
+    }
+    
     func count() -> Int {
         return self.deck.count
     }
     
     mutating func reset() {
+        var index = 0
         for shape in Card.Shape.allCases{
             for rank in Card.Rank.allCases{
-                self.deck.append(Card(shape: shape, rank: rank))
+                self.deck[index] = Card(shape: shape, rank: rank)
+                index += 1
             }
         }
     }
