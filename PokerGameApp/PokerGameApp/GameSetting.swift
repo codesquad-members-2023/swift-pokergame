@@ -11,6 +11,14 @@ class GameSetting {
     enum Mode {
         case fiveStud
         case sevenStud
-        
+     
+        func numberOfCard() -> Int {
+            switch self {
+            case .fiveStud :
+                return 5
+            case .sevenStud :
+                return 7
+            }
+        }
     }
 }
