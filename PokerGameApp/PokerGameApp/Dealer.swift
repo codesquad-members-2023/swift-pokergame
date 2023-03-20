@@ -13,4 +13,12 @@ class Dealer : Player {
     init(_ gameDeck : Deck) {
         self.gameDeck = gameDeck
     }
+    
+    func shuffle() {
+        self.gameDeck.shuffle()
+    }
+    
+    func deal() {
+        //뽑아서 하나씩 돌려
+    }
 }
