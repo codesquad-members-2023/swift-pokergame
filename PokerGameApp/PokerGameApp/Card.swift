@@ -8,24 +8,12 @@
 import Foundation
 
 class Card {
-    var cardSuit: Suits
-    var cardRank: Ranks
+    private var cardSuit: Suits
+    private var cardRank: Ranks
     
     init(suit: Suits, rank: Ranks) {
         cardSuit = suit
         cardRank = rank
-    }
-    
-    enum Suits: String { // 속성이 2개면서 각각 4개, 13개의 모양과 숫자를 가지고 있기 때문에 nested enum을 쓰는게 가장 합리적이라고 판단함
-        case clubs = "♣"
-        case diamonds = "◆"
-        case hearts = "♥"
-        case spades = "♠"
-    }
-    
-    enum Ranks: String {
-        case ace = "A", jack = "J", queen = "Q", king = "k"
-        case two = "2", three = "3", four = "4", five = "5", six = "6", seven = "7", eight = "8", nine = "9", ten = "10"
     }
     
     func makeCard() -> String {
