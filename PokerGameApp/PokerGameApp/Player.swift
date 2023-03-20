@@ -8,5 +8,23 @@
 import Foundation
 
 class Player {
+    private var hand : [Card]
+    var point : Int = 0
     
+    init() {
+        self.hand = []
+    }
+    
+
+}
+
+extension Player: CustomStringConvertible {
+    var description : String {
+        var result = ""
+        for card in self.hand {
+            result += card.description
+            result += " "
+        }
+        return result
+    }
 }
