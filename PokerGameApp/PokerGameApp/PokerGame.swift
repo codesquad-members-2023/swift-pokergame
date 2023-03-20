@@ -9,7 +9,7 @@ import Foundation
 
 struct PokerGame {
   
-  var cardDeck: CardDeck
+  private var cardDeck: CardDeck
   
   init() {
     self.cardDeck = CardDeck()

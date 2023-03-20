@@ -14,13 +14,14 @@ class ViewController: UIViewController {
   private let cardAspectRatio = CGFloat(1.27)
   
   private let cardImage = UIImage(named: "card-back")
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configure()
     addCards(ofRatio: cardAspectRatio, numberOfCard: 7, withInset: 1.0)
     
-    testCards()
+//    testCards()
+    testGame()
   }
   
   private func configure() {
@@ -74,5 +75,17 @@ class ViewController: UIViewController {
     
     let diamondEight = Card(shape: .diamond, number: .eight)
     outputManager.printInfo(ofCard: diamondEight)
+  }
+  
+  private func testGame() {
+    var game = PokerGame()
+    
+    let scenario = [
+      "카드 초기화",
+      "카드 섞기",
+      "카드 하나 뽑기",
+      "카드 하나 뽑기",
+    ]
+    game.test(scenario: scenario)
   }
 }
