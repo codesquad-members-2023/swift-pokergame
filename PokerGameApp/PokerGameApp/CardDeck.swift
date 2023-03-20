@@ -25,7 +25,7 @@ struct CardDeck {
     
     mutating func removeOne() {
         let index = cardList.count - 1
-        print("> 카드 하나 뽑기\n= \(cardList[index].getSuit().rawValue + cardList[index].getRank().rawValue)\n")
+        print("> 카드 하나 뽑기\n= \(cardList[index])\n")
         cardList.removeLast()
         printCardList(cardList: cardList)
     }
@@ -45,7 +45,7 @@ struct CardDeck {
     private func printCardList(cardList: Array<Card>) {
         print("> 카드 목록")
         for card in cardList {
-            print(card.getSuit().rawValue + card.getRank().rawValue, terminator: " ")
+            print(card, terminator: " ")
         }
         count()
     }
