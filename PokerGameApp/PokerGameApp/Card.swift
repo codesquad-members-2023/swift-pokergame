@@ -27,6 +27,6 @@ class Card {
 
 extension Card: CustomStringConvertible {
     var description: String {
-        return "\(cardSuit.rawValue + cardRank.rawValue)"
+        return "\(cardSuit)\(cardRank)"
     }
 }
