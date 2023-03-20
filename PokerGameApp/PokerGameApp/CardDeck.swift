@@ -41,4 +41,12 @@ struct CardDeck {
         }
         printCardList(cardList: cardList)
     }
+    
+    private func printCardList(cardList: Array<Card>) {
+        print("> 카드 목록")
+        for card in cardList {
+            print(card.cardSuit.rawValue + card.cardRank.rawValue, terminator: " ")
+        }
+        count()
+    }
 }
