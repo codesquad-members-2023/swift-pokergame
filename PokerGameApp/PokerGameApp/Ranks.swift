@@ -20,3 +20,38 @@ enum Ranks: String, CaseIterable {
     case twelve = "Q"
     case thirteen = "K"
 }
+
+extension Ranks: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case.one :
+            return Ranks.one.rawValue
+        case.two :
+            return Ranks.two.rawValue
+        case.three :
+            return Ranks.three.rawValue
+        case.four :
+            return Ranks.four.rawValue
+        case.five :
+            return Ranks.five.rawValue
+        case.six :
+            return Ranks.six.rawValue
+        case.seven :
+            return Ranks.seven.rawValue
+        case.eight :
+            return Ranks.eight.rawValue
+        case.nine :
+            return Ranks.nine.rawValue
+        case.ten :
+            return Ranks.ten.rawValue
+        case.eleven :
+            return Ranks.eleven.rawValue
+        case.twelve :
+            return Ranks.twelve.rawValue
+        case.thirteen :
+            return Ranks.thirteen.rawValue
+        }
+    }
+}
+
+
