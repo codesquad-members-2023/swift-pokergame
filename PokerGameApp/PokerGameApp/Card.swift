@@ -19,4 +19,12 @@ class Card {
     func makeCard() -> String {
         return (cardSuit.rawValue + cardRank.rawValue)
     }
+    
+    func getSuit() -> Suits {
+        return cardSuit
+    }
+    
+    func getRank() -> Ranks {
+        return cardRank
+    }
 }
