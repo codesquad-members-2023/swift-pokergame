@@ -30,4 +30,12 @@ class GameSetting {
         self.numberOfPlayer = 0
         self.playerList = []
     }
+    
+    func setPlayer () {
+        
+    }
+    
+    func setNumberOfPlayer() {
+        
+    }
 }
