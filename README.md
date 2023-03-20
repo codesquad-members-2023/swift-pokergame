@@ -123,3 +123,11 @@ i. Deck struct
  - func removeOne() : Deck에 들어있는 Card객체 1개를 return하고 제거한다. 즉, 카드를 뽑는 기능 
  - func shuffle() : Deck에 들어있는 Card객체를 섞어준다.  
  
+### STEP 4
+
+i. 클래스 다이어그램
+
+<img width="426" alt="스크린샷 2023-03-20 오후 4 30 46" src="https://user-images.githubusercontent.com/88966578/226274431-79c206b4-9c45-4b48-91ff-a48d3fe9efcc.png">
+
+
+
