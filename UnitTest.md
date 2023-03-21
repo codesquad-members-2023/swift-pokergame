@@ -93,6 +93,8 @@ var sut : test대상
   * when : 이 섹션에서는 테스트 중인 코드를 실행한다.
   * then : 이것은 테스트가 실패할 경우 인쇄되는 메시지와 함께 예상 결과를 주장하는 섹션이다. 
   
+# ► func 작성 
+  
 <img width="637" alt="스크린샷 2023-03-21 오후 4 06 57" src="https://user-images.githubusercontent.com/88966578/226538453-b1540a1c-8615-44d2-b445-6e1e704a183d.png">
 
  * 52장의 덱에서 ```removeOne()``` 을 하고 ```count()```를 하면 51장이다. Then 파트에 52가 아닌 다른 값을 입력하면 Test에 실패 한다. 
