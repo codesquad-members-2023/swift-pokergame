@@ -13,7 +13,8 @@
 ## Xcode에서 Unit Test 하기
 
 ### 1 ) 생성 및 실행법 
-* <span style="color:red">Test Navigator 에서 ```New Unit Test Target``` 선택</span>
+# ► Test Navigator 에서 ```New Unit Test Target``` 선택
+
 <img width="234" alt="스크린샷 2023-03-21 오후 2 21 50" src="https://user-images.githubusercontent.com/88966578/226525005-b9ea850e-4d4b-467b-8fca-919f807190e1.png">
 
 * 테스트 클래스를 실행하는 방법 
@@ -29,7 +30,7 @@
 
   * measure라인의 회색 다이아몬드를 누르면 test성능결과를 볼 수 있다. 
 
-### 2) XCTAssert를 사용하여 모델 테스트
+### 2) Test 준비 : XCTAssert를 사용하여 모델 테스트
 * Test하고 싶은 모델을 가져와야한다. 
   * 모델이란 다음과 같다.
   ```
@@ -44,8 +45,66 @@
   SRC: https://tecoble.techcourse.co.kr/post/2021-04-26-mvc/
   ```
 
-* 모델을 ```프로젝트명+Tests.swfit``` 에 import 해준다. 
+# ► 모델을 ```프로젝트명+Tests.swfit``` 에 import 해준다. 
 
 ```swift
 @testable import PokerGameApp
 ```
+
+# ► ```프로젝트명+Tests.swfit``` 의 class 내부에 sut프로퍼티를 추가해준다. 
+
+```swift
+var sut : test대상 
+//var sut : Deck!
+```
+
+# ► ```setUpWithError()``` 를 다음과 같이 바꿔준다.
+
+* 이 테스트 클래스의 모든 테스트는 SUT 개체의 속성 및 메소드에 액세스할 수 있다.
+
+```swift
+    override func setUpWithError() throws {
+        try super .setUpWithError()
+        var sut : test대상 
+        //sut = Deck()
+    }
+```
+
+# ► ```tearDownWithError()``` 를 다음과 같이 바꿔준다.
+
+```swift
+    override func tearDownWithError() throws {
+    sut = nil 
+    try super .tearDownWithError()
+    }
+
+```
+
+***참고 : 모든 테스트가 깨끗한 슬레이트로 시작되도록 SUT를 만들고 setUpWithError()릴리스하는 것이 좋다. ***
+
+
+### 3) 준비 끝. 해보자. : 첫 번째 테스트 작성
+ 
+* 테스트 메서드의 이름은 항상 test 로 시작 하고 테스트 대상에 대한 설명이 뒤따른다.
+
+* 테스트를 given , when , then 섹션 으로 형식화하는 것이 좋다 .
+
+  * given: 여기에서 필요한 값을 설정합니다.
+  * when : 이 섹션에서는 테스트 중인 코드를 실행한다.
+  * then : 이것은 테스트가 실패할 경우 인쇄되는 메시지와 함께 예상 결과를 주장하는 섹션이다. 
+  
+<img width="637" alt="스크린샷 2023-03-21 오후 4 06 57" src="https://user-images.githubusercontent.com/88966578/226538453-b1540a1c-8615-44d2-b445-6e1e704a183d.png">
+
+ * 52장의 덱에서 ```removeOne()``` 을 하고 ```count()```를 하면 51장이다. Then 파트에 52가 아닌 다른 값을 입력하면 Test에 실패 한다. 
+
+ * XCTAssertEqual 말고도 많다. 쓰임새에 따라 다른걸 써보도록 하자. 
+
+### 4) Faking Objects and Interactions
+
+* 대부분의 앱은 제어할 수 없는 시스템 또는 라이브러리 개체와 상호 작용한다. 이러한 개체와 상호 작용하는 테스트는 느리고 반복 불가능하여 FIRST 원칙 중 두 가지를 위반할 수 있다. 대신 Stub 에서 입력을 받거나 모의 개체를 업데이트하여 상호 작용을 가짜로 만들 수 있다.
+
+* 코드가 시스템 또는 라이브러리 개체에 대한 종속성이 있는 경우 가짜를 사용합니다. 가짜 개체를 만들어 해당 부분을 재생하고 이 가짜 개체를 코드에 주입하면 됩니다.
+
+### 5) Stub에서 가짜 입력
+
+* 다음기회에 업데이트. 
