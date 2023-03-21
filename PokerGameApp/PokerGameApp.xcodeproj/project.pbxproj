@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC64772229C9743B009B7183 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64772129C9743B009B7183 /* Card.swift */; };
 		CCDBADB129BEC199004678CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBADB029BEC199004678CB /* AppDelegate.swift */; };
 		CCDBADB329BEC199004678CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBADB229BEC199004678CB /* SceneDelegate.swift */; };
 		CCDBADB529BEC199004678CB /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDBADB429BEC199004678CB /* GameBoardViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC64772129C9743B009B7183 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CCDBADAD29BEC199004678CB /* PokerGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDBADB029BEC199004678CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCDBADB229BEC199004678CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				CCDBADB029BEC199004678CB /* AppDelegate.swift */,
 				CCDBADB229BEC199004678CB /* SceneDelegate.swift */,
 				CCDBADB429BEC199004678CB /* GameBoardViewController.swift */,
+				CC64772129C9743B009B7183 /* Card.swift */,
 				CCDBADB629BEC199004678CB /* Main.storyboard */,
 				CCDBADB929BEC19B004678CB /* Assets.xcassets */,
 				CCDBADBB29BEC19B004678CB /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				CCDBADB529BEC199004678CB /* GameBoardViewController.swift in Sources */,
 				CCDBADB129BEC199004678CB /* AppDelegate.swift in Sources */,
 				CCDBADB329BEC199004678CB /* SceneDelegate.swift in Sources */,
+				CC64772229C9743B009B7183 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
