@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card: CustomStringConvertible{
+struct Card: CustomStringConvertible,Equatable{
     
     //enum타입 한 이유 : 어짜피 모양은 4개중 하나, 넘버는 1~13중 하나라서
     var shape : Shape

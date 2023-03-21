@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct CardDeck{
+class CardDeck{
     
     private var stackCards : [Card]
     
@@ -20,7 +20,7 @@ struct CardDeck{
         }
     }
     
-    mutating func shuffle() {
+    func shuffle() {
         for i in 0..<stackCards.count {
             if let randomIndex = (i+1..<stackCards.count).randomElement() {
                 let changeCard = stackCards[randomIndex]
@@ -30,7 +30,7 @@ struct CardDeck{
         }
     }
     
-    mutating func removeOne() -> Card{
+    func removeOne() -> Card{
         if stackCards.count == 0{
             print("---------------------")
             print("카드 부족. 어플을 종료합니다.")
@@ -40,7 +40,7 @@ struct CardDeck{
         }
     }
     
-    mutating func reset(){
+    func reset(){
         stackCards.removeAll()
         for shape in Card.Shape.allCases {
             for number in Card.Number.allCases {
@@ -50,7 +50,7 @@ struct CardDeck{
         }
     }
     
-    mutating func count() -> Int{
+    func count() -> Int{
         return stackCards.count
     }
     
@@ -59,4 +59,4 @@ struct CardDeck{
     }
 }
 
-var cardDeck = CardDeck()
+
