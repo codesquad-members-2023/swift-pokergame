@@ -12,6 +12,7 @@ struct Deck {
     
     init() {
         self.cards = []
+        self.reset()
     }
     
     func count() -> Int {
@@ -41,8 +42,7 @@ struct Deck {
     }
     
     mutating func removeOne() -> Card? {
-        guard cards.count > 0 else { print("cards in deck is less then 1"); return nil }
-        return cards.popLast()
+        cards.popLast()
     }
     
     // 모든 카드를 덱에 담는 함수. 순서가 정해져 있다.
