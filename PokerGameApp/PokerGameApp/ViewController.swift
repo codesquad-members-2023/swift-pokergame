@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setBackground()
         setCardBack(cardCount: 7)
+        let oneCard = Card(suit: .spades, rank: .queen)
+        print(oneCard)
     }
     private func setBackground() {
         guard let image = UIImage(named: "bg_pattern") else { return }

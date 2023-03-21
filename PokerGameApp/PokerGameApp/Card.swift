@@ -49,4 +49,16 @@ struct Card {
             }
         }
     }
+    private var suit: Suit
+    private var rank: Rank
+    
+    init(suit: Suit, rank: Rank) {
+        self.suit = suit
+        self.rank = rank
+    }
+}
+extension Card: CustomStringConvertible {
+    var description: String {
+        return "\(suit)\(rank)"
+    }
 }
