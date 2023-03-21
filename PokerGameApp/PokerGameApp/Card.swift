@@ -9,4 +9,14 @@ import Foundation
 
 struct Card {
     
+    enum Suit: Character, CustomStringConvertible {
+        case spades = "♠"
+        case hearts = "♥"
+        case diamonds = "♦"
+        case clubs = "♣"
+        
+        var description: String {
+            return "\(self.rawValue)"
+        }
+    }
 }
