@@ -33,6 +33,10 @@ class PokerGame {
         addPlayer(playerCount)
         dealer?.startGame()
     }
+    
+    func endGame() {
+        // 게임이 끝날 때 해야할 작업
+    }
 }
 
 enum GameStyle: Int {
