@@ -9,7 +9,7 @@ import Foundation
 
 class PokerCard: CustomStringConvertible {
     // 연관된 계층 구조를 깔끔하게 표현하기 위해서 nested Type 사용
-    enum Suit: Character, CustomStringConvertible {
+    enum Suit: Character, CustomStringConvertible, CaseIterable {
         case spade = "♠"
         case heart = "♥"
         case diamond = "♦"
@@ -29,7 +29,7 @@ class PokerCard: CustomStringConvertible {
         }
     }
     // 카드의 랭크는 추후 승패를 위해 비교해야 하니 Int Type 사용
-    enum Rank: Int, CustomStringConvertible {
+    enum Rank: Int, CustomStringConvertible, CaseIterable {
         case A = 1, two, three, four, five, six, seven, eight, nine, ten, J, Q, K
         
         var description: String {
