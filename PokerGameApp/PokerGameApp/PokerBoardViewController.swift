@@ -50,4 +50,14 @@ final class PokerBoardViewController: UIViewController {
         )
         self.view.addSubview(cardImageView)
     }
+    
+    private func calculateEntireSpacingForRow(
+        startAt startIntervalForFirstCardInRow: CGFloat,
+        offset: CGFloat
+    ) -> CGFloat {
+        let entireOffset = offset * CGFloat(self.cardsPerRow - 1)
+        let endIntervalForLastCardInRow = startIntervalForFirstCardInRow
+        let entireSpacing = startIntervalForFirstCardInRow + endIntervalForLastCardInRow + entireOffset
+        return entireSpacing
+    }
 }
