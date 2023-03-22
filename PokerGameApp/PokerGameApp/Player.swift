@@ -14,8 +14,6 @@ class Player {
     init() {
         self.hand = []
     }
-    
-
 }
 
 extension Player: CustomStringConvertible {

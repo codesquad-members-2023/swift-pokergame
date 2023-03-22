@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GameSetting {
+class GameSetting : GameController {
     enum Mode {
         case fiveStud
         case sevenStud
@@ -29,14 +29,17 @@ class GameSetting {
         self.mode = mode
         self.numberOfParticipant = numberOfParticipant
         self.playerList = []
+        super.init()
+        
         self.isValidNumberOfPlayer(self.numberOfParticipant)
+        
     }
     
     func setPlayer () {
         for _ in 0...numberOfParticipant-1 {
             self.playerList.append(Participant())
         }
-        self.playerList.append(Dealer(Deck()))
+        self.playerList.append(Dealer(Deck(), self.mode))
         
     }
     

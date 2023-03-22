@@ -31,15 +31,16 @@ final class PokerGameAppTests: XCTestCase {
     
     func testSetPlayer() {
         let numberOfdealer = 1
+        
         for numberOfParticipant in 1...4{
             sut = GameSetting(.fiveStud, numberOfParticipant)
             
             sut.setPlayer()
             
-            let participantCount = sut.playerList.filter { $0 is Participant }.count
+            let participantCount = sut.playerList.filter { $0 is Participant }.count // 타입 체크
             let dealerCount = sut.playerList.filter { $0 is Dealer }.count
             
-            XCTAssertEqual(participantCount + dealerCount, numberOfParticipant + numberOfdealer )
+            XCTAssertEqual(participantCount + dealerCount, numberOfParticipant + numberOfdealer ) // 개수 체크
         }
     }
 
