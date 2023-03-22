@@ -8,7 +8,16 @@
 import Foundation
 
 class PokerGame {
+    weak var dealer: Dealer?
+    var gameStyle: GameStyle = .FiveCardStud
     
+    func toggleGameStyle() {
+        if gameStyle == .FiveCardStud {
+            gameStyle = .SevenCardStud
+        } else {
+            gameStyle = .FiveCardStud
+        }
+    }
 }
 
 enum GameStyle {

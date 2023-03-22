@@ -8,10 +8,10 @@
 import Foundation
 
 class Dealer {
-    
     var pokerGameDelegate: PokerGame?
+    var deck: Deck = .init()
     
-    func switchGameStyle() {
-        
+    func toggleGameStyle() {
+        pokerGameDelegate?.toggleGameStyle()
     }
 }
