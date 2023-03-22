@@ -14,13 +14,4 @@ extension Array {
       swapAt(i, randomIndex)
     }
   }
-  
-  private var randomIndex: Int? {
-    (0..<count).randomElement()
-  }
-  
-  mutating func removeRandom() -> Element? {
-    guard let randomIndex = self.randomIndex else { return nil }
-    return self.remove(at: randomIndex)
-  }
 }

@@ -34,11 +34,10 @@ struct CardDeck {
   }
   
   mutating func removeOne() -> Card? {
-    cards.removeRandom()
+    cards.isEmpty ? nil : cards.removeLast()
   }
   
   mutating func reset() {
     cards = Self.createNewDeck()
   }
 }
-
