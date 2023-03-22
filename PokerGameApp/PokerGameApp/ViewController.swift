@@ -15,13 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         makeBackgroundView()
         setCard()
-        let card = Card(suit: .clubs, rank: .one)
-        print(card)
-        var deck = CardDeck()
-        deck.reset()
-        deck.removeOne()
-        deck.shuffle()
-        deck.reset()
+        testScenario()
     }
     
     func makeBackgroundView() {
@@ -47,5 +41,21 @@ class ViewController: UIViewController {
             self.view.addSubview(cardImage)
         }
     }
+    
+    func testScenario() {
+        var deck = CardDeck()
+        print("> 카드 초기화 \n카드 전체를 초기화 했습니다.\n")
+        deck.reset()
+        print("> 카드 섞기. 전체 52장의 카드를 섞었습니다.\n")
+        deck.shuffle()
+        print("> 카드 하나 뽑기\n= \(deck.removeOne())")
+        print("\(deck.count())장의 카드가 남았습니다.\n")
+        print("> 카드 하나 뽑기\n= \(deck.removeOne())")
+        print("\(deck.count())장의 카드가 남았습니다.\n")
+        print("> 카드 초기화 \n카드 전체를 초기화 했습니다.")
+        deck.reset()
+        print("\(deck.count())장의 카드가 남았습니다.")
+    }
 }
+
 
