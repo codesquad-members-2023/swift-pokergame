@@ -42,6 +42,20 @@ final class PokerBoardViewController: UIViewController {
         }
         self.view.backgroundColor = UIColor(patternImage: pokerBoardBackground)
     }
+    private func renderCardImageViews(startAt startCardOrigin: CGPoint, offset: CGFloat) {
+        let cardBackImage = ImageAsset.load(from: .cardBack)
+        let cardWidth = self.calculateCardImageViewWidth(startAt: startCardOrigin.x, offset: offset)
+        var currentCardOrigin = startCardOrigin
+        
+        for _ in 0..<self.numberOfCards {
+            self.renderCardImageView(with: cardBackImage, width: cardWidth, origin: currentCardOrigin)
+            currentCardOrigin = CGPoint(
+                x: currentCardOrigin.x + offset + cardWidth,
+                y: currentCardOrigin.y
+            )
+        }
+    }
+    
     private func renderCardImageView(with cardImage: UIImage?, width: CGFloat, origin: CGPoint) {
         let cardImageView = CardImageView(
             image: cardImage,
