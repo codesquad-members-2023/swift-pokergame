@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4226F3429CAA8B4002A0AC3 /* PokerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4226F3329CAA8B4002A0AC3 /* PokerError.swift */; };
 		F42DDF0929BEB66C00B0DFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42DDF0829BEB66C00B0DFBE /* AppDelegate.swift */; };
 		F42DDF0B29BEB66C00B0DFBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42DDF0A29BEB66C00B0DFBE /* SceneDelegate.swift */; };
 		F42DDF0D29BEB66C00B0DFBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42DDF0C29BEB66C00B0DFBE /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4226F3329CAA8B4002A0AC3 /* PokerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerError.swift; sourceTree = "<group>"; };
 		F42DDF0529BEB66C00B0DFBE /* PokerGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42DDF0829BEB66C00B0DFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F42DDF0A29BEB66C00B0DFBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				F442291029C807FE00CBF0CD /* CardDeck.swift */,
 				F442291229C8082A00CBF0CD /* Array_Extension.swift */,
 				F442291629C80A3000CBF0CD /* PokerGame.swift */,
+				F4226F3329CAA8B4002A0AC3 /* PokerError.swift */,
 				F4E1AD5729C1DF1400E999F3 /* Card.swift */,
 				F4E1AD5529C1DF0900E999F3 /* OutputManager.swift */,
 				F42DDF0E29BEB66C00B0DFBE /* Main.storyboard */,
@@ -161,6 +164,7 @@
 				F442291729C80A3000CBF0CD /* PokerGame.swift in Sources */,
 				F442291329C8082A00CBF0CD /* Array_Extension.swift in Sources */,
 				F42DDF0B29BEB66C00B0DFBE /* SceneDelegate.swift in Sources */,
+				F4226F3429CAA8B4002A0AC3 /* PokerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

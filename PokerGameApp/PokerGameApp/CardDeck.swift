@@ -33,8 +33,9 @@ struct CardDeck {
     cards.myShuffle()
   }
   
-  mutating func removeOne() -> Card? {
-    cards.isEmpty ? nil : cards.removeLast()
+  mutating func removeOne() throws -> Card {
+    guard cards.isEmpty == false else { throw PokerError.EmptyDeck }
+    return cards.removeLast()
   }
   
   mutating func reset() {
