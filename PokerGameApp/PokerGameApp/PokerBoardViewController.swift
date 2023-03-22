@@ -42,4 +42,12 @@ final class PokerBoardViewController: UIViewController {
         }
         self.view.backgroundColor = UIColor(patternImage: pokerBoardBackground)
     }
+    private func renderCardImageView(with cardImage: UIImage?, width: CGFloat, origin: CGPoint) {
+        let cardImageView = CardImageView(
+            image: cardImage,
+            width: width,
+            origin: origin
+        )
+        self.view.addSubview(cardImageView)
+    }
 }
