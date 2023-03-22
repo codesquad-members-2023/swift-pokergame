@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: image)
     }
     private func setCardBack(cardCount: Int) {
-        var positionX: CGFloat = 2.5
+        var positionX: CGFloat = 2
         let positionY: CGFloat = 59
         let spacing: CGFloat = 2.5
         let spaceCount: CGFloat = 8
