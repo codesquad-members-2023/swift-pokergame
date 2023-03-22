@@ -44,6 +44,6 @@ enum Rank: Int, CaseIterable, Hashable {
 
 extension Card: CustomStringConvertible {
     var description: String {
-        "\(shape)\(rank)"
+        "\(shape.rawValue)\(rank.rawValue)"
     }
 }
