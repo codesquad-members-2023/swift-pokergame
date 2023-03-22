@@ -13,6 +13,7 @@
 		4FBD661A29BEFF1000B372BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD661829BEFF1000B372BB /* LaunchScreen.storyboard */; };
 		4FBD663D29C2F24F00B372BB /* PokerBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD663C29C2F24E00B372BB /* PokerBoardViewController.swift */; };
 		4FBD664329C3105500B372BB /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD664229C3105500B372BB /* ImageAsset.swift */; };
+		4FD979AA29C8043D0041D5E8 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD979A929C8043C0041D5E8 /* CardImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4FBD661B29BEFF1000B372BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FBD663C29C2F24E00B372BB /* PokerBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerBoardViewController.swift; sourceTree = "<group>"; };
 		4FBD664229C3105500B372BB /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		4FD979A929C8043C0041D5E8 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4FBD664129C3104A00B372BB /* Asset */,
 				4FBD660D29BEFF0E00B372BB /* AppDelegate.swift */,
 				4FBD660F29BEFF0E00B372BB /* SceneDelegate.swift */,
+				4FD979A929C8043C0041D5E8 /* CardImageView.swift */,
 				4FBD663C29C2F24E00B372BB /* PokerBoardViewController.swift */,
 				4FBD661629BEFF1000B372BB /* Assets.xcassets */,
 				4FBD661829BEFF1000B372BB /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD979AA29C8043D0041D5E8 /* CardImageView.swift in Sources */,
 				4FBD660E29BEFF0E00B372BB /* AppDelegate.swift in Sources */,
 				4FBD663D29C2F24F00B372BB /* PokerBoardViewController.swift in Sources */,
 				4FBD664329C3105500B372BB /* ImageAsset.swift in Sources */,
