@@ -44,10 +44,19 @@ class GameBoardViewController: UIViewController {
         }
         cardStackView.frame = CGRect(x: cardLeftTopX, y: cardRightTopY, width: viewWidth, height: cardWidth)
         self.view.addSubview(cardStackView)
-
-           
-        print(heartQ.description)
-
+        
+        print("카드 전체를 초기화 했습니다")
+        print("총 \(deck.count())장의 카드가 있습니다")
+        print("카드 하나 뽑기")
+        print(deck.removeOne() ?? "카드가 없습니다" )
+        print("총 \(deck.count())장의 카드가 있습니다")
+        deck.reset()
+        print("카드 전체를 초기화 했습니다")
+        print("총 \(deck.count())장의 카드가 있습니다")
+        print(deck)
+        print("덱을 셔플합니다")
+        deck.shuffle()
+        print(deck)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -55,7 +64,7 @@ class GameBoardViewController: UIViewController {
     }
     
     var heartQ = PokerCard(suit: .spade, rank: .K)
-    
+    var deck = CardDeck()
 }
 
 
