@@ -120,6 +120,32 @@ var sut : test대상
 
  * XCTAssertEqual 말고도 많다. 쓰임새에 따라 다른걸 써보도록 하자. 
 
+ ```swift
+// Commonly used XCTest methods in Swift Unit Testing
+
+XCTAssert(condition: Bool, _ message: String = "") 
+// 이 메소드는 지정된 조건이 참인지 확인. 조건이 거짓이면 테스트가 실패합.
+
+XCTAssert(condition:!condition, message)
+XCTAssertFalse(condition: Bool, _ message: String = "")
+// 테스트를 통과하려면 조건이 거짓이어야 한다.
+
+XCTAssertEqual<T: Equatable>(_ expression1: @autoclosure () throws -> T, _ expression2: @autoclosure () throws -> T, _ message: String = "")
+// 이 메소드는 두 expression이 동일한지 확인한다. 이 값이 동일하지 않으면 테스트가 실패한다.
+
+XCTAssertNotEqual<T: Equatable>(_ expression1: @autoclosure () throws -> T, _ expression2: @autoclosure () throws -> T, _ message: String = "")
+// 이 메소드는 두 expression이 동일하지 않은지 확인한다. 이 값이 동일하면 테스트가 실패한다.
+
+XCTAssertNil(_ expression: @autoclosure () throws -> Any?, _ message: String = "")
+// 이 메소드는 expression이 nil인지 확인한다. expression이 nil이 아닐 경우 테스트가 실패한다.
+
+XCTAssertNotNil(_ expression: @autoclosure () throws -> Any?, _ message: String = "")
+// 이 메소드는 expression이 nil이 아닌지 확인한다. expression이 nil일 경우 테스트가 실패한다.
+
+XCTAssertThrowsError(_ expression: @autoclosure () throws -> Any, _ message: String = "")
+// 이 메소드는 expression이 error를 throw 하는지 확인한다. 만약 error를 throw하지 않으면 테스트가 실패한다.
+ ```
+
 ### 4) Faking Objects and Interactions
 
 * 대부분의 앱은 제어할 수 없는 시스템 또는 라이브러리 개체와 상호 작용한다. 이러한 개체와 상호 작용하는 테스트는 느리고 반복 불가능하여 FIRST 원칙 중 두 가지를 위반할 수 있다. 대신 Stub 에서 입력을 받거나 모의 개체를 업데이트하여 상호 작용을 가짜로 만들 수 있다.
