@@ -15,14 +15,6 @@ class Card {
         cardSuit = suit
         cardRank = rank
     }
-    
-    func getSuit() -> Suits {
-        return cardSuit
-    }
-    
-    func getRank() -> Ranks {
-        return cardRank
-    }
 }
 
 extension Card: CustomStringConvertible {
