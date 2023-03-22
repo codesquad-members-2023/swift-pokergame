@@ -19,6 +19,11 @@ class PokerGame {
             gameStyle = .FiveCardStud
         }
     }
+    
+    func addPlayer() {
+        guard players.count < 5 else { return }
+        players.append(Player())
+    }
 }
 
 enum GameStyle {
