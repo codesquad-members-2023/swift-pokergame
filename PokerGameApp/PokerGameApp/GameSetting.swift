@@ -35,9 +35,13 @@ class GameSetting {
         for _ in 0...numberOfPlayer-1 {
             self.playerList.append(Participant())
         }
-        self.playerList.append(Dealer(Deck()))    }
-    
-    func setNumberOfPlayer() {
+        self.playerList.append(Dealer(Deck()))
         
+    }
+    
+    func isValidNumberOfPlayer(_ num : Int){
+        guard num >= 1 else {
+            exit(0)
+        }
     }
 }
