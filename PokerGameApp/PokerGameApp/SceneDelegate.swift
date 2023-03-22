@@ -20,7 +20,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = PokerBoardViewController()
+        window.rootViewController = PokerBoardViewController(cardsPerRow: 7, numberOfCards: 7)
         window.makeKeyAndVisible()
         self.window = window
     }
