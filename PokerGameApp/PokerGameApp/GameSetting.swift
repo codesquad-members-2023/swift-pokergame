@@ -25,10 +25,11 @@ class GameSetting {
     let numberOfPlayer : Int
     var playerList : [Player]
     
-    init(_ mode : Mode ){
+    init(_ mode : Mode , _ numberOfPlayer : Int){
         self.mode = mode
-        self.numberOfPlayer = 0
+        self.numberOfPlayer = numberOfPlayer
         self.playerList = []
+        self.isValidNumberOfPlayer(self.numberOfPlayer)
     }
     
     func setPlayer () {
