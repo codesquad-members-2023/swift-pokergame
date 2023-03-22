@@ -9,6 +9,9 @@ import UIKit
 
 final class PokerBoardViewController: UIViewController {
     
+    private let cardsPerRow: Int
+    private let numberOfCards: Int
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
