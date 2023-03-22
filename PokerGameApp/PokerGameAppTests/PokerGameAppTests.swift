@@ -30,23 +30,16 @@ final class PokerGameAppTests: XCTestCase {
     }
     
     func testSetPlayer() {
-        let numberOfPlayer : Int = 1
-        var count = 0
-        var itIsParticipant : Bool
-        var itIsDealer : Bool
-        sut = GameSetting(.fiveStud, numberOfPlayer)
-        
-        
-        sut.setPlayer()
-        
-        for player in sut.playerList {
-            itIsParticipant = type(of: player) == (Participant.self)
-            itIsDealer = type(of: player) == (Dealer.self)
+        for numberOfPlayer in 1...4{
+            sut = GameSetting(.fiveStud, numberOfPlayer)
             
-            XCTAssertTrue(itIsParticipant || itIsDealer)
-            count += 1
+            sut.setPlayer()
+            
+            let participantCount = sut.playerList.filter { $0 is Participant }.count
+            let dealerCount = sut.playerList.filter { $0 is Dealer }.count
+            
+            XCTAssertEqual(participantCount + dealerCount, numberOfPlayer + 1 )
         }
-        
-        XCTAssertEqual(sut.playerList.count, count , "다시해라.")
     }
+
 }
