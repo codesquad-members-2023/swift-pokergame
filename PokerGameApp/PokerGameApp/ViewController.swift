@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     configure()
     addCards(ofRatio: cardAspectRatio, numberOfCard: 7, withInset: 1.0)
     
-//    testCards()
     testGame()
   }
   
@@ -86,6 +85,12 @@ class ViewController: UIViewController {
       "카드 하나 뽑기",
       "카드 하나 뽑기",
     ]
-    game.test(scenario: scenario)
+    
+    let scenario2 = [
+      "카드 초기화",
+      "카드 섞기",
+    ] + Array(repeating: "카드 하나 뽑기", count: 55)
+    
+    game.test(scenario: scenario2)
   }
 }
