@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A477CA129C846DF00351B5B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A477CA029C846DF00351B5B /* Card.swift */; };
+		2A477CA329CAC44500351B5B /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A477CA229CAC44500351B5B /* CardDeck.swift */; };
 		2AE2270329BF0EB1006EFBA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2270229BF0EB1006EFBA4 /* AppDelegate.swift */; };
 		2AE2270529BF0EB1006EFBA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2270429BF0EB1006EFBA4 /* SceneDelegate.swift */; };
 		2AE2270729BF0EB1006EFBA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2270629BF0EB1006EFBA4 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2A477CA029C846DF00351B5B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		2A477CA229CAC44500351B5B /* CardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
 		2AE226FF29BF0EB1006EFBA4 /* PokerGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE2270229BF0EB1006EFBA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AE2270429BF0EB1006EFBA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				2AE2270429BF0EB1006EFBA4 /* SceneDelegate.swift */,
 				2AE2270629BF0EB1006EFBA4 /* ViewController.swift */,
 				2A477CA029C846DF00351B5B /* Card.swift */,
+				2A477CA229CAC44500351B5B /* CardDeck.swift */,
 				2AE2270829BF0EB1006EFBA4 /* Main.storyboard */,
 				2AE2270B29BF0EB4006EFBA4 /* Assets.xcassets */,
 				2AE2270D29BF0EB4006EFBA4 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE2270729BF0EB1006EFBA4 /* ViewController.swift in Sources */,
+				2A477CA329CAC44500351B5B /* CardDeck.swift in Sources */,
 				2A477CA129C846DF00351B5B /* Card.swift in Sources */,
 				2AE2270329BF0EB1006EFBA4 /* AppDelegate.swift in Sources */,
 				2AE2270529BF0EB1006EFBA4 /* SceneDelegate.swift in Sources */,
