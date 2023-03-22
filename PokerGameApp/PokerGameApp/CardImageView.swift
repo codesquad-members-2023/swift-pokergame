@@ -9,6 +9,8 @@ import UIKit
 
 final class CardImageView: UIImageView {
     
+    private let heightScaleRatio: CGFloat = 1.27
+    
     override init(image: UIImage?) {
         super.init(image: image)
     }
