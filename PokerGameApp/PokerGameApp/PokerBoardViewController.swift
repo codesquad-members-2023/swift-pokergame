@@ -31,6 +31,11 @@ final class PokerBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupViewControllerUIAttribute()
+        self.renderSubViews()
+    }
+    
+    private func setupViewControllerUIAttribute() {
         self.setupBackgroundColor()
     }
     
@@ -42,6 +47,11 @@ final class PokerBoardViewController: UIViewController {
         }
         self.view.backgroundColor = UIColor(patternImage: pokerBoardBackground)
     }
+    
+    private func renderSubViews() {
+        self.renderCardImageViews(startAt: CGPoint(x: 20, y: 60), offset: 5)
+    }
+    
     private func renderCardImageViews(startAt startCardOrigin: CGPoint, offset: CGFloat) {
         let cardBackImage = ImageAsset.load(from: .cardBack)
         let cardWidth = self.calculateCardImageViewWidth(startAt: startCardOrigin.x, offset: offset)
