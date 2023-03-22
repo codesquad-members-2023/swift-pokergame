@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Deck {
-    private var cards: [Card]
+struct Deck: CardDeck {
+    var cards: [Card]
     
     init() {
         self.cards = []
@@ -53,62 +53,5 @@ struct Deck {
                 cards.append(card)
             }
         }
-    }
-}
-
-// 테스트 코드
-extension Deck {
-    mutating func test() -> Bool {
-        var results = [Bool]()
-        results.append(test_reset())
-        results.append(test_shuffle())
-        results.append(test_removeOne())
-        for result in results {
-            print(result)
-        }
-        return test_reset() && test_shuffle() && test_removeOne()
-    }
-    
-    mutating func test_reset() -> Bool {
-        var cardDict: [Card:Int] = [:]
-        
-        self.reset()
-        for card in cards {
-            // deck을 reset하고 하나씩 딕셔너리에 넣는다. 이미 있으면(Dict[Card] != nil 이면) false
-            // 모든 카드의 종류가 52개인지 확인한다. cardDict.count = 52 여야함..
-            if cardDict[card] == nil {
-                cardDict[card] = 1
-            } else {
-                // 같은 종류의 카드가 한 장 이상이 되어 테스트를 실패하는 경우
-                return false
-            }
-        }
-        return cardDict.count == 52
-    }
-    
-    mutating func test_removeOne() -> Bool {
-        let lastCard = cards.last
-        let removedCard = self.removeOne()
-        return lastCard == removedCard
-    }
-    
-    mutating func test_shuffle() -> Bool {
-        // 10번을 셔플작업을 반복한다.
-        // 결과가 모두 다르다면, 정상적으로 동작한다고 판단한다.
-        // 카드 수가 적으면 테스트 결과가 틀리기 쉽다.
-        var shuffledCases: [[Card]] = [cards]
-        
-        for _ in 0..<10 {
-            cards.shuffle()
-            let newShuffledCase = cards
-            shuffledCases.append(newShuffledCase)
-        }
-        
-        for i in 0..<shuffledCases.count - 1 {
-            for j in i+1..<shuffledCases.count {
-                if shuffledCases[i] == shuffledCases[j] { return false }
-            }
-        }
-        return true
     }
 }
