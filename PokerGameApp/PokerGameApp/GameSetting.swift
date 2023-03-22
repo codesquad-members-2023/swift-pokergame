@@ -22,18 +22,18 @@ class GameSetting {
         }
     }
     let mode : Mode
-    let numberOfPlayer : Int
+    let numberOfParticipant : Int
     var playerList : [Player]
     
-    init(_ mode : Mode , _ numberOfPlayer : Int){
+    init(_ mode : Mode , _ numberOfParticipant : Int){
         self.mode = mode
-        self.numberOfPlayer = numberOfPlayer
+        self.numberOfParticipant = numberOfParticipant
         self.playerList = []
-        self.isValidNumberOfPlayer(self.numberOfPlayer)
+        self.isValidNumberOfPlayer(self.numberOfParticipant)
     }
     
     func setPlayer () {
-        for _ in 0...numberOfPlayer-1 {
+        for _ in 0...numberOfParticipant-1 {
             self.playerList.append(Participant())
         }
         self.playerList.append(Dealer(Deck()))
