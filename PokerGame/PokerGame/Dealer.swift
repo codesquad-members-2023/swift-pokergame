@@ -8,10 +8,21 @@
 import Foundation
 
 class Dealer {
-    var pokerGameDelegate: PokerGame?
-    var deck: Deck = .init()
+    private var pokerGameDelegate: PokerGame?
+    private var deck: Deck = .init()
     
-    func toggleGameStyle() {
-        pokerGameDelegate?.toggleGameStyle()
+    func startGame() {
+        let gameStyle = pokerGameDelegate?.gameStyle
+        shuffleDeck()
+        dealCards()
+    }
+    
+    // 카드 나누어주기
+    private func dealCards() {
+
+    }
+    
+    private func shuffleDeck() {
+        deck.shuffle()
     }
 }

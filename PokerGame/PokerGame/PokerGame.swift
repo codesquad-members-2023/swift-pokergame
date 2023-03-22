@@ -28,9 +28,14 @@ class PokerGame {
             players.append(Player())
         }
     }
+    
+    func startGame(playerCount: Int) {
+        addPlayer(playerCount)
+        dealer?.startGame()
+    }
 }
 
-enum GameStyle {
-    case FiveCardStud
-    case SevenCardStud
+enum GameStyle: Int {
+    case FiveCardStud = 5
+    case SevenCardStud = 7
 }
