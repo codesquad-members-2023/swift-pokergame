@@ -67,6 +67,8 @@ self.view.addSubview(diaView)
 
  일때 나는 묻지도 따지지도 않고 Struct로 간다. 
  
+ ## +) Deck 같은 넣었다 뺐다 mutating을 많이 쓰는 경우 , Struct로 쓰는 장점이 없다. 
+ 
 ### 두 타입의 차이점 
 - 구조체는 value type, 클래스는 reference type 입니다.
 
