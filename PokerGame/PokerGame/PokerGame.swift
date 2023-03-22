@@ -9,6 +9,7 @@ import Foundation
 
 class PokerGame {
     weak var dealer: Dealer?
+    var players: [Player] = []
     var gameStyle: GameStyle = .FiveCardStud
     
     func toggleGameStyle() {
