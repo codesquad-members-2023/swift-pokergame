@@ -20,9 +20,13 @@ class PokerGame {
         }
     }
     
-    func addPlayer() {
-        guard players.count < 5 else { return }
-        players.append(Player())
+    func addPlayer(_ count: Int) {
+        var count = count
+        if count > 5 { count = 4 }
+        
+        for _ in 0..<count {
+            players.append(Player())
+        }
     }
 }
 
