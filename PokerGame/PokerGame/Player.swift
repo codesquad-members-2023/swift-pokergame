@@ -8,12 +8,16 @@
 import Foundation
 
 class Player {
-    var name: String
-    var cards: [Card]
+    let name: String
+    private var cards: [Card]
     
     init() {
         name = Player.generateRandomName()
         cards = []
+    }
+    
+    func getCard(_ card: Card) {
+        cards.append(card)
     }
 }
 
