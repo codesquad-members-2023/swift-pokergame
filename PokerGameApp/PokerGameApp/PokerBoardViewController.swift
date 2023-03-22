@@ -16,6 +16,19 @@ final class PokerBoardViewController: UIViewController {
         return .lightContent
     }
     
+    init(cardsPerRow: Int, numberOfCards: Int) {
+        self.cardsPerRow = cardsPerRow
+        self.numberOfCards = numberOfCards
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        self.cardsPerRow = 0
+        self.numberOfCards = 0
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupBackgroundColor()
