@@ -10,28 +10,25 @@ import Foundation
 struct CardDeck {
     private var cardList = [Card]()
     
-    func count() {
-        print("\n=> 총 \(cardList.count)장의 카드가 남아 있습니다.\n")
+    func count() -> Int {
+        return cardList.count
     }
     
     mutating func shuffle() { // Knuth Shuffle 구현
-        print("> 카드 섞기 \n\(cardList.count)장의 카드를 섞었습니다.\n")
         for i in 0 ..< (cardList.count - 1) {
             let randomIndex = Int.random(in: i ..< cardList.count)
             cardList.swapAt(i, randomIndex)
         }
-        printCardList(cardList: cardList)
     }
     
-    mutating func removeOne() {
+    mutating func removeOne() -> Card {
         let index = cardList.count - 1
-        print("> 카드 하나 뽑기\n= \(cardList[index])\n")
+        let removedCard = cardList[index]
         cardList.removeLast()
-        printCardList(cardList: cardList)
+        return removedCard
     }
     
     mutating func reset() {
-        print("> 카드 초기화 \n카드 전체를 초기화 했습니다.\n")
         if !cardList.isEmpty { cardList.removeAll() }
         for suit in Suits.allCases {
             for rank in Ranks.allCases {
@@ -39,14 +36,5 @@ struct CardDeck {
                 cardList.append(card)
             }
         }
-        printCardList(cardList: cardList)
-    }
-    
-    private func printCardList(cardList: Array<Card>) {
-        print("> 카드 목록")
-        for card in cardList {
-            print(card, terminator: " ")
-        }
-        count()
     }
 }
