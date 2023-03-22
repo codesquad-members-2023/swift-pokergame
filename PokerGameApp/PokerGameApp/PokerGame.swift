@@ -33,7 +33,10 @@ struct PokerGame {
       cardDeck.shuffle()
       print("전체 \(cardDeck.count)장의 카드를 섞었습니다.\n")
     case "카드 하나 뽑기":
-      guard let selected = cardDeck.removeOne() else { break }
+      guard let selected = cardDeck.removeOne() else {
+        print("덱이 비어있기 때문에 카드를 뽑을 수 없습니다. 덱을 초기화해야 합니다.\n")
+        break
+      }
       OutputManager().printInfo(ofCard: selected)
       print("총 \(cardDeck.count)장의 카드가 남아있습니다.\n")
     default:
