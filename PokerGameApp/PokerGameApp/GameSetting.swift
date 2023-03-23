@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GameSetting : GameController {
+class GameSetting  {
     enum Mode {
         case fiveStud
         case sevenStud
