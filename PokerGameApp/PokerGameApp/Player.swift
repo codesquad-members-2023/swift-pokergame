@@ -32,6 +32,6 @@ extension Player: CustomStringConvertible {
             result += card.description
             result += " "
         }
-        return result
+        return "\(self.name) : " + result
     }
 }
