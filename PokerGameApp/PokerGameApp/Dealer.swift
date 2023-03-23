@@ -21,16 +21,25 @@ class Dealer : Player {
         self.gameDeck.shuffle()
     }
     
-    func deal(to player : Player) {
+    func draw() -> [Card]? {
         let numberOfDrawedCard = dealHowManyCardByMode()
         var drawedCard : [Card] = []
         
         for _ in 0...numberOfDrawedCard-1 {
             guard let item = self.gameDeck.removeOne() else{
-                return
+                return nil
             }
             drawedCard.append(item)
         }
+        return drawedCard
+    }
+    
+    func give() {
+        
+    }
+    
+    func deal() {
+        
     }
     
     func dealHowManyCardByMode() -> Int{
