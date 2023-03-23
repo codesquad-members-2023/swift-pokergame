@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         setCardBack(cardCount: 7)
         let oneCard = Card(suit: .spades, rank: .queen)
         print(oneCard)
+        printTestScenario()
     }
     private func setBackground() {
         guard let image = UIImage(named: "bg_pattern") else { return }
@@ -37,5 +38,22 @@ class ViewController: UIViewController {
             view.addSubview(cardImageView)
             positionX += cardWidth + spacing
         }
+    }
+    private func printTestScenario() {
+        var testScenario = CardDeck()
+        
+        print("카드 초기화")
+        testScenario.reset()
+        print("총 \(testScenario.cardCount)장의 카드가 있습니다")
+        
+        print("카드 섞기")
+        testScenario.shuffle()
+        print("전체 \(testScenario.cardCount)장의 카드를 섞었습니다")
+        
+        guard let testCard = testScenario.removeOne() else { return }
+        
+        print("카드 하나 뽑기")
+        print("\(testCard)")
+        print("총 \(testScenario.cardCount)장의 카드가 남아있습니다")
     }
 }
