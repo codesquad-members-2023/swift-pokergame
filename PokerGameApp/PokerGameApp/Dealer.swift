@@ -59,8 +59,11 @@ class Dealer : Player {
         }
     }
     
-    func dealHowManyCardByMode() -> Int{
+    private func deciseNumberOfCardByMode() -> Int{
         return self.gameMode.numberOfCard()
     }
     
 }
+
+
+
