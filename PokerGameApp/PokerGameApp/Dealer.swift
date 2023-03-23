@@ -19,7 +19,10 @@ class Dealer : Player {
         self.name = "Dealer"
     }
     
-    func shuffle() {
+    func work() {
+        shuffle()
+        deal()
+    }
         self.gameDeck.shuffle()
     }
     
