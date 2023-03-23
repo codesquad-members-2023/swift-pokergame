@@ -11,6 +11,7 @@ class Dealer : Player {
     private var gameDeck : Deck
     private var gameMode : GameSetting.Mode
     
+    
     init(_ gameDeck : Deck,_ gameMode : GameSetting.Mode) {
         self.gameDeck = gameDeck
         self.gameMode = gameMode
@@ -39,10 +40,16 @@ class Dealer : Player {
     }
     
     func deal() {
-        
+        for player in playerList {
+            guard let cards = draw() else {
+                return
+            }
+            give(cards, to: player)
+        }
     }
     
     func dealHowManyCardByMode() -> Int{
         return self.gameMode.numberOfCard()
     }
+    
 }

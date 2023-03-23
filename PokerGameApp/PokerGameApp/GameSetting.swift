@@ -48,4 +48,11 @@ class GameSetting : GameController {
             exit(0)
         }
     }
+    
+    func givePlayerListToPlayer() {
+        for player in self.playerList {
+            player.playerList = playerList
+        }
+    }
+    
 }

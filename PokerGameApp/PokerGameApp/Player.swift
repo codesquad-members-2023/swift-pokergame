@@ -9,15 +9,18 @@ import Foundation
 
 class Player {
     private var hand : [Card]
+    var playerList : [Player]
     var point : Int = 0
     
     init() {
         self.hand = []
+        self.playerList = [] 
     }
     
     func addCardsToHand(_ cards: [Card]) {
         self.hand.append(contentsOf: cards)
     }
+    
 }
 
 extension Player: CustomStringConvertible {
