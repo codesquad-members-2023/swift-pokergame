@@ -26,4 +26,11 @@ struct CardDeck {
         self.newCards = self.cards
     }
     
+    mutating func shuffle() {
+        for cardIndex in 0..<cardCount-1 {
+            let randomIndex = Int.random(in: cardIndex..<cardCount)
+            cards.swapAt(cardIndex, randomIndex)
+        }
+    }
+    
 }
