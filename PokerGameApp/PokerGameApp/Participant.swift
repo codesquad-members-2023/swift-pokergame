@@ -8,14 +8,13 @@
 import Foundation
 
 class Participant : Player {
-    var name : String
     
     override init(){
-        self.name = ""
         super.init()
+        self.name = setRandomName()
     }
     
-    func setRandomName() {
+    private func setRandomName() -> String {
         var name = ""
         let nameLength = Int.random(in: 2...5)
         
@@ -23,9 +22,10 @@ class Participant : Player {
             let randomOffset = UInt32.random(in: 0...25)
             let randomUnicodeScalar = UnicodeScalar("a").value + randomOffset
             guard let randomLetter = UnicodeScalar(randomUnicodeScalar) else {
-                return
+                return ""
             }
             name += String(randomLetter)
         }
+        return name
     }
 }

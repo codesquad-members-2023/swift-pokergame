@@ -11,16 +11,18 @@ class Player {
     private var hand : [Card]
     var playerList : [Player]
     var point : Int = 0
+    var name : String
     
     init() {
         self.hand = []
-        self.playerList = [] 
+        self.playerList = []
+        self.name = ""
     }
     
     func addCardsToHand(_ cards: [Card]) {
         self.hand.append(contentsOf: cards)
     }
-    
+
 }
 
 extension Player: CustomStringConvertible {

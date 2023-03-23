@@ -16,6 +16,7 @@ class Dealer : Player {
         self.gameDeck = gameDeck
         self.gameMode = gameMode
         super.init()
+        self.name = "Dealer"
     }
     
     func shuffle() {
