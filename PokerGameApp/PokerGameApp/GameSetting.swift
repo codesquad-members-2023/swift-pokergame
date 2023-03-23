@@ -29,9 +29,8 @@ class GameSetting  {
         self.mode = mode
         self.numberOfParticipant = numberOfParticipant
         self.playerList = []
-        super.init()
         
-        self.isValidNumberOfPlayer(self.numberOfParticipant)
+        self.ValidNumberOfPlayer(self.numberOfParticipant)
         
     }
     
@@ -39,16 +38,18 @@ class GameSetting  {
         for _ in 0..<numberOfParticipant {
             self.playerList.append(Participant())
         }
+        
         self.playerList.append(Dealer(Deck(), self.mode))
+        givePlayerListToPlayer()
     }
     
-    func isValidNumberOfPlayer(_ num : Int){
+    private func ValidNumberOfPlayer(_ num : Int){
         guard num >= 1 else {
             exit(0)
         }
     }
     
-    func givePlayerListToPlayer() {
+    private func givePlayerListToPlayer() {
         for player in self.playerList {
             player.playerList = playerList
         }
