@@ -23,6 +23,37 @@ class Player {
         self.hand.append(contentsOf: cards)
     }
 
+    func isHavingProblemInHand5Stud() -> Bool {
+        var allCardsInHandOfAllPlayer : [Card] = []
+        
+        for player in self.playerList {
+            guard player.hand.count == 5 else {
+                return true
+            }
+            allCardsInHandOfAllPlayer.append(contentsOf: player.hand)
+        }
+        
+        guard allCardsInHandOfAllPlayer.count == Set<Card>(allCardsInHandOfAllPlayer).count else {
+            return true
+        }
+        return false
+    }
+    
+    func isHavingProblemInHand7Stud() -> Bool {
+        var allCardsInHandOfAllPlayer : [Card] = []
+        
+        for player in self.playerList {
+            guard player.hand.count == 7 else {
+                return true
+            }
+            allCardsInHandOfAllPlayer.append(contentsOf: player.hand)
+        }
+        
+        guard allCardsInHandOfAllPlayer.count == Set<Card>(allCardsInHandOfAllPlayer).count else {
+            return true
+        }
+        return false
+    }
 }
 
 extension Player: CustomStringConvertible {
