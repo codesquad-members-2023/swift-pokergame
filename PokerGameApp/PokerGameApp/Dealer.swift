@@ -27,13 +27,13 @@ class Dealer : Player {
         return self.gameDeck.count() >= self.gameMode.numberOfCard() * self.playerList.count
     }
     
-    func draw() -> [Card]? {
-        let numberOfDrawedCard = dealHowManyCardByMode()
+    private func draw() -> [Card] {
+        let numberOfDrawedCard = deciseNumberOfCardByMode()
         var drawedCard : [Card] = []
         
         for _ in 0..<numberOfDrawedCard {
             guard let item = self.gameDeck.removeOne() else{
-                return nil
+                return []
             }
             drawedCard.append(item)
         }
