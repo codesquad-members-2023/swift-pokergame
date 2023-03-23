@@ -47,6 +47,8 @@ class Deck: CardDeck {
     
     // 모든 카드를 덱에 담는 함수. 순서가 정해져 있다.
     func reset() {
+        cards = []
+        
         for shape in Shape.allCases {
             for rank in Rank.allCases {
                 let card = Card(shape: shape, rank: rank)
