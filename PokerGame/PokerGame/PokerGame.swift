@@ -8,9 +8,16 @@
 import Foundation
 
 class PokerGame {
-    weak var dealer: Dealer?
-    var players: [Player] = []
-    var gameStyle: GameStyle = .FiveCardStud
+    var dealer: Dealer
+    var players: [Player]
+    var gameStyle: GameStyle
+    
+    init() {
+        dealer = Dealer()
+        players = []
+        gameStyle = .FiveCardStud
+        dealer.pokerGameDelegate = self
+    }
     
     func toggleGameStyle() {
         if gameStyle == .FiveCardStud {
@@ -22,7 +29,7 @@ class PokerGame {
     
     func addPlayer(_ count: Int) {
         var count = count
-        if count > 5 { count = 4 }
+        if count > 4 { count = 4 }
         
         for _ in 0..<count {
             players.append(Player())
@@ -31,7 +38,8 @@ class PokerGame {
     
     func startGame(playerCount: Int) {
         addPlayer(playerCount)
-        dealer?.startGame()
+//        dealer?.startGame()
+        dealer.startGame()
     }
     
     func endGame() {
