@@ -23,6 +23,8 @@ class Dealer : Player {
         shuffle()
         deal()
     }
+    
+    private func shuffle() {
         self.gameDeck.shuffle()
     }
     
