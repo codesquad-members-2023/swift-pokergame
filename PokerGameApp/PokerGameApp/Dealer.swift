@@ -40,7 +40,7 @@ class Dealer : Player {
         return drawedCard
     }
     
-    func give(_ cards: [Card],to gamer : Player ) {
+    private func give(_ cards: [Card],to gamer : Player ) {
         gamer.addCardsToHand(cards)
     }
     
