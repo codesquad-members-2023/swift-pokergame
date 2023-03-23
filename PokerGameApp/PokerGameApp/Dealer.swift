@@ -24,7 +24,10 @@ class Dealer : Player {
     }
     
     func isDealingPossible() -> Bool {
-        return self.gameDeck.count() >= self.gameMode.numberOfCard() * self.playerList.count
+        let numberOfCardInDeck = self.gameDeck.count()
+        let cardForEachHandByMode = self.gameMode.numberOfCard()
+        let numberOfPlayer = self.playerList.count
+        
     }
     
     private func draw() -> [Card] {
