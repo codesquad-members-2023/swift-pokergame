@@ -13,7 +13,7 @@ final class PokerGame_EddieTests: XCTestCase {
     override func setUpWithError() throws { }
     
     override func tearDownWithError() throws {}
-
+    
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -24,25 +24,21 @@ final class PokerGame_EddieTests: XCTestCase {
     }
     
     func testPokerGame_WhenUsingStartingGameWithFourPlayers_ShouldGivePlayers_Adequate_Number_Of_Cards() throws {
-//        let dealer = Dealer()
-//        dealer.pokerGameDelegate = sut
-//        sut.dealer = dealer
-        sut.startGame(playerCount: 4)
+        sut.startGame(with: 4)
+        testPlayersCardsCountIs(5)
         
-        if sut.gameStyle == .FiveCardStud {
+        sut.endGame()
+        sut.gameStyle = .SevenCardStud
+        sut.startGame()
+        testPlayersCardsCountIs(7)
+        
+        return XCTAssert(true)
+        
+        func testPlayersCardsCountIs(_ count: Int) {
             for player in sut.players {
                 let numberOfCards = player.cards.count
-                guard numberOfCards == 5 else { return XCTAssert(false, "Player got \(numberOfCards) cards. It must be 5")}
+                guard numberOfCards == count else { return XCTAssert(false, "Player got \(numberOfCards) cards. It must be \(count)")}
             }
         }
-        
-        if sut.gameStyle == .SevenCardStud {
-            for player in sut.players {
-                let numberOfCards = player.cards.count
-                guard numberOfCards == 7 else { return XCTAssert(false, "Player got \(numberOfCards) cards. It must be 7")}
-            }
-        }
-        
-        XCTAssert(true)
     }
 }
