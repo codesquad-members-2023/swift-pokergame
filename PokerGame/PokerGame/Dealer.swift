@@ -8,33 +8,33 @@
 import Foundation
 
 class Dealer {
-    private var pokerGameDelegate: PokerGame?
+    var pokerGameDelegate: PokerGame?
     private let deck: Deck = .init()
     
     func startGame() {
-        let gameStyle = pokerGameDelegate?.gameStyle
+        // TODO: ?? 뒤에 0으로 수정할 것
+        let initialCardCount = pokerGameDelegate?.gameStyle.rawValue ?? 5
         
         shuffleDeck()
-        dealInitialCards()
+        dealInitialCards(initialCardCount)
     }
     
     // gameStyle에 따라 필요한 수의 카드만큼 분배
-    private func dealInitialCards() {
+    private func dealInitialCards(_ count: Int) {
         guard let pokerGame: PokerGame = pokerGameDelegate else { return }
-        let initialCardsCount: Int = pokerGame.gameStyle.rawValue
         
         for player in pokerGame.players {
-            dealCard(To: player, count: initialCardsCount)
+            dealCard(To: player, count: count)
         }
     }
     
     // 덱에서 카드 뽑아 건내주기
     private func dealCard(To player: Player, count: Int = 1) {
-        guard deck.count() <= count else { endGame(); return }
+        guard deck.count() > count else { endGame(); return }
         
         for _ in 0..<count {
-            let card: Card? = deck.cards.popLast()
-            if card != nil { player.getCard(card!) }
+            let card: Card = deck.cards.popLast()!
+            player.getCard(card)
         }
     }
     
