@@ -44,15 +44,13 @@ class Dealer : Player {
         gamer.addCardsToHand(cards)
     }
     
-    func deal() {
-        if !isDealingPossible() {
+    private func deal() {
+        guard isDealingPossible() else {
             return
         }
         
         for player in playerList {
-            guard let cards = draw() else {
-                return
-            }
+            let cards = draw()
             give(cards, to: player)
         }
     }
