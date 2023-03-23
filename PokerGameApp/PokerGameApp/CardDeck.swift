@@ -37,4 +37,7 @@ struct CardDeck {
         return cards.popLast()
     }
     
+    mutating func reset() {
+        self.cards = self.newCards
+    }
 }
