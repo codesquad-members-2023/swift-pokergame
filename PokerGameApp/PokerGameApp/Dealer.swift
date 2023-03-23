@@ -34,8 +34,8 @@ class Dealer : Player {
         return drawedCard
     }
     
-    func give() {
-        
+    func give(_ cards: [Card],to gamer : Player ) {
+        gamer.addCardsToHand(cards)
     }
     
     func deal() {

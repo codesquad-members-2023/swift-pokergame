@@ -14,6 +14,10 @@ class Player {
     init() {
         self.hand = []
     }
+    
+    func addCardsToHand(_ cards: [Card]) {
+        self.hand.append(contentsOf: cards)
+    }
 }
 
 extension Player: CustomStringConvertible {
