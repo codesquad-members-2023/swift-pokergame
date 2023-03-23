@@ -28,6 +28,7 @@ class Dealer : Player {
         let cardForEachHandByMode = self.gameMode.numberOfCard()
         let numberOfPlayer = self.playerList.count
         
+        return numberOfCardInDeck >= cardForEachHandByMode * numberOfPlayer
     }
     
     private func draw() -> [Card] {
