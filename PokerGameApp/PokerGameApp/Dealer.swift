@@ -22,6 +22,10 @@ class Dealer : Player {
         self.gameDeck.shuffle()
     }
     
+    func isDealingPossible() -> Bool {
+        return self.gameDeck.count() >= self.gameMode.numberOfCard() * self.playerList.count
+    }
+    
     func draw() -> [Card]? {
         let numberOfDrawedCard = dealHowManyCardByMode()
         var drawedCard : [Card] = []
@@ -40,6 +44,10 @@ class Dealer : Player {
     }
     
     func deal() {
+        if !isDealingPossible() {
+            return
+        }
+        
         for player in playerList {
             guard let cards = draw() else {
                 return
