@@ -33,4 +33,8 @@ struct CardDeck {
         }
     }
     
+    mutating func removeOne() -> Card? {
+        return cards.popLast()
+    }
+    
 }
