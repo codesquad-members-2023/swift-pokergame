@@ -9,7 +9,7 @@ import Foundation
 
 class Player {
     let name: String
-    private var cards: [Card]
+    var cards: [Card]
     
     init() {
         name = Player.generateRandomName()
