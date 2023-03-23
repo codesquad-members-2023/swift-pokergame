@@ -19,6 +19,7 @@ class GameBoardViewController: UIViewController {
         setCardBack()
         printCardInfo()
         testDeck()
+        start() 
     }
     
     func setBackground () {
@@ -72,6 +73,11 @@ class GameBoardViewController: UIViewController {
         
         print("카드 몇 장?")
         print(myDeck.count())
+    }
+    
+    func start() {
+        let game = GameController()
+        game.run(mode: .sevenStud, numberOfParticipant: 3)
     }
 }
 
