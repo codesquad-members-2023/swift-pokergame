@@ -36,11 +36,10 @@ class GameSetting : GameController {
     }
     
     func setPlayer () {
-        for _ in 0...numberOfParticipant-1 {
+        for _ in 0..<numberOfParticipant {
             self.playerList.append(Participant())
         }
         self.playerList.append(Dealer(Deck(), self.mode))
-        
     }
     
     func isValidNumberOfPlayer(_ num : Int){

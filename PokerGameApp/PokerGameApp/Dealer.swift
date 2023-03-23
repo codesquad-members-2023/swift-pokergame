@@ -30,7 +30,7 @@ class Dealer : Player {
         let numberOfDrawedCard = dealHowManyCardByMode()
         var drawedCard : [Card] = []
         
-        for _ in 0...numberOfDrawedCard-1 {
+        for _ in 0..<numberOfDrawedCard {
             guard let item = self.gameDeck.removeOne() else{
                 return nil
             }

@@ -20,19 +20,13 @@ final class PokerGameAppTests: XCTestCase {
         try super.tearDownWithError()
     }
         
-    func testExample() throws {
-            
-    }
-    
-    func testPerformanceExample() throws {
-        measure {
-        }
-    }
     
     func testSetPlayer() {
+        // given
         let numberOfdealer = 1
         
-        for numberOfParticipant in 1...4{
+        for numberOfParticipant in 1...4 {
+            // when
             sut = GameSetting(.fiveStud, numberOfParticipant)
             
             sut.setPlayer()
@@ -40,6 +34,7 @@ final class PokerGameAppTests: XCTestCase {
             let participantCount = sut.playerList.filter { $0 is Participant }.count // 타입 체크
             let dealerCount = sut.playerList.filter { $0 is Dealer }.count
             
+            // then
             XCTAssertEqual(participantCount + dealerCount, numberOfParticipant + numberOfdealer ) // 개수 체크
         }
     }
