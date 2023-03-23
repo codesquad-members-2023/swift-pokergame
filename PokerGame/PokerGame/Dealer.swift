@@ -43,6 +43,7 @@ class Dealer {
     }
     
     private func endGame() {
+        deck.reset()
         pokerGameDelegate?.endGame()
     }
 }

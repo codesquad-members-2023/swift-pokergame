@@ -27,23 +27,33 @@ class PokerGame {
         }
     }
     
-    func addPlayer(_ count: Int) {
+    func configurePlayer(_ count: Int) {
         var count = count
         if count > 4 { count = 4 }
         
+        players = []
         for _ in 0..<count {
             players.append(Player())
         }
     }
     
-    func startGame(playerCount: Int) {
-        addPlayer(playerCount)
-//        dealer?.startGame()
+    func startGame() {
+        dealer.startGame()
+    }
+    
+    func startGame(with playerCount: Int) {
+        configurePlayer(playerCount)
         dealer.startGame()
     }
     
     func endGame() {
-        // 게임이 끝날 때 해야할 작업
+        removeDealtCards()
+    }
+    
+    func removeDealtCards() {
+        for player in players {
+            player.removeCards()
+        }
     }
 }
 

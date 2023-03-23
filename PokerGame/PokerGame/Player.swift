@@ -19,6 +19,10 @@ class Player {
     func getCard(_ card: Card) {
         cards.append(card)
     }
+    
+    func removeCards() {
+        cards = []
+    }
 }
 
 extension Player {
