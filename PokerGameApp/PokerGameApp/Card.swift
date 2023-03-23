@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Card { // 포커에 있어서 더이상 확장할 필요가 없는 객체라고 생각한 것이 가장 큰 이유.
+struct Card : Hashable { // 포커에 있어서 더이상 확장할 필요가 없는 객체라고 생각한 것이 가장 큰 이유.
     enum Shape : Character , CaseIterable {
         // 같은 주제로 연관된 데이터의 집합
         // 입력받을 값을 미리 특정할 수 있기에 Enum이 적합하다고 생각.
