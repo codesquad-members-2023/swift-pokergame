@@ -20,8 +20,11 @@ class ViewController: UIViewController {
         printCard(firstCard)
         printCard(secondCard)
         
-        var testDeck = Deck()
-        testDeck.test()
+        let deck = Deck()
+        let testResult = DeckTester.testPokerDeck(deck)
+        for result in testResult {
+            print("test result : \(result)")
+        }
     }
 }
 

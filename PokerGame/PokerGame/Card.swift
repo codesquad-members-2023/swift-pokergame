@@ -27,7 +27,8 @@ enum Shape: String, CaseIterable, Hashable {
 }
 
 enum Rank: Int, CaseIterable, Hashable {
-    case two = 2
+    case one = 1
+    case two
     case three
     case four
     case five
@@ -39,11 +40,10 @@ enum Rank: Int, CaseIterable, Hashable {
     case jack
     case queen
     case king
-    case ace
 }
 
 extension Card: CustomStringConvertible {
     var description: String {
-        "\(shape)\(rank)"
+        "\(shape.rawValue)\(rank.rawValue)"
     }
 }
