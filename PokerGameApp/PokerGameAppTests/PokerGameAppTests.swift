@@ -23,7 +23,7 @@ final class PokerGameAppTests: XCTestCase {
     }
         
     
-    func testSetPlayer() {
+    func testSetPlayer메소드_5스터드모드_모든인원수에대하여_생성한PlayerList의내용_의도한타입과개수가들어가면_성공() {
         // given
         let numberOfdealer = 1
         
@@ -41,7 +41,7 @@ final class PokerGameAppTests: XCTestCase {
         }
     }
     
-    func testGameController() {
+    func testPhaseController에서동작하는_dealPhase메소드가_모든플레이어에게_의도한타입과개수의카드를분배하면_성공() {
         
         sut2 = PhaseController()
         
