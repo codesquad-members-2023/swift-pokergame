@@ -37,7 +37,9 @@
 ## 학습
 
 [LEARNED.md](https://github.com/HG-SONG/swift-pokergame/blob/main/LEARNED.md) 에 정리하였다. 
- 
+
+[UnitTest.md](https://github.com/HG-SONG/swift-pokergame/blob/main/UnitTest.md) 에 정리하였다. 
+
 ## 구현
  
 ### STEP 1
@@ -123,3 +125,41 @@ i. Deck struct
  - func removeOne() : Deck에 들어있는 Card객체 1개를 return하고 제거한다. 즉, 카드를 뽑는 기능 
  - func shuffle() : Deck에 들어있는 Card객체를 섞어준다.  
  
+### STEP 4
+
+i. 클래스 다이어그램
+
+<img width="700" alt="스크린샷 2023-03-24 오전 11 09 23" src="https://user-images.githubusercontent.com/88966578/227406362-22b62959-2844-4167-a09b-96d864b5aca7.png">
+
+ii. 각 클래스별 역할
+
+* GameSetting : 게임을 시작할 때 필요한 정보들을 다룬다. 게임모드 , 플레이어 리스트 제어 등의 기능을 한다. 
+    
+* PhaseController : 게임의 전체적인 흐름을 다룬다. 
+    
+* Player : 게임에 참여하는 모든 플레이어들이 공통으로 가지는 옵션들을 다룬다. 각 게이머의 손에 들고있는 패는 private으로 선언하였고 , 나머지 실제 포커에서도 눈으로 확인할 수 있는 플레이어 리스트, 점수 등은 굳이 접근제어를 걸지 않았다. 
+
+  * Dealer : 플레이어 클래스를 수퍼클래스로 두고있는 클래스이며, 딜러 역할을 한다. 생성된 덱을 받아 섞고, 뽑고, 각 플레이어 에게 분배하는 역할을 한다. 
+  
+  * Participant : 플레이어 클래스를 수퍼클래스로 두고있는 클래스이며, 게임에 참여하는 게이머 중 딜러를 제외한 일반 게이머를 의미한다. 
+  
+* Card : 카드 역할 부여. 모양과 숫자에 대한 정보를 가지고 있다. 
+
+* Deck : 카드뭉치 역할 부여. [Card] 형태이며 이를 조작할 수 있는 기능을 모아놨다. 
+
+iii. UnitTest 
+
+* 테스트 대상 설정 
+ 
+ * STEP4에서 구현해야 할 내용을 요약하자면 , " 모드와 인원수에 따라 모든 플레이어에게 카드를 오류없이 분배하라 " 정도로 생각할 수 있다. 그렇다면 테스트에서 고려되어야 할 내용은 
+ 
+ 1) 5Stud , 7Stud 에서 
+ 2) 참가자 1명 ~ 4명 일 때 ,  
+ 3) 모든 플레이어의 hand에 카드들이 중복없이 
+ 4) 알맞은 개수로 들어갔는가 
+ 를 체크하면 된다고 판단했다. 
+ 
+ Player 클래스에 isHavingProblemInHand5Stud() , isHavingProblemInHand7Stud() 메소드를 추가하였고 , 이 두 메소드는 모드에 따라 맞는 개수가 player들에게 분배되었는지 , 분배된 카드 중에 중복된 카드가 있는지 체크하여 ***문제가 있다고 판단되면 true를 리턴한다.*** 모든 케이스가 이 메소드에서 false를 리턴하면 문제 없음. 테스트 통과.  
+
+
+

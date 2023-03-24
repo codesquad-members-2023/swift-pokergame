@@ -27,9 +27,6 @@ struct Deck {
         }
     }
     mutating func removeOne() -> Card? {
-        guard self.deck.isEmpty == false else {
-            return nil
-        }
         return self.deck.popLast()
     }
     
