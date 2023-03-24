@@ -41,7 +41,7 @@ final class PokerGameAppTests: XCTestCase {
         }
     }
     
-    func testPhaseController에서동작하는_dealPhase메소드가_모든플레이어에게_의도한타입과개수의카드를분배하면_성공() {
+    func test모든케이스에서_PhaseController에서동작하는_dealPhase메소드가_플레이어에게_의도한타입과개수의_카드를분배하면_성공() {
         
         sut2 = PhaseController()
         
