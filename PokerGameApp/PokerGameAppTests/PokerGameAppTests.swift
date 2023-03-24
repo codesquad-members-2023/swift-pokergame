@@ -10,7 +10,7 @@ import XCTest
 @testable import PokerGameApp
 final class PokerGameAppTests: XCTestCase {
     var sut1 : GameSetting!
-    var sut2 : GameController!
+    var sut2 : PhaseController!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -43,10 +43,10 @@ final class PokerGameAppTests: XCTestCase {
     
     func testGameController() {
         
-        sut2 = GameController()
+        sut2 = PhaseController()
         
         for numberOfParticipant in 1...4 {
-            let fiveStudResultPlayerList = sut2.run(mode: .fiveStud, numberOfParticipant: numberOfParticipant)
+            let fiveStudResultPlayerList = sut2.dealPhase(mode: .fiveStud, numberOfParticipant: numberOfParticipant)
             
             for index in 0...numberOfParticipant {
                 XCTAssertFalse(fiveStudResultPlayerList[index].isHavingProblemInHand5Stud())
@@ -55,7 +55,7 @@ final class PokerGameAppTests: XCTestCase {
         }
         
         for numberOfParticipant in 1...4 {
-            let fiveStudResultPlayerList = sut2.run(mode: .sevenStud, numberOfParticipant: numberOfParticipant)
+            let fiveStudResultPlayerList = sut2.dealPhase(mode: .sevenStud, numberOfParticipant: numberOfParticipant)
             
             for index in 0...numberOfParticipant {
                 XCTAssertFalse(fiveStudResultPlayerList[index].isHavingProblemInHand7Stud())
