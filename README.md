@@ -37,7 +37,9 @@
 ## 학습
 
 [LEARNED.md](https://github.com/HG-SONG/swift-pokergame/blob/main/LEARNED.md) 에 정리하였다. 
- 
+
+[UnitTest.md](https://github.com/HG-SONG/swift-pokergame/blob/main/UnitTest.md) 에 정리하였다. 
+
 ## 구현
  
 ### STEP 1
