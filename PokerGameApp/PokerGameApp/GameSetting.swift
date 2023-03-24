@@ -30,7 +30,7 @@ class GameSetting  {
         self.numberOfParticipant = numberOfParticipant
         self.playerList = []
         
-        self.ValidNumberOfPlayer(self.numberOfParticipant)
+        self.validNumberOfPlayer(self.numberOfParticipant)
         
     }
     
@@ -43,7 +43,7 @@ class GameSetting  {
         givePlayerListToPlayer()
     }
     
-    private func ValidNumberOfPlayer(_ num : Int){
+    private func validNumberOfPlayer(_ num : Int){
         guard num >= 1 else {
             exit(0)
         }
