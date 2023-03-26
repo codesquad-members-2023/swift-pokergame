@@ -16,5 +16,7 @@ class Player {
         self.cardDeck = cardDeck
     }
     
-    
+    func numberOfCards() -> Int {
+        return cardDeck.count
+    }
 }
