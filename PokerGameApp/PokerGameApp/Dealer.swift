@@ -10,5 +10,12 @@ import Foundation
 class Dealer {
     private var cardDeck = [Card?]()
 
-   
+    func cardDistribution(deck: CardDeck, numberOfCard: Int) -> [Card?] {
+        var cards = [Card?]()
+
+        for _ in 0 ..< numberOfCard {
+            if let card = deck.removeOne() { cards.append(card) }
+        }
+        return cards
+    }
 }
