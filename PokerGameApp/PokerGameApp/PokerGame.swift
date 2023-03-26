@@ -52,5 +52,13 @@ class PokerGame {
         deck.count() < numberOfCard * (playerCount + 1) ? true : false
     }
     
-    
+    func setPlayerName(randomNumber: Int) -> Set<String> {
+        var names = Set<String>()
+        
+        while true {
+            names.insert(playerNames.randomElement() ?? "")
+            if names.count == randomNumber { break }
+        }
+        return names
+    }
 }
