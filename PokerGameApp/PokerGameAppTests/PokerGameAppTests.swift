@@ -39,4 +39,21 @@ final class PokerGameAppTests: XCTestCase {
         XCTAssertTrue(isPokerGameEnded, "게임이 종료 되지 않음 : 최소 필요 카드 수 = \(numberOfCards * (numberOfPlayers + 1)), 현재 잔여 카드 수 = \(sut.checkRemainNumberOfCard())")
     }
     
+    func checkNumberOfCards(numberOfCards: Int, players: [Player], dealer: Dealer) -> Bool {
+        for player in players {
+            if numberOfCards != player.numberOfCards() {
+                isValidNumberOfCards = false
+                actualNumberOfCards = player.numberOfCards()
+                return isValidNumberOfCards
+            }
+        }
+        
+        if dealer.numberOfCards() != numberOfCards {
+            isValidNumberOfCards = false
+            return isValidNumberOfCards
+        }
+        
+        return isValidNumberOfCards
+    }
+    
 }
