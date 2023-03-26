@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Card {
+struct Card: Hashable {
     private var cardSuit: Suits
     private var cardRank: Ranks
     
