@@ -24,4 +24,8 @@ class Player {
         self.cardDeck.removeAll()
         self.cardDeck = cards
     }
+    
+    func cardList() -> [Card?] {
+        return cardDeck
+    }
 }
