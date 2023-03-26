@@ -42,4 +42,9 @@ class PokerGame {
             dealer.resetCards(cards: makeDeck())
         }
     }
+    
+    func makeDeck() -> [Card?] {
+        let deck = dealer.cardDistribution(deck: self.deck, numberOfCard: numberOfCard)
+        return deck
+    }
 }
