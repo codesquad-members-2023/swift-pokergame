@@ -17,4 +17,10 @@ final class PokerGameAppTests: XCTestCase {
     private var actualNumberOfCards = 0
     private let numberOfCards = 5
     private let numberOfPlayers = 4
+    
+    override func setUpWithError() throws {
+        sut = PokerGame(numberOfPlayers: numberOfPlayers, numberOfCards: numberOfCards)
+    }
+    
+    
 }
