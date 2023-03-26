@@ -19,4 +19,9 @@ class Player {
     func numberOfCards() -> Int {
         return cardDeck.count
     }
+    
+    func resetCards(cards: [Card?]) {
+        self.cardDeck.removeAll()
+        self.cardDeck = cards
+    }
 }
