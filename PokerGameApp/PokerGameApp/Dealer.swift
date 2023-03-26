@@ -23,5 +23,17 @@ class Dealer {
     func selfDistribution(deck: CardDeck, numberOfCard: Int) {
         self.cardDeck = cardDistribution(deck: deck, numberOfCard: numberOfCard)
     }
+    
+    func resetCards(cards: [Card?]) {
+        self.cardDeck.removeAll()
+        self.cardDeck = cards
+    }
 
+    func numberOfCards() -> Int {
+        return cardDeck.count
+    }
+
+    func cardList() -> [Card?] {
+        return cardDeck
+    }
 }
