@@ -22,5 +22,21 @@ final class PokerGameAppTests: XCTestCase {
         sut = PokerGame(numberOfPlayers: numberOfPlayers, numberOfCards: numberOfCards)
     }
     
+    func testPokerGame_WhenNumberOfCardAndPlayersProvided_ShouldReturnTrue() {
+        sut.setGame()
+        let players = sut.getPlayersAndDealer().player
+        let dealer = sut.getPlayersAndDealer().dealer
+        var totalNumberOfCard = 0
+        
+        isValidNumberOfPlayers = numberOfPlayers != players.count ? false : true
+        isValidNumberOfCards = checkNumberOfCards(numberOfCards: numberOfCards, players: players, dealer: dealer)
+        totalNumberOfCard = checkDuplicatedCard(players: players, dealer: dealer)
+        endGame()
+        
+        XCTAssertTrue(isValidNumberOfPlayers, "플레이어 인원 수 불일치 : 예상 인원 수 = \(numberOfPlayers), 실제 인원 수 = \(players.count)")
+        XCTAssertTrue(isValidNumberOfCards, "카드 수 불일치 : 예상 카드 수 = \(numberOfCards), 실제 플레이어 카드 수 = \(actualNumberOfCards == 0 ? sut.numberOfPlayerCard() : actualNumberOfCards ), 실제 딜러 카드 수 = \(dealer.numberOfCards())")
+        XCTAssertTrue(isThereNoDuplicatedCards, "중복되는 카드 존재 : 예상 카드 수 = \(numberOfCards * (numberOfPlayers + 1)), 실제 카드 수 = \(totalNumberOfCard)")
+        XCTAssertTrue(isPokerGameEnded, "게임이 종료 되지 않음 : 최소 필요 카드 수 = \(numberOfCards * (numberOfPlayers + 1)), 현재 잔여 카드 수 = \(sut.checkRemainNumberOfCard())")
+    }
     
 }
