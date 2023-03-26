@@ -39,3 +39,22 @@
 <img width="868" alt="Screenshot 2023-03-20 at 5 25 36 PM" src="https://user-images.githubusercontent.com/57861751/226285029-a1f9920f-989b-4d45-adb2-c9f0c51680cf.png">
 
 ### 완성 날짜 = 03.20
+
+### step4
+- [x] 새로운 클래스/구조체 설계
+    - [x] PokerGame
+    - [x] Dealer
+    - [x] Player
+- [x] XCTest 구현
+    - [x] 카드게임 방식, 인원수 지정하여 테스트 구현
+    - [x] 어떤 동작을 확인 할 것인가?
+        - [x] 지정한 카드수, 인원수대로 게임이 작동하는지
+        - [x] 카드가 부족할 경우 게임이 종료되는지
+    - [x] 어떤 값을 확인할 것인가?
+        - [x] 중복되는 카드 여부
+        - [x] 플레이어 인원 수
+        - [x] 1인당 배분되는 카드 수
+### 작업 결과 화면
+<img width="899" alt="Screenshot 2023-03-27 at 12 16 20 AM" src="https://user-images.githubusercontent.com/57861751/227786478-3095794a-8f2e-48af-8fbc-b1b27a1c346e.png">
+
+### 완성 날짜 = 03.27
