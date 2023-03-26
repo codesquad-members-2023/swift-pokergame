@@ -72,4 +72,16 @@ final class PokerGameAppTests: XCTestCase {
         
         return cardSet.count
     }
+    
+    func endGame() {
+        while true {
+            if sut.cardCheck() {
+                isPokerGameEnded = true
+                sut = nil
+                break
+            } else {
+                sut.setGame()
+            }
+        }
+    }
 }
