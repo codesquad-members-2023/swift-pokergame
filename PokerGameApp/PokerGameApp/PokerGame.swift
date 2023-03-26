@@ -23,4 +23,8 @@ class PokerGame {
         selectedNames = setPlayerName(randomNumber: numberOfPlayers)
         numberOfCard = numberOfCards
     }
+    
+    deinit {
+        print("> 카드가 부족합니다.\n게임이 종료됩니다.")
+    }
 }
