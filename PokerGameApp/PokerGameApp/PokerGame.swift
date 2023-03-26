@@ -27,4 +27,19 @@ class PokerGame {
     deinit {
         print("> 카드가 부족합니다.\n게임이 종료됩니다.")
     }
+    
+    func setGame() {
+        if players.isEmpty {
+            for name in selectedNames {
+                let player = Player(name: name, cardDeck: makeDeck())
+                players.append(player)
+            }
+            dealer.selfDistribution(deck: self.deck, numberOfCard: numberOfCard)
+        } else {
+            for player in players {
+                player.resetCards(cards: makeDeck())
+            }
+            dealer.resetCards(cards: makeDeck())
+        }
+    }
 }
