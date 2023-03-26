@@ -61,4 +61,16 @@ class PokerGame {
         }
         return names
     }
+    
+    func checkRemainNumberOfCard() -> Int {
+        deck.count()
+    }
+
+    func numberOfPlayerCard() -> Int {
+        return players.randomElement()?.numberOfCards() ?? 0
+    }
+
+    func getPlayersAndDealer() -> (player: [Player], dealer: Dealer) {
+        return (players, dealer)
+    }
 }
