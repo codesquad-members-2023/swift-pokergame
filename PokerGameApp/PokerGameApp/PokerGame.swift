@@ -47,4 +47,10 @@ class PokerGame {
         let deck = dealer.cardDistribution(deck: self.deck, numberOfCard: numberOfCard)
         return deck
     }
+    
+    func cardCheck() -> Bool {
+        deck.count() < numberOfCard * (playerCount + 1) ? true : false
+    }
+    
+    
 }
