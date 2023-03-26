@@ -56,4 +56,20 @@ final class PokerGameAppTests: XCTestCase {
         return isValidNumberOfCards
     }
     
+    func checkDuplicatedCard(players: [Player], dealer: Dealer) -> Int {
+        var cardList = dealer.cardList()
+        var cardSet = Set<Card?>()
+        
+        for player in players {
+            cardList += player.cardList()
+        }
+        
+        cardSet = Set(cardList)
+        
+        if cardSet.count != cardList.count {
+            isThereNoDuplicatedCards = false
+        }
+        
+        return cardSet.count
+    }
 }
