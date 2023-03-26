@@ -16,6 +16,12 @@ class Dealer {
         for _ in 0 ..< numberOfCard {
             if let card = deck.removeOne() { cards.append(card) }
         }
+        
         return cards
     }
+    
+    func selfDistribution(deck: CardDeck, numberOfCard: Int) {
+        self.cardDeck = cardDistribution(deck: deck, numberOfCard: numberOfCard)
+    }
+
 }
