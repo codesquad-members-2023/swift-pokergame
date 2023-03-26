@@ -17,4 +17,10 @@ class PokerGame {
     private var numberOfStud = [5, 7].randomElement()
     let playerNames = ["JK", "Honux", "Crong", "Chloe", "Demia", "Aiden", "Harim", "Wolve", "Effie", "Wood", "Eddie", "Haena", "Sol", "Noah"]
 
+    init(numberOfPlayers: Int, numberOfCards: Int) {
+        deck.reset()
+        deck.shuffle()
+        selectedNames = setPlayerName(randomNumber: numberOfPlayers)
+        numberOfCard = numberOfCards
+    }
 }
