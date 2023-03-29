@@ -9,79 +9,93 @@ import XCTest
 @testable import PokerGameApp
 
 final class PokerGameAppTests: XCTestCase {
-    private var sut: PokerGame!
-    private var isValidNumberOfCards = true
-    private var isValidNumberOfPlayers = true
-    private var isThereNoDuplicatedCards = true
-    private var isPokerGameEnded = false
-    private var actualNumberOfCards = 0
-    private let numberOfCards = 5
-    private let numberOfPlayers = 4
+    private var game: PokerGame!
+    private var players: [Participant]!
+    private var playersName: Set<String>!
+    private var dealer: Participant!
+    private var deck: CardDeck!
+    private var numberOfCards = Stud.fiveStud.setNumberOfCards()
+    private var numberOfPlayers = NumberOfPlayers.four.setNumberOfPlayers()
     
     override func setUpWithError() throws {
-        sut = PokerGame(numberOfPlayers: numberOfPlayers, numberOfCards: numberOfCards)
+        game = PokerGame(numberOfPlayers: self.numberOfPlayers, numberOfCards: self.numberOfCards)
+        playersName = game.setPlayerName(randomNumber: numberOfPlayers) // 게임 객체랑 다른 객체 여러개여도 상관없나?? 없을듯?
+        players = setParticipants(names: playersName)
+        dealer = Participant(name: "Dealer")
+        players.append(dealer)
+        deck = CardDeck()
+        dealCards()
     }
     
-    func testPokerGame_WhenNumberOfCardAndPlayersProvided_ShouldReturnTrue() {
-        sut.setGame()
-        let players = sut.getPlayersAndDealer().player
-        let dealer = sut.getPlayersAndDealer().dealer
-        var totalNumberOfCard = 0
-        
-        isValidNumberOfPlayers = numberOfPlayers != players.count ? false : true
-        isValidNumberOfCards = checkNumberOfCards(numberOfCards: numberOfCards, players: players, dealer: dealer)
-        totalNumberOfCard = checkDuplicatedCard(players: players, dealer: dealer)
-        endGame()
-        
-        XCTAssertTrue(isValidNumberOfPlayers, "플레이어 인원 수 불일치 : 예상 인원 수 = \(numberOfPlayers), 실제 인원 수 = \(players.count)")
-        XCTAssertTrue(isValidNumberOfCards, "카드 수 불일치 : 예상 카드 수 = \(numberOfCards), 실제 플레이어 카드 수 = \(actualNumberOfCards == 0 ? sut.numberOfPlayerCard() : actualNumberOfCards ), 실제 딜러 카드 수 = \(dealer.numberOfCards())")
-        XCTAssertTrue(isThereNoDuplicatedCards, "중복되는 카드 존재 : 예상 카드 수 = \(numberOfCards * (numberOfPlayers + 1)), 실제 카드 수 = \(totalNumberOfCard)")
-        XCTAssertTrue(isPokerGameEnded, "게임이 종료 되지 않음 : 최소 필요 카드 수 = \(numberOfCards * (numberOfPlayers + 1)), 현재 잔여 카드 수 = \(sut.checkRemainNumberOfCard())")
+    override func tearDownWithError() throws {
+        game = nil
+        players = nil
+        dealer = nil
+        deck = nil
     }
     
-    func checkNumberOfCards(numberOfCards: Int, players: [Player], dealer: Dealer) -> Bool {
+    func testPokerGame_WhenNumberOfCardAndPlayersProvided_ShouldReturnTrue() { // 이름 바꾸는거 고려해보기
+        XCTAssertEqual(players.count, numberOfPlayers + 1)
+        XCTAssertEqual(checkNumberofCards(numberOfCards: numberOfCards), true)
+        XCTAssertEqual(isThereDealer(), true)
+        XCTAssertEqual(isThereDuplicatedCardInDeck(), true)
+        XCTAssertEqual(isGameEnded(), true)
+    }
+    
+    func dealCards() {
+        for _ in 0 ..< numberOfCards {
+            players.forEach() { $0.setDeck(card: dealer.popCard(deck: deck)) }
+        }
+    }
+    
+    func setParticipants(names: Set<String>) -> [Participant] {
+        var players = [Participant]()
+        
+        for name in names {
+            players.append(Participant(name: name))
+        }
+        
+        return players
+    }
+    
+    func checkNumberofCards(numberOfCards: Int) -> Bool {
+        var isNumberOfCardCorrect = true
+        
         for player in players {
-            if numberOfCards != player.numberOfCards() {
-                isValidNumberOfCards = false
-                actualNumberOfCards = player.numberOfCards()
-                return isValidNumberOfCards
-            }
-        }
-        
-        if dealer.numberOfCards() != numberOfCards {
-            isValidNumberOfCards = false
-            return isValidNumberOfCards
-        }
-        
-        return isValidNumberOfCards
-    }
-    
-    func checkDuplicatedCard(players: [Player], dealer: Dealer) -> Int {
-        var cardList = dealer.cardList()
-        var cardSet = Set<Card?>()
-        
-        for player in players {
-            cardList += player.cardList()
-        }
-        
-        cardSet = Set(cardList)
-        
-        if cardSet.count != cardList.count {
-            isThereNoDuplicatedCards = false
-        }
-        
-        return cardSet.count
-    }
-    
-    func endGame() {
-        while true {
-            if sut.cardCheck() {
-                isPokerGameEnded = true
-                sut = nil
+            if player.numberOfCards() != numberOfCards {
+                isNumberOfCardCorrect = false
                 break
-            } else {
-                sut.setGame()
             }
         }
+        
+        return isNumberOfCardCorrect
+    }
+    
+    func isThereDealer() -> Bool {
+        if dealer != nil { return true }
+        else { return false }
+    }
+    
+    func isThereDuplicatedCardInDeck() -> Bool {
+        var deck = [Card?]()
+        
+        for _ in 0 ..< self.deck.count() {
+            deck.append(self.deck.removeOne())
+        }
+        
+        let setOfDeck = Set(deck)
+        
+        if setOfDeck.count == deck.count { return true }
+        else { return false }
+    }
+    
+    func isGameEnded() -> Bool {
+        while true {
+            game.startGame()
+            if game.checkEndGame() {
+                break
+            }
+        }
+        return true
     }
 }
