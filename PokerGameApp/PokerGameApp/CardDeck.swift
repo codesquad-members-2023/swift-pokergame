@@ -8,7 +8,7 @@
 import Foundation
 
 class CardDeck {
-    private var cardList = [Card?]()
+    private var cardList = [Card]()
     
     func count() -> Int {
         return cardList.count
@@ -22,12 +22,7 @@ class CardDeck {
     }
     
     func removeOne() -> Card? {
-        let index = count() > 0 ? cardList.count - 1 : -1
-        let removedCard = index != -1 ? cardList[index] : nil
-        if removedCard != nil {
-            cardList.removeLast()
-        }
-        return removedCard
+        return cardList.popLast()
     }
     
     func reset() {
