@@ -8,48 +8,45 @@
 import Foundation
 
 class PokerGame {
-    private var dealer = Dealer()
-    private var players = [Player]()
+    private var dealer: Participant
+    private var participants = [Participant]()
     private var deck = CardDeck()
     private var numberOfCard = 0
     private var selectedNames = Set<String>()
-    private var playerCount = Int.random(in: 1...4)
-    private var numberOfStud = [5, 7].randomElement()
-    let playerNames = ["JK", "Honux", "Crong", "Chloe", "Demia", "Aiden", "Harim", "Wolve", "Effie", "Wood", "Eddie", "Haena", "Sol", "Noah"]
+    private let playerNames = ["JK", "Honux", "Crong", "Chloe", "Demia", "Aiden", "Harim", "Wolve", "Effie", "Wood", "Eddie", "Haena", "Sol", "Noah"]
 
     init(numberOfPlayers: Int, numberOfCards: Int) {
         deck.reset()
         deck.shuffle()
+        dealer = Participant(name: "Dealer")
+        participants.append(dealer)
         selectedNames = setPlayerName(randomNumber: numberOfPlayers)
         numberOfCard = numberOfCards
     }
     
-    deinit {
-        print("> 카드가 부족합니다.\n게임이 종료됩니다.")
-    }
-    
-    func setGame() {
-        if players.isEmpty {
+    func setParticipants() {
+        if participants.count == 1 {
             for name in selectedNames {
-                let player = Player(name: name, cardDeck: makeDeck())
-                players.append(player)
+                participants.append(Participant(name: name))
             }
-            dealer.selfDistribution(deck: self.deck, numberOfCard: numberOfCard)
         } else {
-            for player in players {
-                player.resetCards(cards: makeDeck())
-            }
-            dealer.resetCards(cards: makeDeck())
+            participants.forEach() { $0.initDeck() }
         }
     }
     
-    func makeDeck() -> [Card?] {
-        let deck = dealer.cardDistribution(deck: self.deck, numberOfCard: numberOfCard)
-        return deck
+    func dealCards() {
+        for _ in 0 ..< numberOfCard {
+            participants.forEach() { $0.setDeck(card: dealer.popCard(deck: deck)) }
+        }
     }
     
-    func cardCheck() -> Bool {
-        deck.count() < numberOfCard * (playerCount + 1) ? true : false
+    func startGame() {
+        setParticipants()
+        dealCards()
+    }
+    
+    func checkEndGame() -> Bool {
+        deck.count() < numberOfCard * participants.count ? true : false
     }
     
     func setPlayerName(randomNumber: Int) -> Set<String> {
@@ -59,18 +56,7 @@ class PokerGame {
             names.insert(playerNames.randomElement() ?? "")
             if names.count == randomNumber { break }
         }
+        
         return names
-    }
-    
-    func checkRemainNumberOfCard() -> Int {
-        deck.count()
-    }
-
-    func numberOfPlayerCard() -> Int {
-        return players.randomElement()?.numberOfCards() ?? 0
-    }
-
-    func getPlayersAndDealer() -> (player: [Player], dealer: Dealer) {
-        return (players, dealer)
     }
 }
