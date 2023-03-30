@@ -19,7 +19,7 @@ final class PokerGameAppTests: XCTestCase {
     
     override func setUpWithError() throws {
         game = PokerGame(numberOfPlayers: self.numberOfPlayers, numberOfCards: self.numberOfCards)
-        playersName = game.setPlayerName(randomNumber: numberOfPlayers) // 게임 객체랑 다른 객체 여러개여도 상관없나?? 없을듯?
+        playersName = game.setPlayerName(randomNumber: numberOfPlayers)
         players = setParticipants(names: playersName)
         dealer = Participant(name: "Dealer")
         players.append(dealer)
@@ -92,10 +92,12 @@ final class PokerGameAppTests: XCTestCase {
     func isGameEnded() -> Bool {
         while true {
             game.startGame()
+            
             if game.checkEndGame() {
                 break
             }
         }
+        
         return true
     }
 }
